@@ -6,6 +6,6 @@ namespace Imi.Project.Api.Core.Entities.Base
 {
     public abstract class BaseEntity
     {
-        Guid Id { get; set; }
+        public Guid Id { get; set; }
     }
 }
