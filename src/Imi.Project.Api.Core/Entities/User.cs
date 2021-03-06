@@ -9,6 +9,8 @@ namespace Imi.Project.Api.Core.Entities
     {
         public string Name { get; set; }
         public bool IsAdmin { get; set; }
+        public bool IsRaidLeader { get; set; }
+        public bool IsWarlord { get; set; }
         public ICollection<Character> Characters { get; set; }
     }
 }
