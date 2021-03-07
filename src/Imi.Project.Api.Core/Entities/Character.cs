@@ -10,10 +10,10 @@ namespace Imi.Project.Api.Core.Entities
         public string Name { get; set; }
         public string Class { get; set; }
         public string Role { get; set; }
+        public int Level { get; set; }
         public int ItemLevel { get; set; }
         public double ArenaRating { get; set; }
         public double BattlegroundRating { get; set; }
-        public bool IsLeader { get; set; }
         public Guid UserId { get; set; }
         public User User { get; set; }
         public ICollection<ArenaCharacter> ArenaCharacters { get; set; }
