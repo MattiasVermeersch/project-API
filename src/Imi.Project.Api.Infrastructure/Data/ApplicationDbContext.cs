@@ -1,4 +1,5 @@
 ﻿using Imi.Project.Api.Core.Entities;
+using Imi.Project.Api.Infrastructure.Data.Seeding;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -81,6 +82,9 @@ namespace Imi.Project.Api.Infrastructure.Data
                 .HasOne(dc => dc.Character)
                 .WithMany(c => c.RaidCharacters)
                 .HasForeignKey(dc => dc.CharacterId);
+
+            //seeding the data
+            UserSeeder.Seed(modelBuilder);
         }
     }
 }
