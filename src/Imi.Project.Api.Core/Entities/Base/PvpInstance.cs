@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Imi.Project.Api.Core.Entities.Base
 {
-    public abstract class PvpInstance
+    public abstract class PvpInstance : BaseEntity
     {
         public bool IsWon { get; set; }
         public DateTime Date { get; set; }
