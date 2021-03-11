@@ -369,7 +369,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ArenaRating = 0,
                     BattlegroundRating = 0,
                     UserId = Guid.Parse("00000000-0000-0000-0000-000000000010")
-                },
+                }
             );
         }
     }
