@@ -20,7 +20,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 167,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000001")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000001")
                 },
                 new Character
                 {
@@ -32,7 +32,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 216,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000001")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000001")
                 },
                 new Character
                 {
@@ -44,7 +44,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 131,
                     ArenaRating = 384,
                     BattlegroundRating = 192,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000001")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000001")
                 },
                 new Character
                 {
@@ -56,7 +56,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 216,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000002")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000002")
                 },
                 new Character
                 {
@@ -68,7 +68,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 149,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000002")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000002")
                 },
                 new Character
                 {
@@ -80,7 +80,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 187,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000002")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000002")
                 },
                 new Character
                 {
@@ -92,7 +92,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 175,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000003")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000003")
                 },
                 new Character
                 {
@@ -104,7 +104,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 196,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000003")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000003")
                 },
                 new Character
                 {
@@ -116,7 +116,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 200,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000003")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000003")
                 },
                 new Character
                 {
@@ -128,7 +128,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 145,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000004")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000004")
                 },
                 new Character
                 {
@@ -140,7 +140,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 193,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000004")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000004")
                 },
                 new Character
                 {
@@ -152,7 +152,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 145,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000004")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000004")
                 },
                 new Character
                 {
@@ -164,7 +164,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 185,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000005")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000005")
                 },
                 new Character
                 {
@@ -176,7 +176,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 187,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000005")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000005")
                 },
                 new Character
                 {
@@ -188,7 +188,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 187,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000005")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000005")
                 },
                 new Character
                 {
@@ -200,7 +200,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 202,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000006")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000006")
                 },
                 new Character
                 {
@@ -212,7 +212,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 201,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000006")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000006")
                 },
                 new Character
                 {
@@ -224,7 +224,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 201,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000007")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000007")
                 },
                 new Character
                 {
@@ -236,7 +236,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 199,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000007")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000007")
                 },
                 new Character
                 {
@@ -248,7 +248,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 139,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000007")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000007")
                 },
                 new Character
                 {
@@ -260,7 +260,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 157,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000007")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000007")
                 },
                 new Character
                 {
@@ -272,7 +272,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 187,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000008")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000008")
                 },
                 new Character
                 {
@@ -284,7 +284,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 188,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000008")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000008")
                 },
                 new Character
                 {
@@ -296,7 +296,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 192,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000008")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000008")
                 },
                 new Character
                 {
@@ -308,7 +308,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 177,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000009")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000009")
                 },
                 new Character
                 {
@@ -320,7 +320,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 169,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000009")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000009")
                 },
                 new Character
                 {
@@ -332,7 +332,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 152,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000009")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000009")
                 },
                 new Character
                 {
@@ -344,7 +344,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 152,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000010")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000010")
                 },
                 new Character
                 {
@@ -356,7 +356,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 174,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000010")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000010")
                 },
                 new Character
                 {
@@ -368,7 +368,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     ItemLevel = 210,
                     ArenaRating = 0,
                     BattlegroundRating = 0,
-                    UserId = Guid.Parse("00000000-0000-0000-000-000000000010")
+                    UserId = Guid.Parse("00000000-0000-0000-0000-000000000010")
                 },
             );
         }
