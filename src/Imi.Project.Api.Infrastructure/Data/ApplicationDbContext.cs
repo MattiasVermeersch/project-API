@@ -85,6 +85,16 @@ namespace Imi.Project.Api.Infrastructure.Data
 
             //seeding the data
             UserSeeder.Seed(modelBuilder);
+            CharacterSeeder.Seed(modelBuilder);
+            ArenaSeeder.Seed(modelBuilder);
+            BattlegroundSeeder.Seed(modelBuilder);
+            DungeonSeeder.Seed(modelBuilder);
+            RaidSeeder.Seed(modelBuilder);
+
+            ArenaCharacterSeeder.Seed(modelBuilder);
+            BattlegroundCharacterSeeder.Seed(modelBuilder);
+            DungeonCharacterSeeder.Seed(modelBuilder);
+            RaidCharacterSeeder.Seed(modelBuilder);
         }
     }
 }
