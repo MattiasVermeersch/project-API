@@ -83,6 +83,8 @@ namespace Imi.Project.Api.Infrastructure.Data
                 .WithMany(c => c.RaidCharacters)
                 .HasForeignKey(dc => dc.CharacterId);
 
+            base.OnModelCreating(modelBuilder);
+
             //seeding the data
             UserSeeder.Seed(modelBuilder);
             CharacterSeeder.Seed(modelBuilder);
