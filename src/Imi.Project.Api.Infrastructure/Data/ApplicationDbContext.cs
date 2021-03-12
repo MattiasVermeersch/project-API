@@ -38,11 +38,11 @@ namespace Imi.Project.Api.Infrastructure.Data
             modelBuilder.Entity<ArenaCharacter>()
                 .HasOne(ac => ac.Arena)
                 .WithMany(a => a.ArenaCharacters)
-                .HasForeignKey(ac => ac.ArenaId);
+                .HasForeignKey(ac => ac.ArenaId).OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<ArenaCharacter>()
                 .HasOne(ac => ac.Character)
                 .WithMany(c => c.ArenaCharacters)
-                .HasForeignKey(ac => ac.CharacterId);
+                .HasForeignKey(ac => ac.CharacterId).OnDelete(DeleteBehavior.Cascade);
 
             //create releation for BattlegroundCharacter
             modelBuilder.Entity<BattlegroundCharacter>()
@@ -51,11 +51,11 @@ namespace Imi.Project.Api.Infrastructure.Data
             modelBuilder.Entity<BattlegroundCharacter>()
                 .HasOne(bc => bc.Battleground)
                 .WithMany(b => b.BattlegroundCharacters)
-                .HasForeignKey(bc => bc.BattlegroundId);
+                .HasForeignKey(bc => bc.BattlegroundId).OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<BattlegroundCharacter>()
                 .HasOne(bc => bc.Character)
                 .WithMany(c => c.BattlegroundCharacters)
-                .HasForeignKey(bc => bc.CharacterId);
+                .HasForeignKey(bc => bc.CharacterId).OnDelete(DeleteBehavior.Cascade);
 
             //create relation for DungeonCharacter
             modelBuilder.Entity<DungeonCharacter>()
@@ -64,11 +64,11 @@ namespace Imi.Project.Api.Infrastructure.Data
             modelBuilder.Entity<DungeonCharacter>()
                 .HasOne(dc => dc.Dungeon)
                 .WithMany(d => d.DungeonCharacters)
-                .HasForeignKey(dc => dc.DungeonId);
+                .HasForeignKey(dc => dc.DungeonId).OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<DungeonCharacter>()
                 .HasOne(dc => dc.Character)
                 .WithMany(c => c.DungeonCharacters)
-                .HasForeignKey(dc => dc.CharacterId);
+                .HasForeignKey(dc => dc.CharacterId).OnDelete(DeleteBehavior.Cascade);
 
             //create relation for RaidCharacter
             modelBuilder.Entity<RaidCharacter>()
@@ -77,14 +77,26 @@ namespace Imi.Project.Api.Infrastructure.Data
             modelBuilder.Entity<RaidCharacter>()
                 .HasOne(dc => dc.Raid)
                 .WithMany(r => r.RaidCharacters)
-                .HasForeignKey(dc => dc.RaidId);
+                .HasForeignKey(dc => dc.RaidId).OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<RaidCharacter>()
                 .HasOne(dc => dc.Character)
                 .WithMany(c => c.RaidCharacters)
-                .HasForeignKey(dc => dc.CharacterId);
+                .HasForeignKey(dc => dc.CharacterId).OnDelete(DeleteBehavior.Cascade);
+
+            base.OnModelCreating(modelBuilder);
 
             //seeding the data
             UserSeeder.Seed(modelBuilder);
+            CharacterSeeder.Seed(modelBuilder);
+            ArenaSeeder.Seed(modelBuilder);
+            BattlegroundSeeder.Seed(modelBuilder);
+            DungeonSeeder.Seed(modelBuilder);
+            RaidSeeder.Seed(modelBuilder);
+
+            ArenaCharacterSeeder.Seed(modelBuilder);
+            BattlegroundCharacterSeeder.Seed(modelBuilder);
+            DungeonCharacterSeeder.Seed(modelBuilder);
+            RaidCharacterSeeder.Seed(modelBuilder);
         }
     }
 }
