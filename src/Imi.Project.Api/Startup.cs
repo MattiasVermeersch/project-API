@@ -1,4 +1,7 @@
+using Imi.Project.Api.Core.Entities;
+using Imi.Project.Api.Core.Interfaces.Repositories;
 using Imi.Project.Api.Infrastructure.Data;
+using Imi.Project.Api.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,6 +32,14 @@ namespace Imi.Project.Api
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DatabaseConnection")));
+
+            services.AddScoped<IRepository<User>, Repository<User>>();
+            services.AddScoped<IRepository<Character>, Repository<Character>>();
+            services.AddScoped<IRepository<Arena>, Repository<Arena>>();
+            services.AddScoped<IRepository<Battleground>, Repository<Battleground>>();
+            services.AddScoped<IRepository<Dungeon>, Repository<Dungeon>>();
+            services.AddScoped<IRepository<Raid>, Repository<Raid>>();
+
             services.AddControllers();
         }
 

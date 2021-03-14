@@ -1,13 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <Folder Include="Dtos\" />
     <Folder Include="Interfaces\Services\" />
-    <Folder Include="Interfaces\Repositories\" />
     <Folder Include="Mapping\" />
     <Folder Include="Services\" />
   </ItemGroup>
