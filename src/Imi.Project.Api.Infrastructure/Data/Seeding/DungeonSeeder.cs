@@ -15,7 +15,6 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                 {
                     Id = Guid.Parse("00000001-0000-0000-0000-000000000000"),
                     InstanceName = "De Other Side",
-                    AvailableBosses = 4,
                     Difficulty = "Heroic",
                     Date = new DateTime(2021, 01, 31),
                     //Ithaela
@@ -26,7 +25,6 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                 {
                     Id = Guid.Parse("00000002-0000-0000-0000-000000000000"),
                     InstanceName = "Mists of Tirna Scithe",
-                    AvailableBosses = 3,
                     Difficulty = "Heroic",
                     Date = new DateTime(2021, 01, 31),
                     //Ithaela
@@ -37,7 +35,6 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                 {
                     Id = Guid.Parse("00000003-0000-0000-0000-000000000000"),
                     InstanceName = "The Necrotic Wake",
-                    AvailableBosses = 4,
                     Difficulty = "Heroic",
                     Date = new DateTime(2021, 01, 31),
                     //Ithaela
@@ -48,7 +45,6 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                 {
                     Id = Guid.Parse("00000004-0000-0000-0000-000000000000"),
                     InstanceName = "Plaguefall",
-                    AvailableBosses = 4,
                     Difficulty = "Mythic",
                     Date = new DateTime(2021, 01, 31),
                     //Liutasil
@@ -59,7 +55,6 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                 {
                     Id = Guid.Parse("00000005-0000-0000-0000-000000000000"),
                     InstanceName = "Spires of Ascension",
-                    AvailableBosses = 4,
                     Difficulty = "Mythic",
                     Date = new DateTime(2021, 01, 31),
                     //Liutasil
@@ -70,7 +65,6 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                 {
                     Id = Guid.Parse("00000006-0000-0000-0000-000000000000"),
                     InstanceName = "Halls of Atonement",
-                    AvailableBosses = 4,
                     Difficulty = "Mythic+ 5",
                     Date = new DateTime(2021, 02, 02),
                     //Ghinin
@@ -82,7 +76,6 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                 {
                     Id = Guid.Parse("00000007-0000-0000-0000-000000000000"),
                     InstanceName = "Theater of Pain",
-                    AvailableBosses = 5,
                     Difficulty = "Mythic+ 7",
                     Date = new DateTime(2021, 02, 02),
                     //Ghinin
@@ -94,7 +87,6 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                 {
                     Id = Guid.Parse("00000008-0000-0000-0000-000000000000"),
                     InstanceName = "Sanguine Depths",
-                    AvailableBosses = 5,
                     Difficulty = "Mythic+ 8",
                     Date = new DateTime(2021, 02, 02),
                     //Ghinin

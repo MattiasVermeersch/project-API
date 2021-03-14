@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Imi.Project.Api.Core.Entities.Base
+namespace Imi.Project.Api.Core.Dtos
 {
-    public abstract class PveInstance : BaseEntity
+    public class RaidResponseDto
     {
         public string InstanceName { get; set; }
         public string Difficulty { get; set; }
         public DateTime Date { get; set; }
+        public double Progress { get; set; }
+        public CharacterResponseDto Leader { get; set; }
         public Guid LeaderId { get; set; }
-        public Character Leader { get; set; }
+        public ICollection<CharacterResponseDto> Characters { get; set; }
     }
 }
