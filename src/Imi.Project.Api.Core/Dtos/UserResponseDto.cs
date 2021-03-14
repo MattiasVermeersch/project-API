@@ -9,8 +9,9 @@ namespace Imi.Project.Api.Core.Dtos
     {
         public string Name { get; set; }
         public string Email { get; set; }
-        //property to list roles
-        public ICollection<string> Roles { get; set; }
+        public bool IsAdmin { get; set; }
+        public bool IsRaidLeader { get; set; }
+        public bool IsWarlord { get; set; }
         public ICollection<CharacterResponseDto> Characters { get; set; }
     }
 }
