@@ -14,7 +14,6 @@ namespace Imi.Project.Api.Core.Dtos
         public int ItemLevel { get; set; }
         public double ArenaRating { get; set; }
         public double BattlegroundRating { get; set; }
-        public string RaidProgress { get; set; }
         public int ArenaCount { get; set; }
         public int BattlegroundCount { get; set; }
         public int DungeonCount { get; set; }
