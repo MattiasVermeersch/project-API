@@ -1,5 +1,7 @@
 using Imi.Project.Api.Core.Entities;
 using Imi.Project.Api.Core.Interfaces.Repositories;
+using Imi.Project.Api.Core.Interfaces.Services;
+using Imi.Project.Api.Core.Services;
 using Imi.Project.Api.Infrastructure.Data;
 using Imi.Project.Api.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Builder;
@@ -39,6 +41,15 @@ namespace Imi.Project.Api
             services.AddScoped<IRepository<Battleground>, Repository<Battleground>>();
             services.AddScoped<IRepository<Dungeon>, Repository<Dungeon>>();
             services.AddScoped<IRepository<Raid>, Repository<Raid>>();
+
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ICharacterService, CharacterService>();
+            services.AddScoped<IArenaService, ArenaService>();
+            services.AddScoped<IBattlegroundService, BattlegroundService>();
+            services.AddScoped<IDungeonService, DungeonService>();
+            services.AddScoped<IRaidService, RaidService>();
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddControllers();
         }
