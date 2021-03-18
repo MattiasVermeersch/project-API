@@ -36,6 +36,12 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     DungeonId = Guid.Parse("00000001-0000-0000-0000-000000000000"),
                     CharacterId = Guid.Parse("00000000-0000-0000-0022-000000000000")
                 },
+                new DungeonCharacter
+                {
+                    //Dps3
+                    DungeonId = Guid.Parse("00000001-0000-0000-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0030-000000000000")
+                },
 
                 //second dungeon
                 new DungeonCharacter
@@ -61,6 +67,12 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     //Dps2
                     DungeonId = Guid.Parse("00000002-0000-0000-0000-000000000000"),
                     CharacterId = Guid.Parse("00000000-0000-0000-0022-000000000000")
+                },
+                new DungeonCharacter
+                {
+                    //Dps3
+                    DungeonId = Guid.Parse("00000002-0000-0000-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0030-000000000000")
                 },
 
                 //third dungeon
@@ -88,8 +100,20 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     DungeonId = Guid.Parse("00000003-0000-0000-0000-000000000000"),
                     CharacterId = Guid.Parse("00000000-0000-0000-0022-000000000000")
                 },
+                new DungeonCharacter
+                {
+                    //Dps3
+                    DungeonId = Guid.Parse("00000003-0000-0000-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0030-000000000000")
+                },
 
                 //fourth dungeon
+                new DungeonCharacter
+                {
+                    //Tank
+                    DungeonId = Guid.Parse("00000004-0000-0000-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0009-000000000000")
+                },
                 new DungeonCharacter
                 {
                     //Healer
@@ -118,6 +142,12 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                 //fifth dungeon
                 new DungeonCharacter
                 {
+                    //Tank
+                    DungeonId = Guid.Parse("00000005-0000-0000-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0009-000000000000")
+                },
+                new DungeonCharacter
+                {
                     //Healer
                     DungeonId = Guid.Parse("00000005-0000-0000-0000-000000000000"),
                     CharacterId = Guid.Parse("00000000-0000-0000-0018-000000000000")
@@ -142,6 +172,12 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                 },
 
                 //sixth dungeon
+                new DungeonCharacter
+                {
+                    //Tank
+                    DungeonId = Guid.Parse("00000006-0000-0000-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0011-000000000000")
+                },
                 new DungeonCharacter
                 {
                     //Healer
@@ -170,6 +206,12 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                 //seventh dungeon
                 new DungeonCharacter
                 {
+                    //Tank
+                    DungeonId = Guid.Parse("00000007-0000-0000-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0011-000000000000")
+                },
+                new DungeonCharacter
+                {
                     //Healer
                     DungeonId = Guid.Parse("00000007-0000-0000-0000-000000000000"),
                     CharacterId = Guid.Parse("00000000-0000-0000-0016-000000000000")
@@ -194,6 +236,12 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                 },
 
                 //eigth dungeon
+                new DungeonCharacter
+                {
+                    //Tank
+                    DungeonId = Guid.Parse("00000008-0000-0000-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0011-000000000000")
+                },
                 new DungeonCharacter
                 {
                     //Healer

@@ -66,6 +66,12 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     RaidId = Guid.Parse("10000000-0000-0000-0000-000000000000"),
                     CharacterId = Guid.Parse("00000000-0000-0000-0012-000000000000")
                 },
+                new RaidCharacter
+                {
+                    //Dps 5
+                    RaidId = Guid.Parse("10000000-0000-0000-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0024-000000000000")
+                },
 
                 //second raid
                 new RaidCharacter
@@ -122,6 +128,12 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     RaidId = Guid.Parse("20000000-0000-0000-0000-000000000000"),
                     CharacterId = Guid.Parse("00000000-0000-0000-0012-000000000000")
                 },
+                new RaidCharacter
+                {
+                    //Dps 5
+                    RaidId = Guid.Parse("20000000-0000-0000-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0024-000000000000")
+                },
 
                 //third raid
                 new RaidCharacter
@@ -177,6 +189,12 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     //Dps 4
                     RaidId = Guid.Parse("30000000-0000-0000-0000-000000000000"),
                     CharacterId = Guid.Parse("00000000-0000-0000-0012-000000000000")
+                },
+                new RaidCharacter
+                {
+                    //Dps 5
+                    RaidId = Guid.Parse("30000000-0000-0000-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0024-000000000000")
                 }
             );
         }
