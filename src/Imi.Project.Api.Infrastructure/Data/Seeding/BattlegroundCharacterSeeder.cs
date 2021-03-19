@@ -211,7 +211,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                 new BattlegroundCharacter
                 {
                     BattlegroundId = Guid.Parse("00000000-0000-0004-0000-000000000000"),
-                    CharacterId = Guid.Parse("00000000-0000-0000-0000-000000000010")
+                    CharacterId = Guid.Parse("00000000-0000-0000-0010-000000000000")
                 },
                 new BattlegroundCharacter
                 {
@@ -263,7 +263,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                 new BattlegroundCharacter
                 {
                     BattlegroundId = Guid.Parse("00000000-0000-0005-0000-000000000000"),
-                    CharacterId = Guid.Parse("00000000-0000-0000-0000-000000000010")
+                    CharacterId = Guid.Parse("00000000-0000-0000-0010-000000000000")
                 },
                 new BattlegroundCharacter
                 {
