@@ -8,8 +8,6 @@ namespace Imi.Project.Api.Core.Entities.Base
     {
         public bool IsWon { get; set; }
         public DateTime Date { get; set; }
-        public Guid LeaderId { get; set; }
-        public Character Leader { get; set; }
         
     }
 }

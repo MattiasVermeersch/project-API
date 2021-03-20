@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Imi.Project.Api.Core.Dtos.Base;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Imi.Project.Api.Core.Dtos
 {
-    public class DungeonResponseDto
+    public class DungeonResponseDto : BaseDto
     {
         public string InstanceName { get; set; }
         public string Difficulty { get; set; }

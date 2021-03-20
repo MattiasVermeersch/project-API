@@ -17,8 +17,6 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     InstanceName = "De Other Side",
                     Difficulty = "Heroic",
                     Date = new DateTime(2021, 01, 31),
-                    //Ithaela
-                    LeaderId = Guid.Parse("00000000-0000-0000-0030-000000000000"),
                     Succes = true
                 },
                 new Dungeon
@@ -27,8 +25,6 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     InstanceName = "Mists of Tirna Scithe",
                     Difficulty = "Heroic",
                     Date = new DateTime(2021, 01, 31),
-                    //Ithaela
-                    LeaderId = Guid.Parse("00000000-0000-0000-0030-000000000000"),
                     Succes = true
                 }, 
                 new Dungeon
@@ -37,8 +33,6 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     InstanceName = "The Necrotic Wake",
                     Difficulty = "Heroic",
                     Date = new DateTime(2021, 01, 31),
-                    //Ithaela
-                    LeaderId = Guid.Parse("00000000-0000-0000-0030-000000000000"),
                     Succes = true
                 },
                 new Dungeon
@@ -47,8 +41,6 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     InstanceName = "Plaguefall",
                     Difficulty = "Mythic",
                     Date = new DateTime(2021, 01, 31),
-                    //Liutasil
-                    LeaderId = Guid.Parse("00000000-0000-0000-0009-000000000000"),
                     Succes = true
                 },
                 new Dungeon
@@ -57,8 +49,6 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     InstanceName = "Spires of Ascension",
                     Difficulty = "Mythic",
                     Date = new DateTime(2021, 01, 31),
-                    //Liutasil
-                    LeaderId = Guid.Parse("00000000-0000-0000-0009-000000000000"),
                     Succes = true
                 },
                 new Dungeon
@@ -67,8 +57,6 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     InstanceName = "Halls of Atonement",
                     Difficulty = "Mythic+ 5",
                     Date = new DateTime(2021, 02, 02),
-                    //Ghinin
-                    LeaderId = Guid.Parse("00000000-0000-0000-0011-000000000000"),
                     Succes = true,
                     KeyIncrease = 2
                 },
@@ -78,8 +66,6 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     InstanceName = "Theater of Pain",
                     Difficulty = "Mythic+ 7",
                     Date = new DateTime(2021, 02, 02),
-                    //Ghinin
-                    LeaderId = Guid.Parse("00000000-0000-0000-0011-000000000000"),
                     Succes = true,
                     KeyIncrease = 1
                 },
@@ -89,8 +75,6 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     InstanceName = "Sanguine Depths",
                     Difficulty = "Mythic+ 8",
                     Date = new DateTime(2021, 02, 02),
-                    //Ghinin
-                    LeaderId = Guid.Parse("00000000-0000-0000-0011-000000000000"),
                     Succes = false,
                 }
             );

@@ -16,7 +16,6 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     Id = Guid.Parse("00000000-0000-0001-0000-000000000000"),
                     InstanceName = "Warsong Gulch",
                     Date = new DateTime(2021, 03, 01),
-                    LeaderId = Guid.Parse("00000000-0000-0000-0022-000000000000"),
                     IsWon = true
                 },
                 new Battleground
@@ -24,7 +23,6 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     Id = Guid.Parse("00000000-0000-0002-0000-000000000000"),
                     InstanceName = "Twin Peaks",
                     Date = new DateTime(2021, 03, 01),
-                    LeaderId = Guid.Parse("00000000-0000-0000-0022-000000000000"),
                     IsWon = true
                 },
                 new Battleground
@@ -32,7 +30,6 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     Id = Guid.Parse("00000000-0000-0003-0000-000000000000"),
                     InstanceName = "Twin Peaks",
                     Date = new DateTime(2021, 03, 01),
-                    LeaderId = Guid.Parse("00000000-0000-0000-0022-000000000000"),
                     IsWon = false
                 },
                 new Battleground
@@ -40,7 +37,6 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     Id = Guid.Parse("00000000-0000-0004-0000-000000000000"),
                     InstanceName = "Twin Peaks",
                     Date = new DateTime(2021, 03, 01),
-                    LeaderId = Guid.Parse("00000000-0000-0000-0022-000000000000"),
                     IsWon = true
                 },
                 new Battleground
@@ -48,7 +44,6 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     Id = Guid.Parse("00000000-0000-0005-0000-000000000000"),
                     InstanceName = "Warsong Gulch",
                     Date = new DateTime(2021, 03, 01),
-                    LeaderId = Guid.Parse("00000000-0000-0000-0022-000000000000"),
                     IsWon = true
                 }
             );

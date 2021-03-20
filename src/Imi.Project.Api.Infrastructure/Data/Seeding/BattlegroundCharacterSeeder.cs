@@ -11,7 +11,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
         public static void Seed(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<BattlegroundCharacter>().HasData(
-                //first bg, 9 characters + leader = 10
+                //first bg
                 new BattlegroundCharacter
                 {
                     BattlegroundId = Guid.Parse("00000000-0000-0001-0000-000000000000"),
@@ -57,102 +57,117 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     BattlegroundId = Guid.Parse("00000000-0000-0001-0000-000000000000"),
                     CharacterId = Guid.Parse("00000000-0000-0000-0010-000000000000")
                 },
-              
-                //second bg, same 9 chars
                 new BattlegroundCharacter
                 {
-                    BattlegroundId = Guid.Parse("00000000-0000-0002-0000-000000000000"),
-                    CharacterId = Guid.Parse("00000000-0000-0000-0002-000000000000")
-                },
-                new BattlegroundCharacter
-                {
-                    BattlegroundId = Guid.Parse("00000000-0000-0002-0000-000000000000"),
-                    CharacterId = Guid.Parse("00000000-0000-0000-0003-000000000000")
-                },
-                new BattlegroundCharacter
-                {
-                    BattlegroundId = Guid.Parse("00000000-0000-0002-0000-000000000000"),
-                    CharacterId = Guid.Parse("00000000-0000-0000-0004-000000000000")
-                },
-                new BattlegroundCharacter
-                {
-                    BattlegroundId = Guid.Parse("00000000-0000-0002-0000-000000000000"),
-                    CharacterId = Guid.Parse("00000000-0000-0000-0005-000000000000")
-                },
-                new BattlegroundCharacter
-                {
-                    BattlegroundId = Guid.Parse("00000000-0000-0002-0000-000000000000"),
-                    CharacterId = Guid.Parse("00000000-0000-0000-0006-000000000000")
-                },
-                new BattlegroundCharacter
-                {
-                    BattlegroundId = Guid.Parse("00000000-0000-0002-0000-000000000000"),
-                    CharacterId = Guid.Parse("00000000-0000-0000-0007-000000000000")
-                },
-                new BattlegroundCharacter
-                {
-                    BattlegroundId = Guid.Parse("00000000-0000-0002-0000-000000000000"),
-                    CharacterId = Guid.Parse("00000000-0000-0000-0008-000000000000")
-                },
-                new BattlegroundCharacter
-                {
-                    BattlegroundId = Guid.Parse("00000000-0000-0002-0000-000000000000"),
-                    CharacterId = Guid.Parse("00000000-0000-0000-0009-000000000000")
-                },
-                new BattlegroundCharacter
-                {
-                    BattlegroundId = Guid.Parse("00000000-0000-0002-0000-000000000000"),
-                    CharacterId = Guid.Parse("00000000-0000-0000-0010-000000000000")
-                },
-               
-                //third bg, same 9 chars
-                new BattlegroundCharacter
-                {
-                    BattlegroundId = Guid.Parse("00000000-0000-0003-0000-000000000000"),
-                    CharacterId = Guid.Parse("00000000-0000-0000-0002-000000000000")
-                },
-                new BattlegroundCharacter
-                {
-                    BattlegroundId = Guid.Parse("00000000-0000-0003-0000-000000000000"),
-                    CharacterId = Guid.Parse("00000000-0000-0000-0003-000000000000")
-                },
-                new BattlegroundCharacter
-                {
-                    BattlegroundId = Guid.Parse("00000000-0000-0003-0000-000000000000"),
-                    CharacterId = Guid.Parse("00000000-0000-0000-0004-000000000000")
-                },
-                new BattlegroundCharacter
-                {
-                    BattlegroundId = Guid.Parse("00000000-0000-0003-0000-000000000000"),
-                    CharacterId = Guid.Parse("00000000-0000-0000-0005-000000000000")
-                },
-                new BattlegroundCharacter
-                {
-                    BattlegroundId = Guid.Parse("00000000-0000-0003-0000-000000000000"),
-                    CharacterId = Guid.Parse("00000000-0000-0000-0006-000000000000")
-                },
-                new BattlegroundCharacter
-                {
-                    BattlegroundId = Guid.Parse("00000000-0000-0003-0000-000000000000"),
-                    CharacterId = Guid.Parse("00000000-0000-0000-0007-000000000000")
-                },
-                new BattlegroundCharacter
-                {
-                    BattlegroundId = Guid.Parse("00000000-0000-0003-0000-000000000000"),
-                    CharacterId = Guid.Parse("00000000-0000-0000-0008-000000000000")
-                },
-                new BattlegroundCharacter
-                {
-                    BattlegroundId = Guid.Parse("00000000-0000-0003-0000-000000000000"),
-                    CharacterId = Guid.Parse("00000000-0000-0000-0009-000000000000")
-                },
-                new BattlegroundCharacter
-                {
-                    BattlegroundId = Guid.Parse("00000000-0000-0003-0000-000000000000"),
-                    CharacterId = Guid.Parse("00000000-0000-0000-0010-000000000000")
+                    BattlegroundId = Guid.Parse("00000000-0000-0001-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0022-000000000000")
                 },
 
-                //fourth bg, 7 same characters, two different
+                //second bg
+                new BattlegroundCharacter
+                {
+                    BattlegroundId = Guid.Parse("00000000-0000-0002-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0002-000000000000")
+                },
+                new BattlegroundCharacter
+                {
+                    BattlegroundId = Guid.Parse("00000000-0000-0002-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0003-000000000000")
+                },
+                new BattlegroundCharacter
+                {
+                    BattlegroundId = Guid.Parse("00000000-0000-0002-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0004-000000000000")
+                },
+                new BattlegroundCharacter
+                {
+                    BattlegroundId = Guid.Parse("00000000-0000-0002-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0005-000000000000")
+                },
+                new BattlegroundCharacter
+                {
+                    BattlegroundId = Guid.Parse("00000000-0000-0002-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0006-000000000000")
+                },
+                new BattlegroundCharacter
+                {
+                    BattlegroundId = Guid.Parse("00000000-0000-0002-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0007-000000000000")
+                },
+                new BattlegroundCharacter
+                {
+                    BattlegroundId = Guid.Parse("00000000-0000-0002-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0008-000000000000")
+                },
+                new BattlegroundCharacter
+                {
+                    BattlegroundId = Guid.Parse("00000000-0000-0002-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0009-000000000000")
+                },
+                new BattlegroundCharacter
+                {
+                    BattlegroundId = Guid.Parse("00000000-0000-0002-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0010-000000000000")
+                },
+                new BattlegroundCharacter
+                {
+                    BattlegroundId = Guid.Parse("00000000-0000-0002-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0022-000000000000")
+                },
+
+                //third bg
+                new BattlegroundCharacter
+                {
+                    BattlegroundId = Guid.Parse("00000000-0000-0003-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0002-000000000000")
+                },
+                new BattlegroundCharacter
+                {
+                    BattlegroundId = Guid.Parse("00000000-0000-0003-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0003-000000000000")
+                },
+                new BattlegroundCharacter
+                {
+                    BattlegroundId = Guid.Parse("00000000-0000-0003-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0004-000000000000")
+                },
+                new BattlegroundCharacter
+                {
+                    BattlegroundId = Guid.Parse("00000000-0000-0003-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0005-000000000000")
+                },
+                new BattlegroundCharacter
+                {
+                    BattlegroundId = Guid.Parse("00000000-0000-0003-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0006-000000000000")
+                },
+                new BattlegroundCharacter
+                {
+                    BattlegroundId = Guid.Parse("00000000-0000-0003-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0007-000000000000")
+                },
+                new BattlegroundCharacter
+                {
+                    BattlegroundId = Guid.Parse("00000000-0000-0003-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0008-000000000000")
+                },
+                new BattlegroundCharacter
+                {
+                    BattlegroundId = Guid.Parse("00000000-0000-0003-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0009-000000000000")
+                },
+                new BattlegroundCharacter
+                {
+                    BattlegroundId = Guid.Parse("00000000-0000-0003-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0010-000000000000")
+                },
+                new BattlegroundCharacter
+                {
+                    BattlegroundId = Guid.Parse("00000000-0000-0003-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0022-000000000000")
+                },
+
+                //fourth bg
                 new BattlegroundCharacter
                 {
                     BattlegroundId = Guid.Parse("00000000-0000-0004-0000-000000000000"),
@@ -196,10 +211,15 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                 new BattlegroundCharacter
                 {
                     BattlegroundId = Guid.Parse("00000000-0000-0004-0000-000000000000"),
-                    CharacterId = Guid.Parse("00000000-0000-0000-0000-000000000010")
+                    CharacterId = Guid.Parse("00000000-0000-0000-0010-000000000000")
+                },
+                new BattlegroundCharacter
+                {
+                    BattlegroundId = Guid.Parse("00000000-0000-0004-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0022-000000000000")
                 },
 
-                //fifth bg, same 9 characters as fourth
+                //fifth bg
                 new BattlegroundCharacter
                 {
                     BattlegroundId = Guid.Parse("00000000-0000-0005-0000-000000000000"),
@@ -243,7 +263,12 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                 new BattlegroundCharacter
                 {
                     BattlegroundId = Guid.Parse("00000000-0000-0005-0000-000000000000"),
-                    CharacterId = Guid.Parse("00000000-0000-0000-0000-000000000010")
+                    CharacterId = Guid.Parse("00000000-0000-0000-0010-000000000000")
+                },
+                new BattlegroundCharacter
+                {
+                    BattlegroundId = Guid.Parse("00000000-0000-0005-0000-000000000000"),
+                    CharacterId = Guid.Parse("00000000-0000-0000-0022-000000000000")
                 }
             );
         }

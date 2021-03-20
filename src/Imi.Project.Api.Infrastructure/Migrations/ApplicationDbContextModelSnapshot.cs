@@ -31,12 +31,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                     b.Property<bool>("IsWon")
                         .HasColumnType("bit");
 
-                    b.Property<Guid>("LeaderId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("LeaderId");
 
                     b.ToTable("Arenas");
 
@@ -45,71 +40,61 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         {
                             Id = new Guid("00000000-0001-0000-0000-000000000000"),
                             Date = new DateTime(2021, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsWon = true,
-                            LeaderId = new Guid("00000000-0000-0000-0010-000000000000")
+                            IsWon = true
                         },
                         new
                         {
                             Id = new Guid("00000000-0002-0000-0000-000000000000"),
                             Date = new DateTime(2021, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsWon = true,
-                            LeaderId = new Guid("00000000-0000-0000-0010-000000000000")
+                            IsWon = true
                         },
                         new
                         {
                             Id = new Guid("00000000-0003-0000-0000-000000000000"),
                             Date = new DateTime(2021, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsWon = false,
-                            LeaderId = new Guid("00000000-0000-0000-0010-000000000000")
+                            IsWon = false
                         },
                         new
                         {
                             Id = new Guid("00000000-0004-0000-0000-000000000000"),
                             Date = new DateTime(2021, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsWon = true,
-                            LeaderId = new Guid("00000000-0000-0000-0010-000000000000")
+                            IsWon = true
                         },
                         new
                         {
                             Id = new Guid("00000000-0005-0000-0000-000000000000"),
                             Date = new DateTime(2021, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsWon = false,
-                            LeaderId = new Guid("00000000-0000-0000-0018-000000000000")
+                            IsWon = false
                         },
                         new
                         {
                             Id = new Guid("00000000-0006-0000-0000-000000000000"),
                             Date = new DateTime(2021, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsWon = false,
-                            LeaderId = new Guid("00000000-0000-0000-0018-000000000000")
+                            IsWon = false
                         },
                         new
                         {
                             Id = new Guid("00000000-0007-0000-0000-000000000000"),
                             Date = new DateTime(2021, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsWon = true,
-                            LeaderId = new Guid("00000000-0000-0000-0018-000000000000")
+                            IsWon = true
                         },
                         new
                         {
                             Id = new Guid("00000000-0008-0000-0000-000000000000"),
                             Date = new DateTime(2021, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsWon = false,
-                            LeaderId = new Guid("00000000-0000-0000-0018-000000000000")
+                            IsWon = false
                         },
                         new
                         {
                             Id = new Guid("00000000-0009-0000-0000-000000000000"),
                             Date = new DateTime(2021, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsWon = false,
-                            LeaderId = new Guid("00000000-0000-0000-0018-000000000000")
+                            IsWon = false
                         },
                         new
                         {
                             Id = new Guid("00000000-0010-0000-0000-000000000000"),
                             Date = new DateTime(2021, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsWon = false,
-                            LeaderId = new Guid("00000000-0000-0000-0018-000000000000")
+                            IsWon = false
                         });
                 });
 
@@ -135,8 +120,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         },
                         new
                         {
+                            ArenaId = new Guid("00000000-0001-0000-0000-000000000000"),
+                            CharacterId = new Guid("00000000-0000-0000-0010-000000000000")
+                        },
+                        new
+                        {
                             ArenaId = new Guid("00000000-0002-0000-0000-000000000000"),
                             CharacterId = new Guid("00000000-0000-0000-0008-000000000000")
+                        },
+                        new
+                        {
+                            ArenaId = new Guid("00000000-0002-0000-0000-000000000000"),
+                            CharacterId = new Guid("00000000-0000-0000-0010-000000000000")
                         },
                         new
                         {
@@ -145,11 +140,21 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         },
                         new
                         {
+                            ArenaId = new Guid("00000000-0003-0000-0000-000000000000"),
+                            CharacterId = new Guid("00000000-0000-0000-0010-000000000000")
+                        },
+                        new
+                        {
                             ArenaId = new Guid("00000000-0004-0000-0000-000000000000"),
                             CharacterId = new Guid("00000000-0000-0000-0008-000000000000")
                         },
                         new
                         {
+                            ArenaId = new Guid("00000000-0004-0000-0000-000000000000"),
+                            CharacterId = new Guid("00000000-0000-0000-0010-000000000000")
+                        },
+                        new
+                        {
                             ArenaId = new Guid("00000000-0005-0000-0000-000000000000"),
                             CharacterId = new Guid("00000000-0000-0000-0002-000000000000")
                         },
@@ -157,6 +162,11 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         {
                             ArenaId = new Guid("00000000-0005-0000-0000-000000000000"),
                             CharacterId = new Guid("00000000-0000-0000-0005-000000000000")
+                        },
+                        new
+                        {
+                            ArenaId = new Guid("00000000-0005-0000-0000-000000000000"),
+                            CharacterId = new Guid("00000000-0000-0000-0018-000000000000")
                         },
                         new
                         {
@@ -170,6 +180,11 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         },
                         new
                         {
+                            ArenaId = new Guid("00000000-0006-0000-0000-000000000000"),
+                            CharacterId = new Guid("00000000-0000-0000-0018-000000000000")
+                        },
+                        new
+                        {
                             ArenaId = new Guid("00000000-0007-0000-0000-000000000000"),
                             CharacterId = new Guid("00000000-0000-0000-0002-000000000000")
                         },
@@ -177,6 +192,11 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         {
                             ArenaId = new Guid("00000000-0007-0000-0000-000000000000"),
                             CharacterId = new Guid("00000000-0000-0000-0005-000000000000")
+                        },
+                        new
+                        {
+                            ArenaId = new Guid("00000000-0007-0000-0000-000000000000"),
+                            CharacterId = new Guid("00000000-0000-0000-0018-000000000000")
                         },
                         new
                         {
@@ -190,6 +210,11 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         },
                         new
                         {
+                            ArenaId = new Guid("00000000-0008-0000-0000-000000000000"),
+                            CharacterId = new Guid("00000000-0000-0000-0018-000000000000")
+                        },
+                        new
+                        {
                             ArenaId = new Guid("00000000-0009-0000-0000-000000000000"),
                             CharacterId = new Guid("00000000-0000-0000-0002-000000000000")
                         },
@@ -200,6 +225,11 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         },
                         new
                         {
+                            ArenaId = new Guid("00000000-0009-0000-0000-000000000000"),
+                            CharacterId = new Guid("00000000-0000-0000-0018-000000000000")
+                        },
+                        new
+                        {
                             ArenaId = new Guid("00000000-0010-0000-0000-000000000000"),
                             CharacterId = new Guid("00000000-0000-0000-0002-000000000000")
                         },
@@ -207,6 +237,11 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         {
                             ArenaId = new Guid("00000000-0010-0000-0000-000000000000"),
                             CharacterId = new Guid("00000000-0000-0000-0024-000000000000")
+                        },
+                        new
+                        {
+                            ArenaId = new Guid("00000000-0010-0000-0000-000000000000"),
+                            CharacterId = new Guid("00000000-0000-0000-0018-000000000000")
                         });
                 });
 
@@ -225,12 +260,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                     b.Property<bool>("IsWon")
                         .HasColumnType("bit");
 
-                    b.Property<Guid>("LeaderId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("LeaderId");
 
                     b.ToTable("Battlegrounds");
 
@@ -240,40 +270,35 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = new Guid("00000000-0000-0001-0000-000000000000"),
                             Date = new DateTime(2021, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstanceName = "Warsong Gulch",
-                            IsWon = true,
-                            LeaderId = new Guid("00000000-0000-0000-0022-000000000000")
+                            IsWon = true
                         },
                         new
                         {
                             Id = new Guid("00000000-0000-0002-0000-000000000000"),
                             Date = new DateTime(2021, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstanceName = "Twin Peaks",
-                            IsWon = true,
-                            LeaderId = new Guid("00000000-0000-0000-0022-000000000000")
+                            IsWon = true
                         },
                         new
                         {
                             Id = new Guid("00000000-0000-0003-0000-000000000000"),
                             Date = new DateTime(2021, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstanceName = "Twin Peaks",
-                            IsWon = false,
-                            LeaderId = new Guid("00000000-0000-0000-0022-000000000000")
+                            IsWon = false
                         },
                         new
                         {
                             Id = new Guid("00000000-0000-0004-0000-000000000000"),
                             Date = new DateTime(2021, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstanceName = "Twin Peaks",
-                            IsWon = true,
-                            LeaderId = new Guid("00000000-0000-0000-0022-000000000000")
+                            IsWon = true
                         },
                         new
                         {
                             Id = new Guid("00000000-0000-0005-0000-000000000000"),
                             Date = new DateTime(2021, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstanceName = "Warsong Gulch",
-                            IsWon = true,
-                            LeaderId = new Guid("00000000-0000-0000-0022-000000000000")
+                            IsWon = true
                         });
                 });
 
@@ -339,6 +364,11 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         },
                         new
                         {
+                            BattlegroundId = new Guid("00000000-0000-0001-0000-000000000000"),
+                            CharacterId = new Guid("00000000-0000-0000-0022-000000000000")
+                        },
+                        new
+                        {
                             BattlegroundId = new Guid("00000000-0000-0002-0000-000000000000"),
                             CharacterId = new Guid("00000000-0000-0000-0002-000000000000")
                         },
@@ -384,6 +414,11 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         },
                         new
                         {
+                            BattlegroundId = new Guid("00000000-0000-0002-0000-000000000000"),
+                            CharacterId = new Guid("00000000-0000-0000-0022-000000000000")
+                        },
+                        new
+                        {
                             BattlegroundId = new Guid("00000000-0000-0003-0000-000000000000"),
                             CharacterId = new Guid("00000000-0000-0000-0002-000000000000")
                         },
@@ -429,6 +464,11 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         },
                         new
                         {
+                            BattlegroundId = new Guid("00000000-0000-0003-0000-000000000000"),
+                            CharacterId = new Guid("00000000-0000-0000-0022-000000000000")
+                        },
+                        new
+                        {
                             BattlegroundId = new Guid("00000000-0000-0004-0000-000000000000"),
                             CharacterId = new Guid("00000000-0000-0000-0002-000000000000")
                         },
@@ -470,7 +510,12 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         new
                         {
                             BattlegroundId = new Guid("00000000-0000-0004-0000-000000000000"),
-                            CharacterId = new Guid("00000000-0000-0000-0000-000000000010")
+                            CharacterId = new Guid("00000000-0000-0000-0010-000000000000")
+                        },
+                        new
+                        {
+                            BattlegroundId = new Guid("00000000-0000-0004-0000-000000000000"),
+                            CharacterId = new Guid("00000000-0000-0000-0022-000000000000")
                         },
                         new
                         {
@@ -515,7 +560,12 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         new
                         {
                             BattlegroundId = new Guid("00000000-0000-0005-0000-000000000000"),
-                            CharacterId = new Guid("00000000-0000-0000-0000-000000000010")
+                            CharacterId = new Guid("00000000-0000-0000-0010-000000000000")
+                        },
+                        new
+                        {
+                            BattlegroundId = new Guid("00000000-0000-0005-0000-000000000000"),
+                            CharacterId = new Guid("00000000-0000-0000-0022-000000000000")
                         });
                 });
 
@@ -533,6 +583,9 @@ namespace Imi.Project.Api.Infrastructure.Migrations
 
                     b.Property<string>("Class")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<int>("ItemLevel")
                         .HasColumnType("int");
@@ -562,6 +615,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Death Knight",
+                            IsDeleted = false,
                             ItemLevel = 167,
                             Level = 60,
                             Name = "Ghortak",
@@ -574,6 +628,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Druid",
+                            IsDeleted = false,
                             ItemLevel = 216,
                             Level = 60,
                             Name = "Bauglir",
@@ -586,6 +641,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 384.0,
                             BattlegroundRating = 192.0,
                             Class = "Priest",
+                            IsDeleted = false,
                             ItemLevel = 131,
                             Level = 60,
                             Name = "Shiroe",
@@ -598,6 +654,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Shaman",
+                            IsDeleted = false,
                             ItemLevel = 216,
                             Level = 60,
                             Name = "Yoriko",
@@ -610,6 +667,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Warlock",
+                            IsDeleted = false,
                             ItemLevel = 149,
                             Level = 60,
                             Name = "Elen",
@@ -622,6 +680,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Mage",
+                            IsDeleted = false,
                             ItemLevel = 187,
                             Level = 60,
                             Name = "Tary",
@@ -634,6 +693,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Warrior",
+                            IsDeleted = false,
                             ItemLevel = 175,
                             Level = 60,
                             Name = "Borugor",
@@ -646,6 +706,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Hunter",
+                            IsDeleted = false,
                             ItemLevel = 196,
                             Level = 60,
                             Name = "Wildstrider",
@@ -658,6 +719,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Paladin",
+                            IsDeleted = false,
                             ItemLevel = 200,
                             Level = 60,
                             Name = "Liutasil",
@@ -670,6 +732,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Demon Hunter",
+                            IsDeleted = false,
                             ItemLevel = 145,
                             Level = 60,
                             Name = "Aerenthil",
@@ -682,6 +745,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Monk",
+                            IsDeleted = false,
                             ItemLevel = 193,
                             Level = 60,
                             Name = "Ghinin",
@@ -694,6 +758,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Mage",
+                            IsDeleted = false,
                             ItemLevel = 145,
                             Level = 60,
                             Name = "Nuremor",
@@ -706,6 +771,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Shaman",
+                            IsDeleted = false,
                             ItemLevel = 185,
                             Level = 60,
                             Name = "Rhamanji",
@@ -718,6 +784,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Priest",
+                            IsDeleted = false,
                             ItemLevel = 187,
                             Level = 60,
                             Name = "Ebrothil",
@@ -730,6 +797,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Rogue",
+                            IsDeleted = false,
                             ItemLevel = 187,
                             Level = 60,
                             Name = "Tyrigon",
@@ -742,6 +810,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Paladin",
+                            IsDeleted = false,
                             ItemLevel = 202,
                             Level = 60,
                             Name = "Aeternus",
@@ -754,6 +823,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Monk",
+                            IsDeleted = false,
                             ItemLevel = 201,
                             Level = 60,
                             Name = "Trech",
@@ -766,6 +836,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Shaman",
+                            IsDeleted = false,
                             ItemLevel = 201,
                             Level = 60,
                             Name = "Baradhor",
@@ -778,6 +849,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Druid",
+                            IsDeleted = false,
                             ItemLevel = 199,
                             Level = 60,
                             Name = "Eranthil",
@@ -790,6 +862,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Warlock",
+                            IsDeleted = false,
                             ItemLevel = 139,
                             Level = 60,
                             Name = "Morgoroth",
@@ -802,6 +875,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Demon Hunter",
+                            IsDeleted = false,
                             ItemLevel = 157,
                             Level = 60,
                             Name = "Malefikh",
@@ -814,6 +888,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Death Knight",
+                            IsDeleted = false,
                             ItemLevel = 187,
                             Level = 60,
                             Name = "Ashifal",
@@ -826,6 +901,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Hunter",
+                            IsDeleted = false,
                             ItemLevel = 188,
                             Level = 60,
                             Name = "Umbrion",
@@ -838,6 +914,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Mage",
+                            IsDeleted = false,
                             ItemLevel = 192,
                             Level = 60,
                             Name = "Coolbone",
@@ -850,6 +927,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Warrior",
+                            IsDeleted = false,
                             ItemLevel = 177,
                             Level = 60,
                             Name = "GilGalad",
@@ -862,6 +940,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Rogue",
+                            IsDeleted = false,
                             ItemLevel = 169,
                             Level = 60,
                             Name = "Yreleth",
@@ -874,6 +953,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Monk",
+                            IsDeleted = false,
                             ItemLevel = 152,
                             Level = 60,
                             Name = "Bromir",
@@ -886,6 +966,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Druid",
+                            IsDeleted = false,
                             ItemLevel = 152,
                             Level = 60,
                             Name = "Phandalor",
@@ -898,6 +979,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Hunter",
+                            IsDeleted = false,
                             ItemLevel = 174,
                             Level = 60,
                             Name = "Myriad",
@@ -910,6 +992,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             ArenaRating = 0.0,
                             BattlegroundRating = 0.0,
                             Class = "Warrior",
+                            IsDeleted = false,
                             ItemLevel = 210,
                             Level = 60,
                             Name = "Ithaela",
@@ -924,9 +1007,6 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("AvailableBosses")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
@@ -939,15 +1019,10 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                     b.Property<int?>("KeyIncrease")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("LeaderId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<bool>("Succes")
                         .HasColumnType("bit");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("LeaderId");
 
                     b.ToTable("Dungeons");
 
@@ -955,83 +1030,67 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("00000001-0000-0000-0000-000000000000"),
-                            AvailableBosses = 4,
                             Date = new DateTime(2021, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Difficulty = "Heroic",
                             InstanceName = "De Other Side",
-                            LeaderId = new Guid("00000000-0000-0000-0030-000000000000"),
                             Succes = true
                         },
                         new
                         {
                             Id = new Guid("00000002-0000-0000-0000-000000000000"),
-                            AvailableBosses = 3,
                             Date = new DateTime(2021, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Difficulty = "Heroic",
                             InstanceName = "Mists of Tirna Scithe",
-                            LeaderId = new Guid("00000000-0000-0000-0030-000000000000"),
                             Succes = true
                         },
                         new
                         {
                             Id = new Guid("00000003-0000-0000-0000-000000000000"),
-                            AvailableBosses = 4,
                             Date = new DateTime(2021, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Difficulty = "Heroic",
                             InstanceName = "The Necrotic Wake",
-                            LeaderId = new Guid("00000000-0000-0000-0030-000000000000"),
                             Succes = true
                         },
                         new
                         {
                             Id = new Guid("00000004-0000-0000-0000-000000000000"),
-                            AvailableBosses = 4,
                             Date = new DateTime(2021, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Difficulty = "Mythic",
                             InstanceName = "Plaguefall",
-                            LeaderId = new Guid("00000000-0000-0000-0009-000000000000"),
                             Succes = true
                         },
                         new
                         {
                             Id = new Guid("00000005-0000-0000-0000-000000000000"),
-                            AvailableBosses = 4,
                             Date = new DateTime(2021, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Difficulty = "Mythic",
                             InstanceName = "Spires of Ascension",
-                            LeaderId = new Guid("00000000-0000-0000-0009-000000000000"),
                             Succes = true
                         },
                         new
                         {
                             Id = new Guid("00000006-0000-0000-0000-000000000000"),
-                            AvailableBosses = 4,
                             Date = new DateTime(2021, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Difficulty = "Mythic+ 5",
                             InstanceName = "Halls of Atonement",
                             KeyIncrease = 2,
-                            LeaderId = new Guid("00000000-0000-0000-0011-000000000000"),
                             Succes = true
                         },
                         new
                         {
                             Id = new Guid("00000007-0000-0000-0000-000000000000"),
-                            AvailableBosses = 5,
                             Date = new DateTime(2021, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Difficulty = "Mythic+ 7",
                             InstanceName = "Theater of Pain",
                             KeyIncrease = 1,
-                            LeaderId = new Guid("00000000-0000-0000-0011-000000000000"),
                             Succes = true
                         },
                         new
                         {
                             Id = new Guid("00000008-0000-0000-0000-000000000000"),
-                            AvailableBosses = 5,
                             Date = new DateTime(2021, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Difficulty = "Mythic+ 8",
                             InstanceName = "Sanguine Depths",
-                            LeaderId = new Guid("00000000-0000-0000-0011-000000000000"),
                             Succes = false
                         });
                 });
@@ -1073,6 +1132,11 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         },
                         new
                         {
+                            DungeonId = new Guid("00000001-0000-0000-0000-000000000000"),
+                            CharacterId = new Guid("00000000-0000-0000-0030-000000000000")
+                        },
+                        new
+                        {
                             DungeonId = new Guid("00000002-0000-0000-0000-000000000000"),
                             CharacterId = new Guid("00000000-0000-0000-0025-000000000000")
                         },
@@ -1093,6 +1157,11 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         },
                         new
                         {
+                            DungeonId = new Guid("00000002-0000-0000-0000-000000000000"),
+                            CharacterId = new Guid("00000000-0000-0000-0030-000000000000")
+                        },
+                        new
+                        {
                             DungeonId = new Guid("00000003-0000-0000-0000-000000000000"),
                             CharacterId = new Guid("00000000-0000-0000-0025-000000000000")
                         },
@@ -1110,6 +1179,16 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         {
                             DungeonId = new Guid("00000003-0000-0000-0000-000000000000"),
                             CharacterId = new Guid("00000000-0000-0000-0022-000000000000")
+                        },
+                        new
+                        {
+                            DungeonId = new Guid("00000003-0000-0000-0000-000000000000"),
+                            CharacterId = new Guid("00000000-0000-0000-0030-000000000000")
+                        },
+                        new
+                        {
+                            DungeonId = new Guid("00000004-0000-0000-0000-000000000000"),
+                            CharacterId = new Guid("00000000-0000-0000-0009-000000000000")
                         },
                         new
                         {
@@ -1134,6 +1213,11 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         new
                         {
                             DungeonId = new Guid("00000005-0000-0000-0000-000000000000"),
+                            CharacterId = new Guid("00000000-0000-0000-0009-000000000000")
+                        },
+                        new
+                        {
+                            DungeonId = new Guid("00000005-0000-0000-0000-000000000000"),
                             CharacterId = new Guid("00000000-0000-0000-0018-000000000000")
                         },
                         new
@@ -1154,6 +1238,11 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         new
                         {
                             DungeonId = new Guid("00000006-0000-0000-0000-000000000000"),
+                            CharacterId = new Guid("00000000-0000-0000-0011-000000000000")
+                        },
+                        new
+                        {
+                            DungeonId = new Guid("00000006-0000-0000-0000-000000000000"),
                             CharacterId = new Guid("00000000-0000-0000-0016-000000000000")
                         },
                         new
@@ -1174,6 +1263,11 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         new
                         {
                             DungeonId = new Guid("00000007-0000-0000-0000-000000000000"),
+                            CharacterId = new Guid("00000000-0000-0000-0011-000000000000")
+                        },
+                        new
+                        {
+                            DungeonId = new Guid("00000007-0000-0000-0000-000000000000"),
                             CharacterId = new Guid("00000000-0000-0000-0016-000000000000")
                         },
                         new
@@ -1190,6 +1284,11 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         {
                             DungeonId = new Guid("00000007-0000-0000-0000-000000000000"),
                             CharacterId = new Guid("00000000-0000-0000-0021-000000000000")
+                        },
+                        new
+                        {
+                            DungeonId = new Guid("00000008-0000-0000-0000-000000000000"),
+                            CharacterId = new Guid("00000000-0000-0000-0011-000000000000")
                         },
                         new
                         {
@@ -1234,12 +1333,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                     b.Property<string>("InstanceName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("LeaderId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("LeaderId");
 
                     b.ToTable("Raids");
 
@@ -1251,8 +1345,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             BossesKilled = 10,
                             Date = new DateTime(2021, 2, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Difficulty = "Heroic",
-                            InstanceName = "Caste Nathria",
-                            LeaderId = new Guid("00000000-0000-0000-0024-000000000000")
+                            InstanceName = "Caste Nathria"
                         },
                         new
                         {
@@ -1261,8 +1354,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             BossesKilled = 10,
                             Date = new DateTime(2021, 3, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Difficulty = "Heroic",
-                            InstanceName = "Caste Nathria",
-                            LeaderId = new Guid("00000000-0000-0000-0024-000000000000")
+                            InstanceName = "Caste Nathria"
                         },
                         new
                         {
@@ -1271,8 +1363,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             BossesKilled = 10,
                             Date = new DateTime(2021, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Difficulty = "Heroic",
-                            InstanceName = "Caste Nathria",
-                            LeaderId = new Guid("00000000-0000-0000-0024-000000000000")
+                            InstanceName = "Caste Nathria"
                         });
                 });
 
@@ -1338,6 +1429,11 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         },
                         new
                         {
+                            RaidId = new Guid("10000000-0000-0000-0000-000000000000"),
+                            CharacterId = new Guid("00000000-0000-0000-0024-000000000000")
+                        },
+                        new
+                        {
                             RaidId = new Guid("20000000-0000-0000-0000-000000000000"),
                             CharacterId = new Guid("00000000-0000-0000-0001-000000000000")
                         },
@@ -1383,6 +1479,11 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         },
                         new
                         {
+                            RaidId = new Guid("20000000-0000-0000-0000-000000000000"),
+                            CharacterId = new Guid("00000000-0000-0000-0024-000000000000")
+                        },
+                        new
+                        {
                             RaidId = new Guid("30000000-0000-0000-0000-000000000000"),
                             CharacterId = new Guid("00000000-0000-0000-0001-000000000000")
                         },
@@ -1425,6 +1526,11 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         {
                             RaidId = new Guid("30000000-0000-0000-0000-000000000000"),
                             CharacterId = new Guid("00000000-0000-0000-0012-000000000000")
+                        },
+                        new
+                        {
+                            RaidId = new Guid("30000000-0000-0000-0000-000000000000"),
+                            CharacterId = new Guid("00000000-0000-0000-0024-000000000000")
                         });
                 });
 
@@ -1559,21 +1665,12 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Imi.Project.Api.Core.Entities.Arena", b =>
-                {
-                    b.HasOne("Imi.Project.Api.Core.Entities.Character", "Leader")
-                        .WithMany()
-                        .HasForeignKey("LeaderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Imi.Project.Api.Core.Entities.ArenaCharacter", b =>
                 {
                     b.HasOne("Imi.Project.Api.Core.Entities.Arena", "Arena")
                         .WithMany("ArenaCharacters")
                         .HasForeignKey("ArenaId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Imi.Project.Api.Core.Entities.Character", "Character")
@@ -1583,21 +1680,12 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Imi.Project.Api.Core.Entities.Battleground", b =>
-                {
-                    b.HasOne("Imi.Project.Api.Core.Entities.Character", "Leader")
-                        .WithMany()
-                        .HasForeignKey("LeaderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Imi.Project.Api.Core.Entities.BattlegroundCharacter", b =>
                 {
                     b.HasOne("Imi.Project.Api.Core.Entities.Battleground", "Battleground")
                         .WithMany("BattlegroundCharacters")
                         .HasForeignKey("BattlegroundId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Imi.Project.Api.Core.Entities.Character", "Character")
@@ -1616,15 +1704,6 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Imi.Project.Api.Core.Entities.Dungeon", b =>
-                {
-                    b.HasOne("Imi.Project.Api.Core.Entities.Character", "Leader")
-                        .WithMany()
-                        .HasForeignKey("LeaderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Imi.Project.Api.Core.Entities.DungeonCharacter", b =>
                 {
                     b.HasOne("Imi.Project.Api.Core.Entities.Character", "Character")
@@ -1636,15 +1715,6 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                     b.HasOne("Imi.Project.Api.Core.Entities.Dungeon", "Dungeon")
                         .WithMany("DungeonCharacters")
                         .HasForeignKey("DungeonId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Imi.Project.Api.Core.Entities.Raid", b =>
-                {
-                    b.HasOne("Imi.Project.Api.Core.Entities.Character", "Leader")
-                        .WithMany()
-                        .HasForeignKey("LeaderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -1660,7 +1730,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                     b.HasOne("Imi.Project.Api.Core.Entities.Raid", "Raid")
                         .WithMany("RaidCharacters")
                         .HasForeignKey("RaidId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 #pragma warning restore 612, 618
