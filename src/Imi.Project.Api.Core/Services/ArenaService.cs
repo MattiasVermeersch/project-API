@@ -1,22 +1,19 @@
 ﻿using AutoMapper;
-using Microsoft.EntityFrameworkCore;
 using Imi.Project.Api.Core.Dtos;
-using Imi.Project.Api.Core.Entities;
 using Imi.Project.Api.Core.Interfaces.Repositories;
 using Imi.Project.Api.Core.Interfaces.Services;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Imi.Project.Api.Core.Services
 {
     public class ArenaService : IArenaService
     {
-        private readonly IRepository<Arena> _arenaRepository;
+        private readonly IArenaRepository _arenaRepository;
         private readonly IMapper _mapper;
 
-        public ArenaService(IRepository<Arena> arenaRepo, IMapper mapper)
+        public ArenaService(IArenaRepository arenaRepo, IMapper mapper)
         {
             _arenaRepository = arenaRepo;
             _mapper = mapper;
@@ -24,10 +21,7 @@ namespace Imi.Project.Api.Core.Services
 
         public async Task<ArenaResponseDto> GetByIdAsync(Guid id)
         {
-            var result = await _arenaRepository.GetAllAsync()
-                .Include(a => a.ArenaCharacters)
-                    .ThenInclude(ac => ac.Character)
-                .SingleOrDefaultAsync(a => a.Id.Equals(id));
+            var result = await _arenaRepository.GetByIdAsync(id);
 
             var dto = _mapper.Map<ArenaResponseDto>(result);
             return dto;
@@ -35,10 +29,7 @@ namespace Imi.Project.Api.Core.Services
 
         public async Task<IEnumerable<ArenaResponseDto>> ListAllAsync()
         {
-            var result = await _arenaRepository.GetAllAsync()
-                .Include(a => a.ArenaCharacters)
-                    .ThenInclude(ac => ac.Character)
-                .ToListAsync();
+            var result = await _arenaRepository.ListAllAsync();
 
             var dto = _mapper.Map<IEnumerable<ArenaResponseDto>>(result);
             return dto;
