@@ -1,31 +1,26 @@
 ﻿using AutoMapper;
-using Microsoft.EntityFrameworkCore;
 using Imi.Project.Api.Core.Dtos;
-using Imi.Project.Api.Core.Entities;
 using Imi.Project.Api.Core.Interfaces.Repositories;
 using Imi.Project.Api.Core.Interfaces.Services;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Imi.Project.Api.Core.Services
 {
     public class UserService : IUserService
     {
-        private readonly IRepository<User> _userRepository;
+        private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
 
-        public UserService(IRepository<User> userRepo, IMapper mapper)
+        public UserService(IUserRepository userRepo, IMapper mapper)
         {
             _userRepository = userRepo;
             _mapper = mapper;
         }
         public async Task<UserResponseDto> GetByIdAsync(Guid id)
         {
-            var result = await _userRepository.GetAllAsync()
-                .Include(u => u.Characters)
-                .SingleOrDefaultAsync(u => u.Id.Equals(id));
+            var result = await _userRepository.GetByIdAsync(id);
 
             var dto = _mapper.Map<UserResponseDto>(result);
             return dto;
@@ -33,9 +28,7 @@ namespace Imi.Project.Api.Core.Services
 
         public async Task<IEnumerable<UserResponseDto>> ListAllAsync()
         {
-            var result = await _userRepository.GetAllAsync()
-                .Include(u => u.Characters)
-                .ToListAsync();
+            var result = await _userRepository.ListAllAsync();
 
             var dto = _mapper.Map<IEnumerable<UserResponseDto>>(result);
             return dto;
