@@ -77,7 +77,7 @@ namespace Imi.Project.Api.Infrastructure.Repositories
             return entity;
         }
 
-        public async Task<T> DeleteByIdAsync(Guid id)
+        public async Task<T> DeleteAsync(Guid id)
         {
             T entity = await GetByIdAsync(id);
             await DeleteAsync(entity);
