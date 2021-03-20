@@ -12,8 +12,11 @@ namespace Imi.Project.Api.Core.Mapping
     {
         public AutoMapperProfiles()
         {
+            //Mapping for User entity
             CreateMap<User, UserResponseDto>();
+            CreateMap<UserRequestDto, User>();
 
+            //Mapping for Character entity
             CreateMap<Character, CharacterResponseDto>()
                 .ForMember(dest => dest.ArenaCount,
                     opt => opt.MapFrom(src => src.ArenaCharacters.Count()))
@@ -23,7 +26,9 @@ namespace Imi.Project.Api.Core.Mapping
                     opt => opt.MapFrom(src => src.DungeonCharacters.Count()))
                 .ForMember(dest => dest.RaidCount,
                     opt => opt.MapFrom(src => src.RaidCharacters.Count()));
+            CreateMap<CharacterRequestDto, Character>();
 
+            //Mapping for Arena entity
             CreateMap<Arena, ArenaResponseDto>()
                 .ForMember(dest => dest.Mode,
                     opt => opt.MapFrom(src => src.ArenaCharacters.Count() + 1))
@@ -40,7 +45,9 @@ namespace Imi.Project.Api.Core.Mapping
                             ArenaRating = ac.Character.ArenaRating,
                             BattlegroundRating = ac.Character.BattlegroundRating
                         })));
+            CreateMap<ArenaRequestDto, Arena>();
 
+            //Mapping for Battleground entity
             CreateMap<Battleground, BattlegroundResponseDto>()
                 .ForMember(dest => dest.Mode,
                     opt => opt.MapFrom(src => src.BattlegroundCharacters.Count() + 1))
@@ -57,7 +64,9 @@ namespace Imi.Project.Api.Core.Mapping
                             ArenaRating = bc.Character.ArenaRating,
                             BattlegroundRating = bc.Character.BattlegroundRating
                         })));
+            CreateMap<BattlegroundRequestDto, Battleground>();
 
+            //Mapping for Dungeon entity
             CreateMap<Dungeon, DungeonResponseDto>()
                 .ForMember(dest => dest.Characters,
                     opt => opt.MapFrom(src => src.DungeonCharacters
@@ -72,7 +81,9 @@ namespace Imi.Project.Api.Core.Mapping
                             ArenaRating = dc.Character.ArenaRating,
                             BattlegroundRating = dc.Character.BattlegroundRating
                         })));
+            CreateMap<DungeonRequestDto, Dungeon>();
 
+            //Mapping for Raid entity
             CreateMap<Raid, RaidResponseDto>()
                 .ForMember(dest => dest.Characters,
                     opt => opt.MapFrom(src => src.RaidCharacters
@@ -87,6 +98,7 @@ namespace Imi.Project.Api.Core.Mapping
                             ArenaRating = rc.Character.ArenaRating,
                             BattlegroundRating = rc.Character.BattlegroundRating
                         })));
+            CreateMap<RaidRequestDto, Raid>();
         }
     }
 }
