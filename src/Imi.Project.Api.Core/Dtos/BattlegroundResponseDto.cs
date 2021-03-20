@@ -11,8 +11,6 @@ namespace Imi.Project.Api.Core.Dtos
         public int Mode { get; set; }
         public bool IsWon { get; set; }
         public DateTime Date { get; set; }
-        public CharacterResponseDto Leader { get; set; }
-        public Guid LeaderId { get; set; }
         public ICollection<CharacterResponseDto> Characters { get; set; }
     }
 }
