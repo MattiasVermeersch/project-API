@@ -35,12 +35,12 @@ namespace Imi.Project.Api
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DatabaseConnection")));
 
-            services.AddScoped<IRepository<User>, Repository<User>>();
-            services.AddScoped<IRepository<Character>, Repository<Character>>();
-            services.AddScoped<IRepository<Arena>, Repository<Arena>>();
-            services.AddScoped<IRepository<Battleground>, Repository<Battleground>>();
-            services.AddScoped<IRepository<Dungeon>, Repository<Dungeon>>();
-            services.AddScoped<IRepository<Raid>, Repository<Raid>>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ICharacterRepository, CharacterRepository>();
+            services.AddScoped<IArenaRepository, ArenaRepository>();
+            services.AddScoped<IBattlegroundRepository, BattlegroundRepository>();
+            services.AddScoped<IDungeonRepository, DungeonRepository>();
+            services.AddScoped<IRaidRepository, RaidRepository>();
 
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<ICharacterService, CharacterService>();
