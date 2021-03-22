@@ -13,10 +13,20 @@ namespace Imi.Project.Api.Controllers
     public class CharactersController : ControllerBase
     {
         private readonly ICharacterService _characterService;
+        private readonly IArenaService _arenaService;
+        private readonly IBattlegroundService _battlegroundService;
+        private readonly IDungeonService _dungeonService;
+        private readonly IRaidService _raidService;
 
-        public CharactersController(ICharacterService characterService)
+        public CharactersController(ICharacterService characterService,
+            IArenaService arenaService, IBattlegroundService battlegroundService,
+            IDungeonService dungeonService, IRaidService raidService)
         {
             _characterService = characterService;
+            _arenaService = arenaService;
+            _battlegroundService = battlegroundService;
+            _dungeonService = dungeonService;
+            _raidService = raidService;
         }
 
         [HttpGet]
