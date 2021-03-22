@@ -34,5 +34,13 @@ namespace Imi.Project.Api.Core.Services
             var dto = _mapper.Map<IEnumerable<BattlegroundResponseDto>>(result);
             return dto;
         }
+
+        public async Task<IEnumerable<BattlegroundResponseDto>> GetByCharacterId(Guid id)
+        {
+            var result = await _battlegroundRepository.GetByCharacterId(id);
+
+            var dto = _mapper.Map<IEnumerable<BattlegroundResponseDto>>(result);
+            return dto;
+        }
     }
 }
