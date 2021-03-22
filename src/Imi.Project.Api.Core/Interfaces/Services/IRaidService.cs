@@ -10,5 +10,6 @@ namespace Imi.Project.Api.Core.Interfaces.Services
     {
         Task<IEnumerable<RaidResponseDto>> ListAllAsync();
         Task<RaidResponseDto> GetByIdAsync(Guid id);
+        Task<IEnumerable<RaidResponseDto>> GetByCharacterId(Guid id);
     }
 }
