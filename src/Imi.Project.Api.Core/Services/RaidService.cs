@@ -18,6 +18,7 @@ namespace Imi.Project.Api.Core.Services
             _raidRepository = raidRepo;
             _mapper = mapper;
         }
+
         public async Task<RaidResponseDto> GetByIdAsync(Guid id)
         {
             var result = await _raidRepository.GetByIdAsync(id);
@@ -29,6 +30,14 @@ namespace Imi.Project.Api.Core.Services
         public async Task<IEnumerable<RaidResponseDto>> ListAllAsync()
         {
             var result = await _raidRepository.ListAllAsync();
+
+            var dto = _mapper.Map<IEnumerable<RaidResponseDto>>(result);
+            return dto;
+        }
+
+        public async Task<IEnumerable<RaidResponseDto>> GetByCharacterId(Guid id)
+        {
+            var result = _raidRepository.GetByCharacterId(id);
 
             var dto = _mapper.Map<IEnumerable<RaidResponseDto>>(result);
             return dto;
