@@ -34,5 +34,13 @@ namespace Imi.Project.Api.Core.Services
             var dto = _mapper.Map<IEnumerable<ArenaResponseDto>>(result);
             return dto;
         }
+
+        public async Task<IEnumerable<ArenaResponseDto>> GetByCharacterId(Guid id)
+        {
+            var result = await _arenaRepository.GetByCharacterId(id);
+
+            var dto = _mapper.Map<IEnumerable<ArenaResponseDto>>(result);
+            return dto;
+        }
     }
 }
