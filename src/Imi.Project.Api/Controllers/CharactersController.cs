@@ -49,5 +49,37 @@ namespace Imi.Project.Api.Controllers
 
             return Ok(character);
         }
+
+        [HttpGet("{id}/arenas")]
+        public async Task<IActionResult> GetArenasByCharacterId(Guid id)
+        {
+            var characters = await _arenaService.GetByCharacterId(id);
+
+            return Ok(characters);
+        }
+
+        [HttpGet("{id}/battlegrounds")]
+        public async Task<IActionResult> GetBattlegroundsByCharacterId(Guid id)
+        {
+            var characters = await _battlegroundService.GetByCharacterId(id);
+
+            return Ok(characters);
+        }
+
+        [HttpGet("{id}/dungeons")]
+        public async Task<IActionResult> GetDungeonsByCharacterId(Guid id)
+        {
+            var characters = await _dungeonService.GetByCharacterId(id);
+
+            return Ok(characters);
+        }
+
+        [HttpGet("{id}/raids")]
+        public async Task<IActionResult> GetRaidsByCharacterId(Guid id)
+        {
+            var characters = await _raidService.GetByCharacterId(id);
+
+            return Ok(characters);
+        }
     }
 }
