@@ -37,7 +37,7 @@ namespace Imi.Project.Api.Core.Services
 
         public async Task<IEnumerable<RaidResponseDto>> GetByCharacterId(Guid id)
         {
-            var result = _raidRepository.GetByCharacterId(id);
+            var result = await _raidRepository.GetByCharacterId(id);
 
             var dto = _mapper.Map<IEnumerable<RaidResponseDto>>(result);
             return dto;
