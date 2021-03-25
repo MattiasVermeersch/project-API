@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Imi.Project.Api.Core.Dtos;
+using Imi.Project.Api.Core.Entities;
 using Imi.Project.Api.Core.Interfaces.Repositories;
 using Imi.Project.Api.Core.Interfaces.Services;
 using System;
@@ -41,6 +42,27 @@ namespace Imi.Project.Api.Core.Services
 
             var dto = _mapper.Map<IEnumerable<RaidResponseDto>>(result);
             return dto;
+        }
+
+        public async Task<RaidResponseDto> AddAsync(RaidRequestDto raidRequest)
+        {
+            var raid = _mapper.Map<Raid>(raidRequest);
+            var result = await _raidRepository.AddAsync(raid);
+            var dto = _mapper.Map<RaidResponseDto>(result);
+            return dto;
+        }
+
+        public async Task<RaidResponseDto> UpdateAsync(RaidRequestDto raidRequest)
+        {
+            var raid = _mapper.Map<Raid>(raidRequest);
+            var result = await _raidRepository.UpdateAsync(raid);
+            var dto = _mapper.Map<RaidResponseDto>(result);
+            return dto;
+        }
+
+        public async Task DeleteAsync(Guid id)
+        {
+            await _raidRepository.DeleteAsync(id);
         }
     }
 }
