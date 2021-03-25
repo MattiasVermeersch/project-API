@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Imi.Project.Api.Core.Dtos;
+using Imi.Project.Api.Core.Entities;
 using Imi.Project.Api.Core.Interfaces.Repositories;
 using Imi.Project.Api.Core.Interfaces.Services;
 using System;
@@ -41,6 +42,27 @@ namespace Imi.Project.Api.Core.Services
 
             var dto = _mapper.Map<IEnumerable<BattlegroundResponseDto>>(result);
             return dto;
+        }
+
+        public async Task<BattlegroundResponseDto> AddAsync(BattlegroundRequestDto battlegroundRequest)
+        {
+            var battleground = _mapper.Map<Battleground>(battlegroundRequest);
+            var result = await _battlegroundRepository.AddAsync(battleground);
+            var dto = _mapper.Map<BattlegroundResponseDto>(result);
+            return dto;
+        }
+
+        public async Task<BattlegroundResponseDto> UpdateAsync(BattlegroundRequestDto battlegroundRequest)
+        {
+            var battleground = _mapper.Map<Battleground>(battlegroundRequest);
+            var result = await _battlegroundRepository.UpdateAsync(battleground);
+            var dto = _mapper.Map<BattlegroundResponseDto>(result);
+            return dto;
+        }
+
+        public async Task DeleteAsync(Guid id)
+        {
+            await _battlegroundRepository.DeleteAsync(id);
         }
     }
 }
