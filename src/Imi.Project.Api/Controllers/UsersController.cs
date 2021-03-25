@@ -42,28 +42,28 @@ namespace Imi.Project.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(UserRequestDto userRequestDto)
+        public async Task<IActionResult> Post(UserRequestDto userRequest)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var userResponseDto = await _userService.AddAsync(userRequestDto);
-            return CreatedAtAction(nameof(Get), new { id = userResponseDto.Id }, userResponseDto);
+            var userResponse = await _userService.AddAsync(userRequest);
+            return CreatedAtAction(nameof(Get), new { id = userResponse.Id }, userResponse);
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put(UserRequestDto userRequestDto)
+        public async Task<IActionResult> Put(UserRequestDto userRequest)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var userResponseDto = await _userService.UpdateAsync(userRequestDto);
+            var userResponse = await _userService.UpdateAsync(userRequest);
 
-            return Ok(userResponseDto);
+            return Ok(userResponse);
         }
 
         [HttpDelete("{id}")]
