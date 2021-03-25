@@ -11,5 +11,8 @@ namespace Imi.Project.Api.Core.Interfaces.Services
         Task<IEnumerable<BattlegroundResponseDto>> ListAllAsync();
         Task<BattlegroundResponseDto> GetByIdAsync(Guid id);
         Task<IEnumerable<BattlegroundResponseDto>> GetByCharacterId(Guid id);
+        Task<BattlegroundResponseDto> AddAsync(BattlegroundRequestDto battlegroundRequest);
+        Task<BattlegroundResponseDto> UpdateAsync(BattlegroundRequestDto battlegroundRequest);
+        Task DeleteAsync(Guid id);
     }
 }
