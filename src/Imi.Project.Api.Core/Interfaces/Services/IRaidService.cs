@@ -11,5 +11,8 @@ namespace Imi.Project.Api.Core.Interfaces.Services
         Task<IEnumerable<RaidResponseDto>> ListAllAsync();
         Task<RaidResponseDto> GetByIdAsync(Guid id);
         Task<IEnumerable<RaidResponseDto>> GetByCharacterId(Guid id);
+        Task<RaidResponseDto> AddAsync(RaidRequestDto raidRequest);
+        Task<RaidResponseDto> UpdateAsync(RaidRequestDto raidRequest);
+        Task DeleteAsync(Guid id);
     }
 }
