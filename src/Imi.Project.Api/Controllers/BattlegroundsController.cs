@@ -61,9 +61,9 @@ namespace Imi.Project.Api.Controllers
                 return BadRequest(ModelState);
             }
 
-            var battlegrounResponse = await _battlegroundService.UpdateAsync(battlegroundRequest);
+            var battlegroundResponse = await _battlegroundService.UpdateAsync(battlegroundRequest);
 
-            return Ok(battlegrounResponse);
+            return Ok(battlegroundResponse);
         }
 
         [HttpDelete("{id}")]
