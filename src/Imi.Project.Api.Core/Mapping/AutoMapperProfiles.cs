@@ -99,12 +99,6 @@ namespace Imi.Project.Api.Core.Mapping
                             BattlegroundRating = rc.Character.BattlegroundRating
                         })));
             CreateMap<RaidRequestDto, Raid>();
-
-            //Mapping for many-to-many tables
-            CreateMap<ArenaCharacterRequestDto, ArenaCharacter>();
-            CreateMap<BattlegroundCharacterRequestDto, BattlegroundCharacter>();
-            CreateMap<DungeonCharacterRequestDto, DungeonCharacter>();
-            CreateMap<RaidCharacterRequestDto, RaidCharacter>();
         }
     }
 }
