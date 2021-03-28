@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Imi.Project.Api.Core.Dtos;
+using Imi.Project.Api.Core.Entities;
 using Imi.Project.Api.Core.Interfaces.Repositories;
 using Imi.Project.Api.Core.Interfaces.Services;
 using System;
@@ -33,6 +34,35 @@ namespace Imi.Project.Api.Core.Services
 
             var dto = _mapper.Map<IEnumerable<DungeonResponseDto>>(result);
             return dto;
-        }   
+        }
+
+        public async Task<IEnumerable<DungeonResponseDto>> GetByCharacterId(Guid id)
+        {
+            var result = await _dungeonRepository.GetByCharacterId(id);
+
+            var dto = _mapper.Map<IEnumerable<DungeonResponseDto>>(result);
+            return dto;
+        }
+
+        public async Task<DungeonResponseDto> AddAsync(DungeonRequestDto dungeonRequest)
+        {
+            var dungeon = _mapper.Map<Dungeon>(dungeonRequest);
+            var result = await _dungeonRepository.AddAsync(dungeon);
+            var dto = _mapper.Map<DungeonResponseDto>(result);
+            return dto;
+        }
+
+        public async Task<DungeonResponseDto> UpdateAsync(DungeonRequestDto dungeonRequest)
+        {
+            var dungeon = _mapper.Map<Dungeon>(dungeonRequest);
+            var result = await _dungeonRepository.UpdateAsync(dungeon);
+            var dto = _mapper.Map<DungeonResponseDto>(result);
+            return dto;
+        }
+
+        public async Task DeleteAsync(Guid id)
+        {
+            await _dungeonRepository.DeleteAsync(id);
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using Imi.Project.Api.Core.Interfaces.Services;
+﻿using Imi.Project.Api.Core.Dtos;
+using Imi.Project.Api.Core.Entities;
+using Imi.Project.Api.Core.Interfaces.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -37,6 +39,45 @@ namespace Imi.Project.Api.Controllers
             }
 
             return Ok(battleGround);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Post(BattlegroundRequestDto battlegroundRequest)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var battlegroundResponse = await _battlegroundService.AddAsync(battlegroundRequest);
+            return CreatedAtAction(nameof(Get), new { id = battlegroundResponse.Id }, battlegroundResponse);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Put(BattlegroundRequestDto battlegroundRequest)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var battlegroundResponse = await _battlegroundService.UpdateAsync(battlegroundRequest);
+
+            return Ok(battlegroundResponse);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var battleground = await _battlegroundService.GetByIdAsync(id);
+
+            if (battleground == null)
+            {
+                return NotFound($"Battleground with ID {id} could not be found.");
+            }
+
+            await _battlegroundService.DeleteAsync(id);
+            return Ok();
         }
     }
 }

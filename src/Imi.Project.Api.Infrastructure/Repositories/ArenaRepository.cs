@@ -25,5 +25,27 @@ namespace Imi.Project.Api.Infrastructure.Repositories
         {
             return await GetAllAsync().SingleOrDefaultAsync(a => a.Id.Equals(id));
         }
+
+        public async Task<IEnumerable<Arena>> GetByCharacterId(Guid id)
+        {
+            return await GetAllAsync()
+                .Where(a => a.ArenaCharacters.Any(ac => ac.CharacterId.Equals(id)))
+                .ToListAsync();
+        }
+
+        public async Task<Arena> AddCharacterAsync(Guid arenaId, Character character)
+        {
+            var arena = await GetByIdAsync(arenaId);
+
+            arena.ArenaCharacters.Add(new ArenaCharacter
+            {
+                Arena = arena,
+                Character = character
+            });
+
+            await _dbContext.SaveChangesAsync();
+
+            return arena;
+        }
     }
 }

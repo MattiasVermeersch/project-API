@@ -19,6 +19,12 @@ namespace Imi.Project.Api.Infrastructure.Repositories
         {
             _dbContext = dbContext;
         }
+
+        public virtual IQueryable<T> GetAllAsync()
+        {
+            return _dbContext.Set<T>().AsNoTracking();
+        }
+
         public virtual async Task<T> GetByIdAsync(Guid id)
         {
             return await _dbContext.Set<T>().FindAsync(id);
@@ -34,11 +40,6 @@ namespace Imi.Project.Api.Infrastructure.Repositories
             }
 
             return await query.SingleOrDefaultAsync(t => t.Id.Equals(id));
-        }
-
-        public virtual IQueryable<T> GetAllAsync()
-        {
-            return _dbContext.Set<T>().AsNoTracking();
         }
 
         public async Task<IEnumerable<T>> ListAllAsync()
@@ -77,7 +78,7 @@ namespace Imi.Project.Api.Infrastructure.Repositories
             return entity;
         }
 
-        public async Task<T> DeleteByIdAsync(Guid id)
+        public async Task<T> DeleteAsync(Guid id)
         {
             T entity = await GetByIdAsync(id);
             await DeleteAsync(entity);

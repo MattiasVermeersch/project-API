@@ -1,4 +1,6 @@
-﻿using Imi.Project.Api.Core.Interfaces.Services;
+﻿using Imi.Project.Api.Core.Dtos;
+using Imi.Project.Api.Core.Entities;
+using Imi.Project.Api.Core.Interfaces.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -13,9 +15,11 @@ namespace Imi.Project.Api.Controllers
     public class ArenasController : ControllerBase
     {
         private readonly IArenaService _arenaService;
-        public ArenasController(IArenaService arenaService)
+        private readonly ICharacterService _characterService;
+        public ArenasController(IArenaService arenaService, ICharacterService characterService)
         {
             _arenaService = arenaService;
+            _characterService = characterService;
         }
 
         [HttpGet]
@@ -37,6 +41,58 @@ namespace Imi.Project.Api.Controllers
             }
 
             return Ok(arena);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Post(ArenaRequestDto arenaRequest)
+        {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var arenaResponse = await _arenaService.AddAsync(arenaRequest);
+            return CreatedAtAction(nameof(Get), new { id = arenaResponse.Id }, arenaResponse);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Put(ArenaRequestDto arenaRequest)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var arenaResponse = await _arenaService.UpdateAsync(arenaRequest);
+
+            return Ok(arenaResponse);
+        }
+
+        [HttpPut("/api/arenas/{arenaId}/character")]
+        public async Task<IActionResult> PutAddCharacterToArena(Guid arenaId, CharacterRequestDto characterRequest)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var arenaResponse = await _arenaService.AddCharacterAsync(arenaId, characterRequest);
+
+            return Ok(arenaResponse);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var arena = await _arenaService.GetByIdAsync(id);
+
+            if (arena == null)
+            {
+                return NotFound($"Arena with ID {id} could not be found.");
+            }
+
+            await _arenaService.DeleteAsync(id);
+            return Ok();
         }
     }
 }

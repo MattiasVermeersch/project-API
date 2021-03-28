@@ -12,8 +12,8 @@ namespace Imi.Project.Api.Core.Entities
         public string Role { get; set; }
         public int Level { get; set; }
         public int ItemLevel { get; set; }
-        public double ArenaRating { get; set; }
-        public double BattlegroundRating { get; set; }
+        public int ArenaRating { get; set; } = 0;
+        public int BattlegroundRating { get; set; } = 0;
         public bool IsDeleted { get; set; } = false;
         public Guid UserId { get; set; }
         public User User { get; set; }

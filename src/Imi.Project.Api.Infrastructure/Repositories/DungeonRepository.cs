@@ -25,5 +25,13 @@ namespace Imi.Project.Api.Infrastructure.Repositories
         {
             return await GetAllAsync().SingleOrDefaultAsync(d => d.Id.Equals(id));
         }
+
+        public async Task<IEnumerable<Dungeon>> GetByCharacterId(Guid id)
+        {
+            return await GetAllAsync()
+                .Where(d => d.DungeonCharacters.Any(dc => dc.CharacterId.Equals(id)))
+                .ToListAsync();
+        }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using Imi.Project.Api.Core.Interfaces.Services;
+﻿using Imi.Project.Api.Core.Dtos;
+using Imi.Project.Api.Core.Interfaces.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -38,6 +39,45 @@ namespace Imi.Project.Api.Controllers
             }
 
             return Ok(raid);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Post(RaidRequestDto raidRequest)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var raidResponse = await _raidService.AddAsync(raidRequest);
+            return CreatedAtAction(nameof(Get), new { id = raidResponse.Id }, raidResponse);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Put(RaidRequestDto raidRequest)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var raidResponse = await _raidService.UpdateAsync(raidRequest);
+
+            return Ok(raidResponse);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var raid = await _raidService.GetByIdAsync(id);
+
+            if (raid == null)
+            {
+                return NotFound($"Raid with ID {id} could not be found.");
+            }
+
+            await _raidService.DeleteAsync(id);
+            return Ok();
         }
     }
 }

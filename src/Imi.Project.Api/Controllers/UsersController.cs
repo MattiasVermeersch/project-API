@@ -1,4 +1,5 @@
-﻿using Imi.Project.Api.Core.Interfaces.Services;
+﻿using Imi.Project.Api.Core.Dtos;
+using Imi.Project.Api.Core.Interfaces.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -38,6 +39,45 @@ namespace Imi.Project.Api.Controllers
             }
 
             return Ok(user);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Post(UserRequestDto userRequest)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var userResponse = await _userService.AddAsync(userRequest);
+            return CreatedAtAction(nameof(Get), new { id = userResponse.Id }, userResponse);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Put(UserRequestDto userRequest)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var userResponse = await _userService.UpdateAsync(userRequest);
+
+            return Ok(userResponse);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var user = await _userService.GetByIdAsync(id);
+
+            if(user == null)
+            {
+                return NotFound($"User with ID {id} could not be found.");
+            }
+
+            await _userService.DeleteAsync(id);
+            return Ok();
         }
     }
 }

@@ -2,10 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Imi.Project.Api.Core.Interfaces.Repositories
 {
     public interface IBattlegroundRepository : IRepository<Battleground>
     {
+        Task<IEnumerable<Battleground>> GetByCharacterId(Guid id);
     }
 }

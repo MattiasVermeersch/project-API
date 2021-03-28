@@ -1,4 +1,5 @@
-﻿using Imi.Project.Api.Core.Interfaces.Services;
+﻿using Imi.Project.Api.Core.Dtos;
+using Imi.Project.Api.Core.Interfaces.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -38,6 +39,45 @@ namespace Imi.Project.Api.Controllers
             }
 
             return Ok(dungeon);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Post(DungeonRequestDto dungeonRequest)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var dungeonResponse = await _dungeonService.AddAsync(dungeonRequest);
+            return CreatedAtAction(nameof(Get), new { id = dungeonResponse.Id }, dungeonResponse);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Put(DungeonRequestDto dungeonRequest)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var dungeonResponse = await _dungeonService.UpdateAsync(dungeonRequest);
+
+            return Ok(dungeonResponse);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var dungeon = await _dungeonService.GetByIdAsync(id);
+
+            if (dungeon == null)
+            {
+                return NotFound($"Dungeon with ID {id} could not be found.");
+            }
+
+            await _dungeonService.DeleteAsync(id);
+            return Ok();
         }
     }
 }
