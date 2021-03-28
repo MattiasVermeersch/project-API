@@ -14,5 +14,6 @@ namespace Imi.Project.Api.Core.Interfaces.Services
         Task<ArenaResponseDto> AddAsync(ArenaRequestDto arenaRequestDto);
         Task<ArenaResponseDto> UpdateAsync(ArenaRequestDto arenaRequestDto);
         Task DeleteAsync(Guid id);
+        Task<ArenaResponseDto> AddCharacterAsync(Guid id, CharacterRequestDto characterRequest);
     }
 }
