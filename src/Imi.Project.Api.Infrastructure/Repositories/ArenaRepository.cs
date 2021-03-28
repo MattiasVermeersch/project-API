@@ -33,6 +33,19 @@ namespace Imi.Project.Api.Infrastructure.Repositories
                 .ToListAsync();
         }
 
-        
+        public async Task<Arena> AddCharacterAsync(Guid arenaId, Character character)
+        {
+            var arena = await GetByIdAsync(arenaId);
+
+            arena.ArenaCharacters.Add(new ArenaCharacter
+            {
+                Arena = arena,
+                Character = character
+            });
+
+            await _dbContext.SaveChangesAsync();
+
+            return arena;
+        }
     }
 }
