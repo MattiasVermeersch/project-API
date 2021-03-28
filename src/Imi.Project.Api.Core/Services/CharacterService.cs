@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Imi.Project.Api.Core.Dtos;
+using Imi.Project.Api.Core.Entities;
 using Imi.Project.Api.Core.Interfaces.Repositories;
 using Imi.Project.Api.Core.Interfaces.Services;
 using System;
@@ -33,6 +34,29 @@ namespace Imi.Project.Api.Core.Services
 
             var dto = _mapper.Map<IEnumerable<CharacterResponseDto>>(result);
             return dto;
+        }
+
+        public async Task<CharacterResponseDto> AddAsync(CharacterRequestDto characterRequest)
+        {
+            var character = _mapper.Map<Character>(characterRequest);
+            var result = await _characterRepository.AddAsync(character);
+            var dto = _mapper.Map<CharacterResponseDto>(result);
+            return dto;
+        }
+
+        public async Task<CharacterResponseDto> UpdateAsync(CharacterRequestDto characterRequest)
+        {
+            var character = _mapper.Map<Character>(characterRequest);
+            var result = await _characterRepository.UpdateAsync(character);
+            var dto = _mapper.Map<CharacterResponseDto>(result);
+            return dto;
+        }
+
+        public async Task DeleteAsync(Guid id)
+        {
+            var character = await _characterRepository.GetByIdAsync(id);
+            character.IsDeleted = true;
+            await _characterRepository.UpdateAsync(character);
         }
     }
 }
