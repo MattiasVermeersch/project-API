@@ -31,7 +31,7 @@ namespace Imi.Project.Api.Core.Mapping
             //Mapping for Arena entity
             CreateMap<Arena, ArenaResponseDto>()
                 .ForMember(dest => dest.Mode,
-                    opt => opt.MapFrom(src => src.ArenaCharacters.Count() + 1))
+                    opt => opt.MapFrom(src => src.ArenaCharacters.Count()))
                 .ForMember(dest => dest.Characters,
                     opt => opt.MapFrom(src => src.ArenaCharacters
                         .Select(ac => new CharacterResponseDto
@@ -99,6 +99,12 @@ namespace Imi.Project.Api.Core.Mapping
                             BattlegroundRating = rc.Character.BattlegroundRating
                         })));
             CreateMap<RaidRequestDto, Raid>();
+
+            //Mapping for many-to-many tables
+            CreateMap<ArenaCharacterRequestDto, ArenaCharacter>();
+            CreateMap<BattlegroundCharacterRequestDto, BattlegroundCharacter>();
+            CreateMap<DungeonCharacterRequestDto, DungeonCharacter>();
+            CreateMap<RaidCharacterRequestDto, RaidCharacter>();
         }
     }
 }
