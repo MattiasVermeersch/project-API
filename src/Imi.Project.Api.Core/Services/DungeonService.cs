@@ -38,7 +38,7 @@ namespace Imi.Project.Api.Core.Services
 
         public async Task<IEnumerable<DungeonResponseDto>> GetByCharacterId(Guid id)
         {
-            var result = _dungeonRepository.GetByCharacterId(id);
+            var result = await _dungeonRepository.GetByCharacterId(id);
 
             var dto = _mapper.Map<IEnumerable<DungeonResponseDto>>(result);
             return dto;
