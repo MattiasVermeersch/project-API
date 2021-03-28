@@ -1,4 +1,5 @@
 ﻿using Imi.Project.Api.Core.Dtos;
+using Imi.Project.Api.Core.Entities;
 using Imi.Project.Api.Core.Interfaces.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -14,9 +15,11 @@ namespace Imi.Project.Api.Controllers
     public class ArenasController : ControllerBase
     {
         private readonly IArenaService _arenaService;
-        public ArenasController(IArenaService arenaService)
+        private readonly ICharacterService _characterService;
+        public ArenasController(IArenaService arenaService, ICharacterService characterService)
         {
             _arenaService = arenaService;
+            _characterService = characterService;
         }
 
         [HttpGet]
@@ -61,6 +64,19 @@ namespace Imi.Project.Api.Controllers
             }
 
             var arenaResponse = await _arenaService.UpdateAsync(arenaRequest);
+
+            return Ok(arenaResponse);
+        }
+
+        [HttpPut("/api/arenas/{arenaId}/character")]
+        public async Task<IActionResult> PutAddCharacterToArena(Guid arenaId, CharacterRequestDto characterRequest)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var arenaResponse = await _arenaService.AddCharacterAsync(arenaId, characterRequest);
 
             return Ok(arenaResponse);
         }
