@@ -64,5 +64,13 @@ namespace Imi.Project.Api.Core.Services
         {
             await _arenaRepository.DeleteAsync(id);
         }
+
+        public async Task<ArenaResponseDto> AddCharacterAsync(Guid id, CharacterRequestDto characterRequest)
+        {
+            var character = _mapper.Map<Character>(characterRequest);
+            var result = await _arenaRepository.AddCharacterAsync(id, character);
+            var dto = _mapper.Map<ArenaResponseDto>(result);
+            return dto;
+        }
     }
 }
