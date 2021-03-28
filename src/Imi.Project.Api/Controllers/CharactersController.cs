@@ -1,4 +1,5 @@
-﻿using Imi.Project.Api.Core.Interfaces.Services;
+﻿using Imi.Project.Api.Core.Dtos;
+using Imi.Project.Api.Core.Interfaces.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -80,6 +81,44 @@ namespace Imi.Project.Api.Controllers
             var characters = await _raidService.GetByCharacterId(id);
 
             return Ok(characters);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Post(CharacterRequestDto characterRequest)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var characterResponse = await _characterService.AddAsync(characterRequest);
+            return CreatedAtAction(nameof(Get), new { id = characterResponse.Id }, characterResponse);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Put(CharacterRequestDto characterRequest)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var characterResponse = await _characterService.UpdateAsync(characterRequest);
+            return Ok(characterResponse);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var character = await _characterService.GetByIdAsync(id);
+
+            if(character == null)
+            {
+                return BadRequest($"Character with ID {id} could not be found.");
+            }
+
+            await _characterService.DeleteAsync(id);
+            return Ok();
         }
     }
 }
