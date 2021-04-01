@@ -94,7 +94,7 @@ namespace Imi.Project.Api.Controllers
         }
 
         [HttpDelete("/api/battlegrounds/{id}/character")]
-        public async Task<IActionResult> DeleteCharacterFromArena(Guid id, CharacterRequestDto characterRequest)
+        public async Task<IActionResult> DeleteCharacterFromBattleground(Guid id, CharacterRequestDto characterRequest)
         {
             var battleground = await _battlegroundService.GetByIdAsync(id);
 
