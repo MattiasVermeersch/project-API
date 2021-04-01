@@ -12,6 +12,6 @@ namespace Imi.Project.Api.Core.Dtos
         public bool IsAdmin { get; set; }
         public bool IsRaidLeader { get; set; }
         public bool IsWarlord { get; set; }
-        public ICollection<CharacterResponseDto> Characters { get; set; }
+        public ICollection<SimpleCharacterResponseDto> Characters { get; set; }
     }
 }
