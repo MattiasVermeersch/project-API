@@ -32,5 +32,35 @@ namespace Imi.Project.Api.Infrastructure.Repositories
                 .Where(r => r.RaidCharacters.Any(rc => rc.CharacterId.Equals(id)))
                 .ToListAsync();
         }
+
+        public async Task<Raid> AddCharacterAsync(Guid id, Character character)
+        {
+            var raid = await GetByIdAsync(id);
+
+            raid.RaidCharacters.Add(new RaidCharacter
+            {
+                Raid = raid,
+                Character = character
+            });
+
+            await _dbContext.SaveChangesAsync();
+
+            return raid;
+        }
+
+        public async Task<Raid> DeleteCharacterAsync(Guid id, Character character)
+        {
+            var raid = await GetByIdAsync(id);
+
+            raid.RaidCharacters.Remove(new RaidCharacter
+            {
+                Raid = raid,
+                Character = character
+            });
+
+            await _dbContext.SaveChangesAsync();
+
+            return raid;
+        }
     }
 }
