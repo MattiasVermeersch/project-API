@@ -9,5 +9,6 @@ namespace Imi.Project.Api.Core.Interfaces.Repositories
     public interface IRaidRepository : IRepository<Raid>
     {
         Task<IEnumerable<Raid>> GetByCharacterId(Guid id);
+        Task<Raid> AddCharacterAsync(Guid id, Character character);
     }
 }
