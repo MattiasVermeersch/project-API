@@ -10,5 +10,6 @@ namespace Imi.Project.Api.Core.Interfaces.Repositories
     {
         Task<IEnumerable<Battleground>> GetByCharacterId(Guid id);
         Task<Battleground> AddCharacterAsync(Guid id, Character character);
+        Task<Battleground> DeleteCharacterAsync(Guid id, Character character);
     }
 }
