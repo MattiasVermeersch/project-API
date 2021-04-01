@@ -66,6 +66,19 @@ namespace Imi.Project.Api.Controllers
             return Ok(dungeonResponse);
         }
 
+        [HttpPut("/api/dungeons/{id}/character")]
+        public async Task<IActionResult> PutAddCharacterToDungeon(Guid id, CharacterRequestDto characterRequest)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var dungeonResponse = await _dungeonService.AddCharacterAsync(id, characterRequest);
+
+            return Ok(dungeonResponse);
+        }
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
