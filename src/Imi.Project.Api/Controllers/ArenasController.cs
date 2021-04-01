@@ -15,11 +15,9 @@ namespace Imi.Project.Api.Controllers
     public class ArenasController : ControllerBase
     {
         private readonly IArenaService _arenaService;
-        private readonly ICharacterService _characterService;
-        public ArenasController(IArenaService arenaService, ICharacterService characterService)
+        public ArenasController(IArenaService arenaService)
         {
             _arenaService = arenaService;
-            _characterService = characterService;
         }
 
         [HttpGet]
