@@ -68,15 +68,15 @@ namespace Imi.Project.Api.Controllers
             return Ok(arenaResponse);
         }
 
-        [HttpPut("/api/arenas/{arenaId}/character")]
-        public async Task<IActionResult> PutAddCharacterToArena(Guid arenaId, CharacterRequestDto characterRequest)
+        [HttpPut("/api/arenas/{id}/character")]
+        public async Task<IActionResult> PutAddCharacterToArena(Guid id, CharacterRequestDto characterRequest)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var arenaResponse = await _arenaService.AddCharacterAsync(arenaId, characterRequest);
+            var arenaResponse = await _arenaService.AddCharacterAsync(id, characterRequest);
 
             return Ok(arenaResponse);
         }
@@ -93,6 +93,21 @@ namespace Imi.Project.Api.Controllers
 
             await _arenaService.DeleteAsync(id);
             return Ok();
+        }
+
+        [HttpDelete("/api/arenas/{id}/character")]
+        public async Task<IActionResult> DeleteCharacterFromArena(Guid id, CharacterRequestDto characterRequest)
+        {
+            var arena = await _arenaService.GetByIdAsync(id);
+
+            if(arena == null)
+            {
+                return NotFound($"Arena with ID {id} could not be found.");
+            }
+
+            var arenaResponse = await _arenaService.DeleteCharacterAsync(id, characterRequest);
+
+            return Ok(arenaResponse);
         }
     }
 }
