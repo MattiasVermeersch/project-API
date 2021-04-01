@@ -14,5 +14,6 @@ namespace Imi.Project.Api.Core.Interfaces.Services
         Task<RaidResponseDto> AddAsync(RaidRequestDto raidRequest);
         Task<RaidResponseDto> UpdateAsync(RaidRequestDto raidRequest);
         Task DeleteAsync(Guid id);
+        Task<RaidResponseDto> AddCharacterAsync(Guid id, CharacterRequestDto characterRequest);
     }
 }
