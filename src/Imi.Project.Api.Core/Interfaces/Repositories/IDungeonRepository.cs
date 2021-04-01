@@ -9,5 +9,6 @@ namespace Imi.Project.Api.Core.Interfaces.Repositories
     public interface IDungeonRepository : IRepository<Dungeon>
     {
         Task<IEnumerable<Dungeon>> GetByCharacterId(Guid id);
+        Task<Dungeon> AddCharacterAsync(Guid id, Character character);
     }
 }
