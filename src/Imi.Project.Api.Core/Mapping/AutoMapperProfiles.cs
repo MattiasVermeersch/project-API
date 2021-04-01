@@ -26,6 +26,7 @@ namespace Imi.Project.Api.Core.Mapping
                     opt => opt.MapFrom(src => src.DungeonCharacters.Count()))
                 .ForMember(dest => dest.RaidCount,
                     opt => opt.MapFrom(src => src.RaidCharacters.Count()));
+            CreateMap<Character, SimpleCharacterResponseDto>();
             CreateMap<CharacterRequestDto, Character>();
 
             //Mapping for Arena entity
@@ -34,16 +35,13 @@ namespace Imi.Project.Api.Core.Mapping
                     opt => opt.MapFrom(src => src.ArenaCharacters.Count()))
                 .ForMember(dest => dest.Characters,
                     opt => opt.MapFrom(src => src.ArenaCharacters
-                        .Select(ac => new CharacterResponseDto
+                        .Select(ac => new SimpleCharacterResponseDto
                         {
                             Id = ac.CharacterId,
                             Name = ac.Character.Name,
                             Class = ac.Character.Class,
                             Role = ac.Character.Role,
-                            Level = ac.Character.Level,
-                            ItemLevel = ac.Character.ItemLevel,
-                            ArenaRating = ac.Character.ArenaRating,
-                            BattlegroundRating = ac.Character.BattlegroundRating
+                            ItemLevel = ac.Character.ItemLevel
                         })));
             CreateMap<ArenaRequestDto, Arena>();
 
@@ -53,16 +51,13 @@ namespace Imi.Project.Api.Core.Mapping
                     opt => opt.MapFrom(src => src.BattlegroundCharacters.Count() + 1))
                 .ForMember(dest => dest.Characters,
                     opt => opt.MapFrom(src => src.BattlegroundCharacters
-                        .Select(bc => new CharacterResponseDto
+                        .Select(bc => new SimpleCharacterResponseDto
                         {
                             Id = bc.CharacterId,
                             Name = bc.Character.Name,
                             Class = bc.Character.Class,
                             Role = bc.Character.Role,
-                            Level = bc.Character.Level,
-                            ItemLevel = bc.Character.ItemLevel,
-                            ArenaRating = bc.Character.ArenaRating,
-                            BattlegroundRating = bc.Character.BattlegroundRating
+                            ItemLevel = bc.Character.ItemLevel
                         })));
             CreateMap<BattlegroundRequestDto, Battleground>();
 
@@ -70,16 +65,13 @@ namespace Imi.Project.Api.Core.Mapping
             CreateMap<Dungeon, DungeonResponseDto>()
                 .ForMember(dest => dest.Characters,
                     opt => opt.MapFrom(src => src.DungeonCharacters
-                        .Select(dc => new CharacterResponseDto
+                        .Select(dc => new SimpleCharacterResponseDto
                         {
                             Id = dc.CharacterId,
                             Name = dc.Character.Name,
                             Class = dc.Character.Class,
                             Role = dc.Character.Role,
-                            Level = dc.Character.Level,
-                            ItemLevel = dc.Character.ItemLevel,
-                            ArenaRating = dc.Character.ArenaRating,
-                            BattlegroundRating = dc.Character.BattlegroundRating
+                            ItemLevel = dc.Character.ItemLevel
                         })));
             CreateMap<DungeonRequestDto, Dungeon>();
 
@@ -87,16 +79,13 @@ namespace Imi.Project.Api.Core.Mapping
             CreateMap<Raid, RaidResponseDto>()
                 .ForMember(dest => dest.Characters,
                     opt => opt.MapFrom(src => src.RaidCharacters
-                        .Select(rc => new CharacterResponseDto
+                        .Select(rc => new SimpleCharacterResponseDto
                         {
                             Id = rc.CharacterId,
                             Name = rc.Character.Name,
                             Class = rc.Character.Class,
                             Role = rc.Character.Role,
-                            Level = rc.Character.Level,
-                            ItemLevel = rc.Character.ItemLevel,
-                            ArenaRating = rc.Character.ArenaRating,
-                            BattlegroundRating = rc.Character.BattlegroundRating
+                            ItemLevel = rc.Character.ItemLevel
                         })));
             CreateMap<RaidRequestDto, Raid>();
         }
