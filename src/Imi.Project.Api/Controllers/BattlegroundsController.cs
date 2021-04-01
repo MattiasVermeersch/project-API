@@ -92,5 +92,20 @@ namespace Imi.Project.Api.Controllers
             await _battlegroundService.DeleteAsync(id);
             return Ok();
         }
+
+        [HttpDelete("/api/battlegrounds/{id}/character")]
+        public async Task<IActionResult> DeleteCharacterFromArena(Guid id, CharacterRequestDto characterRequest)
+        {
+            var battleground = await _battlegroundService.GetByIdAsync(id);
+
+            if (battleground == null)
+            {
+                return NotFound($"Arena with ID {id} could not be found.");
+            }
+
+            var battlegroundResponse = await _battlegroundService.DeleteCharacterAsync(id, characterRequest);
+
+            return Ok(battlegroundResponse);
+        }
     }
 }
