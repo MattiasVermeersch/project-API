@@ -92,5 +92,20 @@ namespace Imi.Project.Api.Controllers
             await _dungeonService.DeleteAsync(id);
             return Ok();
         }
+
+        [HttpDelete("/api/dungeons/{id}/character")]
+        public async Task<IActionResult> DeleteCharacterFromDungeon(Guid id, CharacterRequestDto characterRequest)
+        {
+            var dungeon = await _dungeonService.GetByIdAsync(id);
+
+            if (dungeon == null)
+            {
+                return NotFound($"Dungeon with ID {id} could not be found.");
+            }
+
+            var dungeonResponse = await _dungeonService.DeleteCharacterAsync(id, characterRequest);
+
+            return Ok(dungeonResponse);
+        }
     }
 }
