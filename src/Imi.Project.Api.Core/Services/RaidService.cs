@@ -64,5 +64,21 @@ namespace Imi.Project.Api.Core.Services
         {
             await _raidRepository.DeleteAsync(id);
         }
+
+        public async Task<RaidResponseDto> AddCharacterAsync(Guid id, CharacterRequestDto characterRequest)
+        {
+            var character = _mapper.Map<Character>(characterRequest);
+            var result = await _raidRepository.AddCharacterAsync(id, character);
+            var dto = _mapper.Map<RaidResponseDto>(result);
+            return dto;
+        }
+
+        public async Task<RaidResponseDto> DeleteCharacterAsync(Guid id, CharacterRequestDto characterRequest)
+        {
+            var character = _mapper.Map<Character>(characterRequest);
+            var result = await _raidRepository.DeleteCharacterAsync(id, character);
+            var dto = _mapper.Map<RaidResponseDto>(result);
+            return dto;
+        }
     }
 }
