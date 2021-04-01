@@ -100,7 +100,7 @@ namespace Imi.Project.Api.Controllers
 
             if (battleground == null)
             {
-                return NotFound($"Arena with ID {id} could not be found.");
+                return NotFound($"Battleground with ID {id} could not be found.");
             }
 
             var battlegroundResponse = await _battlegroundService.DeleteCharacterAsync(id, characterRequest);
