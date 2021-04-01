@@ -32,5 +32,35 @@ namespace Imi.Project.Api.Infrastructure.Repositories
                 .Where(b => b.BattlegroundCharacters.Any(bg => bg.CharacterId.Equals(id)))
                 .ToListAsync();
         }
+
+        public async Task<Battleground> AddCharacterAsync(Guid id, Character character)
+        {
+            var battleground = await GetByIdAsync(id);
+
+            battleground.BattlegroundCharacters.Add(new BattlegroundCharacter
+            {
+                Battleground = battleground,
+                Character = character
+            });
+
+            await _dbContext.SaveChangesAsync();
+
+            return battleground;
+        }
+
+        public async Task<Battleground> DeleteCharacterAsync(Guid id, Character character)
+        {
+            var battleground = await GetByIdAsync(id);
+
+            battleground.BattlegroundCharacters.Remove(new BattlegroundCharacter
+            {
+                Battleground = battleground,
+                Character = character
+            });
+
+            await _dbContext.SaveChangesAsync();
+
+            return battleground;
+        }
     }
 }
