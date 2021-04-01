@@ -33,5 +33,34 @@ namespace Imi.Project.Api.Infrastructure.Repositories
                 .ToListAsync();
         }
 
+        public async Task<Dungeon> AddCharacterAsync(Guid id, Character character)
+        {
+            var dungeon = await GetByIdAsync(id);
+
+            dungeon.DungeonCharacters.Add(new DungeonCharacter
+            {
+                Dungeon = dungeon,
+                Character = character
+            });
+
+            await _dbContext.SaveChangesAsync();
+
+            return dungeon;
+        }
+
+        public async Task<Dungeon> DeleteCharacterAsync(Guid id, Character character)
+        {
+            var dungeon = await GetByIdAsync(id);
+
+            dungeon.DungeonCharacters.Remove(new DungeonCharacter
+            {
+                Dungeon = dungeon,
+                Character = character
+            });
+
+            await _dbContext.SaveChangesAsync();
+
+            return dungeon;
+        }
     }
 }
