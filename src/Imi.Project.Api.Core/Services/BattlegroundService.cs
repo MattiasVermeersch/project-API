@@ -64,5 +64,21 @@ namespace Imi.Project.Api.Core.Services
         {
             await _battlegroundRepository.DeleteAsync(id);
         }
+
+        public async Task<BattlegroundResponseDto> AddCharacterAsync(Guid id, CharacterRequestDto characterRequest)
+        {
+            var character = _mapper.Map<Character>(characterRequest);
+            var result = await _battlegroundRepository.AddCharacterAsync(id, character);
+            var dto = _mapper.Map<BattlegroundResponseDto>(result);
+            return dto;
+        }
+
+        public async Task<BattlegroundResponseDto> DeleteCharacterAsync(Guid id, CharacterRequestDto characterRequest)
+        {
+            var character = _mapper.Map<Character>(characterRequest);
+            var result = await _battlegroundRepository.DeleteCharacterAsync(id, character);
+            var dto = _mapper.Map<BattlegroundResponseDto>(result);
+            return dto;
+        }
     }
 }
