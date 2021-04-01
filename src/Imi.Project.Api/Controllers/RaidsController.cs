@@ -92,5 +92,20 @@ namespace Imi.Project.Api.Controllers
             await _raidService.DeleteAsync(id);
             return Ok();
         }
+
+        [HttpDelete("/api/raids/{id}/character")]
+        public async Task<IActionResult> DeleteCharacterFromRaid(Guid id, CharacterRequestDto characterRequest)
+        {
+            var raid = await _raidService.GetByIdAsync(id);
+
+            if (raid == null)
+            {
+                return NotFound($"Raid with ID {id} could not be found.");
+            }
+
+            var raidResponse = await _raidService.DeleteCharacterAsync(id, characterRequest);
+
+            return Ok(raidResponse);
+        }
     }
 }
