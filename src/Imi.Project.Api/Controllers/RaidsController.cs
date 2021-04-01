@@ -66,6 +66,19 @@ namespace Imi.Project.Api.Controllers
             return Ok(raidResponse);
         }
 
+        [HttpPut("/api/raids/{id}/character")]
+        public async Task<IActionResult> PutAddCharacterToRaid(Guid id, CharacterRequestDto characterRequest)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var raidResponse = await _raidService.AddCharacterAsync(id, characterRequest);
+
+            return Ok(raidResponse);
+        }
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
