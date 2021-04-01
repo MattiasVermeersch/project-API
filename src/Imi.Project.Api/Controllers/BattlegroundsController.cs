@@ -66,6 +66,19 @@ namespace Imi.Project.Api.Controllers
             return Ok(battlegroundResponse);
         }
 
+        [HttpPut("/api/battlegrounds/{id}/character")]
+        public async Task<IActionResult> PutAddCharacterToBattleground(Guid id, CharacterRequestDto characterRequest)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var battlegroundResponse = await _battlegroundService.AddCharacterAsync(id, characterRequest);
+
+            return Ok(battlegroundResponse);
+        }
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
