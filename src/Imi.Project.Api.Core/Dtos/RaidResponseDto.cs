@@ -11,6 +11,6 @@ namespace Imi.Project.Api.Core.Dtos
         public string Difficulty { get; set; }
         public DateTime Date { get; set; }
         public double Progress { get; set; }
-        public ICollection<CharacterResponseDto> Characters { get; set; }
+        public ICollection<SimpleCharacterResponseDto> Characters { get; set; }
     }
 }

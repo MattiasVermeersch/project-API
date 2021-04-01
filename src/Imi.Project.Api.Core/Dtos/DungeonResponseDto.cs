@@ -12,6 +12,6 @@ namespace Imi.Project.Api.Core.Dtos
         public DateTime Date { get; set; }
         public int? KeyIncrease { get; set; }
         public bool Succes { get; set; }
-        public ICollection<CharacterResponseDto> Characters { get; set; }
+        public ICollection<SimpleCharacterResponseDto> Characters { get; set; }
     }
 }
