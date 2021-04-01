@@ -9,5 +9,6 @@ namespace Imi.Project.Api.Core.Interfaces.Repositories
     public interface IBattlegroundRepository : IRepository<Battleground>
     {
         Task<IEnumerable<Battleground>> GetByCharacterId(Guid id);
+        Task<Arena> AddCharacterAsync(Guid id, Character character);
     }
 }
