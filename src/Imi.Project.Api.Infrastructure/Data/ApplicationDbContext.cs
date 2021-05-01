@@ -1,5 +1,6 @@
 ﻿using Imi.Project.Api.Core.Entities;
 using Imi.Project.Api.Infrastructure.Data.Seeding;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,10 +8,10 @@ using System.Text;
 
 namespace Imi.Project.Api.Infrastructure.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<User>
     {
         //create tables
-        public DbSet<User> Users { get; set; }
+        //public DbSet<User> Users { get; set; }
         public DbSet<Character> Characters { get; set; }
         public DbSet<Arena> Arenas { get; set; }
         public DbSet<Battleground> Battlegrounds { get; set; }
@@ -86,7 +87,7 @@ namespace Imi.Project.Api.Infrastructure.Data
             base.OnModelCreating(modelBuilder);
 
             //seeding the data
-            UserSeeder.Seed(modelBuilder);
+            //UserSeeder.Seed(modelBuilder);
             CharacterSeeder.Seed(modelBuilder);
             ArenaSeeder.Seed(modelBuilder);
             BattlegroundSeeder.Seed(modelBuilder);
