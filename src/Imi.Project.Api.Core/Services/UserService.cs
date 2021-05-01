@@ -3,6 +3,7 @@ using Imi.Project.Api.Core.Dtos;
 using Imi.Project.Api.Core.Entities;
 using Imi.Project.Api.Core.Interfaces.Repositories;
 using Imi.Project.Api.Core.Interfaces.Services;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -14,13 +15,13 @@ namespace Imi.Project.Api.Core.Services
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
 
-        public UserService(IUserRepository userRepo, IMapper mapper)
+        public UserService(IUserRepository userRepository, IMapper mapper)
         {
-            _userRepository = userRepo;
+            _userRepository = userRepository;
             _mapper = mapper;
         }
 
-        public async Task<UserResponseDto> GetByIdAsync(Guid id)
+        public async Task<UserResponseDto> GetByIdAsync(string id)
         {
             var result = await _userRepository.GetByIdAsync(id);
 
@@ -52,7 +53,7 @@ namespace Imi.Project.Api.Core.Services
             return dto;
         }
 
-        public async Task DeleteAsync(Guid id)
+        public async Task DeleteAsync(string id)
         {
             await _userRepository.DeleteAsync(id);
         }
