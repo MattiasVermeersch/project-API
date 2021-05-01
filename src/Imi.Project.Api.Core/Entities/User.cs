@@ -1,18 +1,17 @@
 ﻿using Imi.Project.Api.Core.Entities.Base;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Imi.Project.Api.Core.Entities
 {
-    public class User : BaseEntity
+    public class User : IdentityUser
     {
-        public string Name { get; set; }
-        public string Email { get; set; }
+        public DateTime BirthDate { get; set; }
+        public string Address { get; set; }
+        public string FullName { get; set; }
         public string Password { get; set; }
-        public bool IsAdmin { get; set; } = false;
-        public bool IsRaidLeader { get; set; } = false;
-        public bool IsWarlord { get; set; } = false;
         public ICollection<Character> Characters { get; set; }
     }
 }
