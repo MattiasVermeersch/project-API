@@ -29,7 +29,7 @@ namespace Imi.Project.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get(Guid id)
+        public async Task<IActionResult> Get(string id)
         {
             var user = await _userService.GetByIdAsync(id);
 
@@ -67,7 +67,7 @@ namespace Imi.Project.Api.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(Guid id)
+        public async Task<IActionResult> Delete(string id)
         {
             var user = await _userService.GetByIdAsync(id);
 
