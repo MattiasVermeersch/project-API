@@ -12,6 +12,7 @@ namespace Imi.Project.Api.Core.Entities
         public string Address { get; set; }
         public string FullName { get; set; }
         public string Password { get; set; }
+        public string City { get; set; }
         public ICollection<Character> Characters { get; set; }
     }
 }
