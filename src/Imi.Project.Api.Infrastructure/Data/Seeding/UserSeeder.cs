@@ -1,233 +1,187 @@
-﻿//using Imi.Project.Api.Core.Entities;
-//using Microsoft.EntityFrameworkCore;
-//using System;
-//using System.Collections.Generic;
-//using System.Text;
+﻿using Imi.Project.Api.Core.Entities;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
-//namespace Imi.Project.Api.Infrastructure.Data.Seeding
-//{
-//    public class UserSeeder
-//    {
-//        public static void Seed(ModelBuilder modelBuilder)
-//        {
-//            //data courtesy from mockaroo.com
-//            modelBuilder.Entity<User>().HasData(
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000001"),
-//                    Name = "Aldwin Geydon",
-//                    Email = "ageydon0@marriott.com",
-//                    Password = "Ct7JR2FEL",
-//                    IsAdmin = true
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000002"),
-//                    Name = "Clem Woodland",
-//                    Email = "cwoodland1@reference.com",
-//                    Password = "GwV08icD",
-//                    IsRaidLeader = true
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000003"),
-//                    Name = "Mil Semeniuk",
-//                    Email = "msemeniuk2@prweb.com",
-//                    Password = "0Sm8bO",
-//                    IsRaidLeader = true
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000004"),
-//                    Name = "Aurel Wasbey",
-//                    Email = "awasbey3@google.it",
-//                    Password = "YjYpKO",
-//                    IsWarlord = true
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000005"),
-//                    Name = "Jackson Ingyon",
-//                    Email = "jingyon4@hao123.com",
-//                    Password = "uTyKrtdJ6pk",
-//                    IsWarlord = true
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000006"),
-//                    Name = "Lucho Egell",
-//                    Email = "legell5@wikispaces.com",
-//                    Password = "U64vxCUx"
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000007"),
-//                    Name = "Giavani Bortolozzi",
-//                    Email = "gbortolozzi6@friendfeed.com",
-//                    Password = "4BR3Mr40YsD"
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000008"),
-//                    Name = "Casie Mair",
-//                    Email = "cmair7@dion.ne.jp",
-//                    Password = "sPcKvSnIoeEH"
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000009"),
-//                    Name = "Madalena Rispine",
-//                    Email = "mrispine8@is.gd",
-//                    Password = "iQYb77c"
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000010"),
-//                    Name = "Broderick Rowena",
-//                    Email = "browena9@springer.com",
-//                    Password = "fWs8Sa"
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000011"),
-//                    Name = "Lenna Gregoriou",
-//                    Email = "lgregorioua@storify.com",
-//                    Password = "P49llZ049pz"
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000012"),
-//                    Name = "Timi Eastam",
-//                    Email = "teastamb@phoca.cz",
-//                    Password = "DfHR3lv2"
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000013"),
-//                    Name = "Gweneth Lidierth",
-//                    Email = "glidierthc@freewebs.com",
-//                    Password = "uJd67JjN4tVh"
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000014"),
-//                    Name = "Lesya Dutton",
-//                    Email = "lduttond@canalblog.com",
-//                    Password = "2gnClUF8"
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000015"),
-//                    Name = "Hedvige Fyers",
-//                    Email = "hfyerse@dmoz.org",
-//                    Password = "L970io8cwz"
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000016"),
-//                    Name = "Nehemiah Halworth",
-//                    Email = "nhalworthf@ezinearticles.com",
-//                    Password = "em18c5ls"
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000017"),
-//                    Name = "Robinetta Phin",
-//                    Email = "rphing@europa.eu",
-//                    Password = "uRrbRG8co4w"
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000018"),
-//                    Name = "Correy Dirr",
-//                    Email = "cdirrh@ucsd.edu",
-//                    Password = "HO5p9jajWl9"
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000019"),
-//                    Name = "Zelda Ferreras",
-//                    Email = "zferrerasi@cisco.com",
-//                    Password = "8UV6YqrR"
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000020"),
-//                    Name = "Paddy Ninnis",
-//                    Email = "pninnisj@wix.com",
-//                    Password = "1dFoZSvdA"
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000021"),
-//                    Name = "Jeanna Nind",
-//                    Email = "jnindk@github.io",
-//                    Password = "s1cRs43a7"
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000022"),
-//                    Name = "Darius Richford",
-//                    Email = "drichfordl@economist.com",
-//                    Password = "SebyyqXenu"
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000023"),
-//                    Name = "Lindy Siebert",
-//                    Email = "lsiebertm@mapy.cz",
-//                    Password = "5RI8u1feojGH"
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000024"),
-//                    Name = "Micheil Baxstare",
-//                    Email = "mbaxstaren@mysql.com",
-//                    Password = "2xhK9m1599T5"
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000025"),
-//                    Name = "Terrance Klainer",
-//                    Email = "tklainero@admin.ch",
-//                    Password = "VbJgKJIIHVJo"
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000026"),
-//                    Name = "Killian Lockless",
-//                    Email = "klocklessp@un.org",
-//                    Password = "Z6st864D"
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000027"),
-//                    Name = "Reynold Gabby",
-//                    Email = "rgabbyq@mozilla.org",
-//                    Password = "VcaYtXSUXm"
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000028"),
-//                    Name = "Opaline Barta",
-//                    Email = "obartar@vistaprint.com",
-//                    Password = "XW1MzRu"
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000029"),
-//                    Name = "Concettina Scocroft",
-//                    Email = "cscocrofts@facebook.com",
-//                    Password = "GzsICdL08z"
-//                },
-//                new User
-//                {
-//                    Id = Guid.Parse("00000000-0000-0000-0000-000000000030"),
-//                    Name = "Pooh Shill",
-//                    Email = "pshillt@simplemachines.org",
-//                    Password = "Hmb5OnSOKr"
-//                }
-//            );
-//        }
-//    }
-//}
+namespace Imi.Project.Api.Infrastructure.Data.Seeding
+{
+    public class UserSeeder
+    {
+        const string Password = "Test123?";
+
+        //IdentityRoles
+        //Admin
+        const string AdminRoleId = "00000000-0000-0000-000000000001";
+        const string AdminRoleName = "Admin";
+
+        //Warlord
+        const string WarlordRoleId = "00000000-0000-0000-000000000002";
+        const string WarlordRoleName = "Warlord";
+
+        //RaidLeader
+        const string RaidLeaderRoleId = "00000000-0000-0000-000000000003";
+        const string RaidLeaderRoleName = "RaidLeader";
+
+        public static void Seed(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<IdentityRole>().HasData(
+                new IdentityRole
+                {
+                    Id = AdminRoleId,
+                    Name = AdminRoleName,
+                    NormalizedName = AdminRoleName.ToUpper()
+                },
+                new IdentityRole
+                {
+                    Id = WarlordRoleId,
+                    Name = WarlordRoleName,
+                    NormalizedName = WarlordRoleName.ToUpper()
+                },
+                new IdentityRole
+                {
+                    Id = RaidLeaderRoleId,
+                    Name = RaidLeaderRoleName,
+                    NormalizedName = RaidLeaderRoleName.ToUpper()
+                });
+
+            //Users data, courtesy of mockaroo.com
+            List<string> identifiers = new List<string>() 
+            { 
+                "00000000-0000-0000-0000-000000000001", "00000000-0000-0000-0000-000000000002",
+                "00000000-0000-0000-0000-000000000003", "00000000-0000-0000-0000-000000000004",
+                "00000000-0000-0000-0000-000000000005", "00000000-0000-0000-0000-000000000006",
+                "00000000-0000-0000-0000-000000000007", "00000000-0000-0000-0000-000000000008",
+                "00000000-0000-0000-0000-000000000009", "00000000-0000-0000-0000-000000000010",
+                "00000000-0000-0000-0000-000000000011", "00000000-0000-0000-0000-000000000012",
+                "00000000-0000-0000-0000-000000000013", "00000000-0000-0000-0000-000000000014",
+                "00000000-0000-0000-0000-000000000015", "00000000-0000-0000-0000-000000000016",
+                "00000000-0000-0000-0000-000000000017", "00000000-0000-0000-0000-000000000018",
+                "00000000-0000-0000-0000-000000000019", "00000000-0000-0000-0000-000000000020",
+                "00000000-0000-0000-0000-000000000021", "00000000-0000-0000-0000-000000000022",
+                "00000000-0000-0000-0000-000000000023", "00000000-0000-0000-0000-000000000024",
+                "00000000-0000-0000-0000-000000000025", "00000000-0000-0000-0000-000000000026",
+                "00000000-0000-0000-0000-000000000027", "00000000-0000-0000-0000-000000000028",
+                "00000000-0000-0000-0000-000000000029", "00000000-0000-0000-0000-000000000030"
+            };
+
+            List<string> userEmails = new List<string>() 
+            {
+                "ageydon0@marriott.com", "cwoodland1@reference.com",
+                "msemeniuk2@prweb.com",  "awasbey3@google.it",
+                "jingyon4@hao123.com", "legell5@wikispaces.com",
+                "gbortolozzi6@friendfeed.com", "cmair7@dion.ne.jp",
+                "mrispine8@is.gd", "browena9@springer.com",
+                "lgregorioua@storify.com", "teastamb@phoca.cz",
+                "glidierthc@freewebs.com", "lduttond@canalblog.com",
+                "hfyerse@dmoz.org", "nhalworthf@ezinearticles.com",
+                "rphing@europa.eu", "cdirrh@ucsd.edu",
+                "zferrerasi@cisco.com", "pninnisj@wix.com",
+                "jnindk@github.io", "drichfordl@economist.com",
+                "lsiebertm@mapy.cz", "mbaxstaren@mysql.com",
+                "tklainero@admin.ch", "klocklessp@un.org",
+                "rgabbyq@mozilla.org", "obartar@vistaprint.com",
+                "cscocrofts@facebook.com", "pshillt@simplemachines.org"
+            };
+
+            List<string> userFullNames = new List<string>()
+            {
+                "Aldwin Geydon", "Clem Woodland", "Mil Semeniuk", "Aurel Wasbey",
+                "Jackson Ingyon", "Lucho Egell", "Giavani Bortolozzi",
+                "Casie Mair", "Madalena Rispine", "Broderick Rowena",
+                "Lenna Gregoriou", "Timi Eastam", "Gweneth Lidierth",
+                "Lesya Dutton", "Hedvige Fyers", "Nehemiah Halworth",
+                "Robinetta Phin", "Correy Dirr", "Zelda Ferreras",
+                "Paddy Ninnis", "Jeanna Nind", "Darius Richford",
+                "Lindy Siebert", "Micheil Baxstare", "Terrance Klainer",
+                "Killian Lockless", "Reynold Gabby", "Opaline Barta",
+                "Concettina Scocroft", "Pooh Shill"
+            };
+
+            List<string> userAddresses = new List<string>()
+            {
+                "6 Gale Plaza", "50 Independence Avenue", "5 Onsgard Parkway",
+                "20 Wayridge Place", "80 Mcguire Circle", "7 Cody Way", "39 Morrow Center",
+                "3 Monica Plaza", "22114 Carberry Avenue", "04 Harbort Point", "97 Rockefeller Circle",
+                "6 Scofield Drive", "9 Chive Alley", "56741 Huxley Lane", "4 Blaine Plaza", "58 Sherman Circle",
+                "2572 Nelson Trail", "45 Onsgard Parkway", "197 Longview Way", "9 Vahlen Crossing", "98 Granby Hill",
+                "88 Roxbury Crossing", "3 Holmberg Hill", "64070 Lakewood Gardens Circle", "1 Mesta Court",
+                "0 Bashford Plaza", "79 Fieldstone Drive", "9875 Warner Terrace", "189 Fairfield Hill",
+                "7918 Jenifer Lane"
+            };
+
+            List<string> cities = new List<string>() { "Brugge", "Gent", "Antwerpen", "Hasselt", "Brussel" };
+
+            List<User> newUsers = new List<User>();
+            Random random = new Random();
+            IPasswordHasher<User> passwordHasher = new PasswordHasher<User>();
+
+            for (int i = 0; i < identifiers.Count; i++)
+            {
+                string userName = userEmails[i];
+
+                int cityIndex = random.Next(5);
+                int randomDay = random.Next(1, 31);
+                int randomMonth = random.Next(1, 13);
+                int randomYear = random.Next(1970, 2001);
+
+                bool confirmed = random.Next(2) > 0.5;
+
+                User newUser = new User
+                {
+                    Id = identifiers[i],
+                    UserName = userName,
+                    NormalizedUserName = userName.ToUpper(),
+                    Email = userName,
+                    NormalizedEmail = userName.ToUpper(),
+                    EmailConfirmed = confirmed,
+                    SecurityStamp = Guid.NewGuid().ToString(),
+                    ConcurrencyStamp = Guid.NewGuid().ToString(),
+                    City = cities[cityIndex],
+                    BirthDate = new DateTime(randomYear, randomMonth, randomDay),
+                    Address = userAddresses[i],
+                    FullName = userFullNames[i],
+                };
+
+                newUser.PasswordHash = passwordHasher.HashPassword(newUser, Password);
+
+                newUsers.Add(newUser);
+            }
+
+            foreach (User user in newUsers)
+            {
+                modelBuilder.Entity<User>().HasData(user);
+            };
+
+            //adding roles to some users
+            modelBuilder.Entity<IdentityUserRole<string>>().HasData(
+                new IdentityUserRole<string>
+                {
+                    RoleId = AdminRoleId,
+                    UserId = identifiers[0]
+                },
+                new IdentityUserRole<string>
+                {
+                    RoleId = RaidLeaderRoleId,
+                    UserId = identifiers[1]
+                },
+                new IdentityUserRole<string>
+                {
+                    RoleId = RaidLeaderRoleId,
+                    UserId = identifiers[2]
+                },
+                new IdentityUserRole<string>
+                {
+                    RoleId = WarlordRoleId,
+                    UserId = identifiers[3]
+                },
+                new IdentityUserRole<string>
+                {
+                    RoleId = WarlordRoleId,
+                    UserId = identifiers[4]
+                }
+            );
+        }
+    }
+}
