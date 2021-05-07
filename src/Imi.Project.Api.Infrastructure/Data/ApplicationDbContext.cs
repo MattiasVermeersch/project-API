@@ -1,5 +1,6 @@
 ﻿using Imi.Project.Api.Core.Entities;
 using Imi.Project.Api.Infrastructure.Data.Seeding;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -87,7 +88,7 @@ namespace Imi.Project.Api.Infrastructure.Data
             base.OnModelCreating(modelBuilder);
 
             //seeding the data
-            //UserSeeder.Seed(modelBuilder);
+            UserSeeder.Seed(modelBuilder);
             CharacterSeeder.Seed(modelBuilder);
             ArenaSeeder.Seed(modelBuilder);
             BattlegroundSeeder.Seed(modelBuilder);
