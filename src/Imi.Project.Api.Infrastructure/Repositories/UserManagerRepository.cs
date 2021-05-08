@@ -59,7 +59,8 @@ namespace Imi.Project.Api.Infrastructure.Repositories
 
         public async Task<T> AddAsync(T entity)
         {
-            await _userManager.CreateAsync(entity);
+            var password = entity.PasswordHash;
+            await _userManager.CreateAsync(entity, password);
             return entity;
         }
 
