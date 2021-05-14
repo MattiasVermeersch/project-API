@@ -1,17 +1,20 @@
 ﻿using Imi.Project.Api.Core.Dtos.Base;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Imi.Project.Api.Core.Dtos
 {
-    public class UserResponseDto : BaseDto
+    public class UserResponseDto : BaseIdentityDto
     {
-        public string Name { get; set; }
+        public DateTime BirthDate { get; set; }
         public string Email { get; set; }
-        public bool IsAdmin { get; set; }
-        public bool IsRaidLeader { get; set; }
-        public bool IsWarlord { get; set; }
+        public string Address { get; set; }
+        public string FullName { get; set; }
+        public string City { get; set; }
+        public IdentityResult Error { get; set; }
         public ICollection<SimpleCharacterResponseDto> Characters { get; set; }
     }
 }

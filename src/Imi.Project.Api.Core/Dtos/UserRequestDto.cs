@@ -5,12 +5,14 @@ using System.Text;
 
 namespace Imi.Project.Api.Core.Dtos
 {
-    public class UserRequestDto : BaseDto
+    public class UserRequestDto : BaseIdentityDto
     {
-        public string Name { get; set; }
+        public DateTime BirthDate { get; set; }
+        public string UserName { get; set; }
         public string Email { get; set; }
-        public bool IsAdmin { get; set; }
-        public bool IsRaidLeader { get; set; }
-        public bool IsWarlord { get; set; }
+        public string Address { get; set; }
+        public string FullName { get; set; }
+        public string Password { get; set; }
+        public string City { get; set; }
     }
 }
