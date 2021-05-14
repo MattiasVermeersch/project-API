@@ -1,4 +1,5 @@
 ﻿using Imi.Project.Api.Core.Dtos;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,7 +11,7 @@ namespace Imi.Project.Api.Core.Interfaces.Services
     {
         Task<IEnumerable<UserResponseDto>> ListAllAsync();
         Task<UserResponseDto> GetByIdAsync(string id);
-        Task<UserResponseDto> AddAsync(UserRequestDto userRequestDto);
+        Task<UserResponseDto> AddAsync(RegisterUserRequestDto registerUserRequestDto);
         Task<UserResponseDto> UpdateAsync(UserRequestDto userRequestDto);
         Task DeleteAsync(string id);
     }

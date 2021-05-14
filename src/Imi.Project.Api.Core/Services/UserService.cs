@@ -37,11 +37,18 @@ namespace Imi.Project.Api.Core.Services
             return dto;
         }
 
-        public async Task<UserResponseDto> AddAsync(UserRequestDto userRequestDto)
+        public async Task<UserResponseDto> AddAsync(RegisterUserRequestDto registerUserRequestDto)
         {
-            var user = _mapper.Map<User>(userRequestDto);
+            var user = _mapper.Map<User>(registerUserRequestDto);
+
+            user.FullName = registerUserRequestDto.FirstName + " " + registerUserRequestDto.LastName;
+            user.UserName = registerUserRequestDto.Email;
+
             var result = await _userRepository.AddAsync(user);
             var dto = _mapper.Map<UserResponseDto>(result);
+
+            dto.Error = result.Error;
+
             return dto;
         }
 
