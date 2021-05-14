@@ -12,5 +12,6 @@ namespace Imi.Project.Api.Core.Interfaces.Repositories
     public interface IUserManagerRepository<T> : IBaseRepository<T, string>
         where T : IdentityUser
     {
+        public Task<T> LoginUser(string email, string password, bool isPersistent, bool lockoutOnFailure);
     }
 }

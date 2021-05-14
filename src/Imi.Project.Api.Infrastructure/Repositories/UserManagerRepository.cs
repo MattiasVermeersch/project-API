@@ -15,9 +15,11 @@ namespace Imi.Project.Api.Infrastructure.Repositories
     public class UserManagerRepository<T> : IUserManagerRepository<T> where T : IdentityUser
     {
         protected readonly UserManager<T> _userManager;
-        public UserManagerRepository(UserManager<T> userManager)
+        protected readonly SignInManager<T> _signInManager;
+        public UserManagerRepository(UserManager<T> userManager, SignInManager<T> signInManager)
         {
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         public virtual IQueryable<T> GetAllAsync()
@@ -82,6 +84,14 @@ namespace Imi.Project.Api.Infrastructure.Repositories
             T entity = await GetByIdAsync(id);
             await DeleteAsync(entity);
             return entity;
+        }
+
+        public virtual async Task<T> LoginUser(string email, string password, bool isPersistent, bool lockoutOnFailure)
+        {
+            var result = await _signInManager.PasswordSignInAsync(email, password, isPersistent, lockoutOnFailure);
+
+            var user = await _userManager.FindByEmailAsync(email);
+            return user;
         }
     }
 }
