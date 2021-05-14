@@ -44,6 +44,7 @@ namespace Imi.Project.Api
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            services.AddSingleton(Configuration.GetSection("JWTConfiguration").Get<JWTConfiguration>());
 
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ICharacterRepository, CharacterRepository>();
