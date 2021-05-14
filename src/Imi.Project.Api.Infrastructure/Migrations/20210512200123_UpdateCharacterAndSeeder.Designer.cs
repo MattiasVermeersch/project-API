@@ -4,14 +4,16 @@ using Imi.Project.Api.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Imi.Project.Api.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210512200123_UpdateCharacterAndSeeder")]
+    partial class UpdateCharacterAndSeeder
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -2517,18 +2519,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000001",
                             AccessFailedCount = 0,
                             Address = "6 Gale Plaza",
-                            BirthDate = new DateTime(1998, 10, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Brussel",
-                            ConcurrencyStamp = "39f583bd-8f57-4366-9a87-03e132d6d9c2",
+                            BirthDate = new DateTime(1997, 12, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Antwerpen",
+                            ConcurrencyStamp = "ee402304-3ad5-4752-bd1a-653ab37cc533",
                             Email = "ageydon0@marriott.com",
-                            EmailConfirmed = false,
+                            EmailConfirmed = true,
                             FullName = "Aldwin Geydon",
                             LockoutEnabled = false,
                             NormalizedEmail = "AGEYDON0@MARRIOTT.COM",
                             NormalizedUserName = "AGEYDON0@MARRIOTT.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAECbZPoO93vQv0F1aBIMZ4tKtSXv4n87JNdVwBlfPpsBHwDiyNq3QQvrIGppPpvJdDA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPw9g541PAWtCjNiJVF1N+re5Uej8ajVN6xku2D0jX515mfi4w+sLtsdQ1hXUcmc9g==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b7eeed52-19e4-46bf-9bf8-96679d5f620b",
+                            SecurityStamp = "7ba3b998-ac2c-4d48-8645-a518f343d591",
                             TwoFactorEnabled = false,
                             UserName = "ageydon0@marriott.com"
                         },
@@ -2537,18 +2539,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000002",
                             AccessFailedCount = 0,
                             Address = "50 Independence Avenue",
-                            BirthDate = new DateTime(1973, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Gent",
-                            ConcurrencyStamp = "919b79cd-019e-4b1e-8b7f-e2404e8c2eec",
+                            BirthDate = new DateTime(1984, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Brussel",
+                            ConcurrencyStamp = "3d901c01-b72f-4587-b95c-f098a262e61b",
                             Email = "cwoodland1@reference.com",
                             EmailConfirmed = false,
                             FullName = "Clem Woodland",
                             LockoutEnabled = false,
                             NormalizedEmail = "CWOODLAND1@REFERENCE.COM",
                             NormalizedUserName = "CWOODLAND1@REFERENCE.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDzMpHW2MiSRGooXxhyYmom/5d5hkYO/TtzCmwvSmOW3JNPXhOLlSyoEt7bruzxVcg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBOhG7527X71op+MehQTURiOi42my0n4WJ2Syy1p7wDgaeoTq/c4WQz1MxOewwSKMg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b3b995f6-7ec6-4f38-9c66-6cf4a86a5746",
+                            SecurityStamp = "34aeb52e-3232-4a0c-8ea7-6bb28d1744dd",
                             TwoFactorEnabled = false,
                             UserName = "cwoodland1@reference.com"
                         },
@@ -2557,18 +2559,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000003",
                             AccessFailedCount = 0,
                             Address = "5 Onsgard Parkway",
-                            BirthDate = new DateTime(1984, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Gent",
-                            ConcurrencyStamp = "997c2365-d8c3-4ba9-b528-3ce8fdb30bb8",
+                            BirthDate = new DateTime(1990, 12, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Brussel",
+                            ConcurrencyStamp = "7de5f209-22b9-4a3f-8ded-19df1c5eb700",
                             Email = "msemeniuk2@prweb.com",
-                            EmailConfirmed = true,
+                            EmailConfirmed = false,
                             FullName = "Mil Semeniuk",
                             LockoutEnabled = false,
                             NormalizedEmail = "MSEMENIUK2@PRWEB.COM",
                             NormalizedUserName = "MSEMENIUK2@PRWEB.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJY1+ztRUuRbFIrJWJ1j+bLU1P6yWe2u55W68QHQSFNDGcjrZERHeeI1X/xaewTvxA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGLPEdA/UobgBm1humrqHaXXLg7PsAtc6Kg5kchEPdocKWEpFftlESTX5xvP4lDe1Q==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "76e42442-022e-41ff-9165-691278501860",
+                            SecurityStamp = "8a3f437c-57c9-4074-b636-23e83520222e",
                             TwoFactorEnabled = false,
                             UserName = "msemeniuk2@prweb.com"
                         },
@@ -2577,18 +2579,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000004",
                             AccessFailedCount = 0,
                             Address = "20 Wayridge Place",
-                            BirthDate = new DateTime(1979, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Brussel",
-                            ConcurrencyStamp = "5ebd866d-a430-4e88-adce-699489241e8c",
+                            BirthDate = new DateTime(1985, 4, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Gent",
+                            ConcurrencyStamp = "0f16894d-8e30-4aaa-a8d1-a6cc21f4bd6b",
                             Email = "awasbey3@google.it",
-                            EmailConfirmed = true,
+                            EmailConfirmed = false,
                             FullName = "Aurel Wasbey",
                             LockoutEnabled = false,
                             NormalizedEmail = "AWASBEY3@GOOGLE.IT",
                             NormalizedUserName = "AWASBEY3@GOOGLE.IT",
-                            PasswordHash = "AQAAAAEAACcQAAAAEH9Qy92mXCRSmrgYXNWHr/2uiMJ5kRRDVDC+tMgk5Fp3PogoRG9fDaeiw47aZGOWbA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPvHPMLvLrL4rZAJrO6C3XagglaDBKbm64JDe9B0sPxhmQVXZZ2x8VvAyzkYyS5s/A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b8cf80ea-51d1-4be8-9101-c71b70fbb149",
+                            SecurityStamp = "9983770f-ba2c-45b7-8fa8-ec811b20fc1e",
                             TwoFactorEnabled = false,
                             UserName = "awasbey3@google.it"
                         },
@@ -2597,18 +2599,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000005",
                             AccessFailedCount = 0,
                             Address = "80 Mcguire Circle",
-                            BirthDate = new DateTime(1975, 11, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            BirthDate = new DateTime(1971, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             City = "Antwerpen",
-                            ConcurrencyStamp = "7a06f81d-32bb-4074-9f2b-3f6d016de35f",
+                            ConcurrencyStamp = "30b10550-69a8-4168-804a-a8919d72a17d",
                             Email = "jingyon4@hao123.com",
-                            EmailConfirmed = true,
+                            EmailConfirmed = false,
                             FullName = "Jackson Ingyon",
                             LockoutEnabled = false,
                             NormalizedEmail = "JINGYON4@HAO123.COM",
                             NormalizedUserName = "JINGYON4@HAO123.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJ9PA0X5jJDrE5ywo1llyxoOnyN/HUz5zviQBQFA9MeDwvCUHZ3JMANOgx0AGIAGXg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEF7J6mzpktRDRrftXthhtkdiedAob7sD1sBtaqxkG6+K+m/5IMbpe31wEWkcHAAfIA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "4343a7b2-8d24-4fa8-afc4-dfafb5ebd73c",
+                            SecurityStamp = "f13cfc98-e121-4fc0-8e55-f6130f37f6d6",
                             TwoFactorEnabled = false,
                             UserName = "jingyon4@hao123.com"
                         },
@@ -2617,18 +2619,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000006",
                             AccessFailedCount = 0,
                             Address = "7 Cody Way",
-                            BirthDate = new DateTime(1994, 6, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Brussel",
-                            ConcurrencyStamp = "140889b6-d279-4eae-a3a3-9347fb66773e",
+                            BirthDate = new DateTime(1979, 11, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Antwerpen",
+                            ConcurrencyStamp = "48aa25ee-9a48-4378-a539-f29469792dfb",
                             Email = "legell5@wikispaces.com",
-                            EmailConfirmed = true,
+                            EmailConfirmed = false,
                             FullName = "Lucho Egell",
                             LockoutEnabled = false,
                             NormalizedEmail = "LEGELL5@WIKISPACES.COM",
                             NormalizedUserName = "LEGELL5@WIKISPACES.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEMbRfK3VsVwSpKNnbDWB7eOK02d0j9Yl53f50ZuaeAq3kLFDdZmy884ShYDqtdF3sg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJ4hQRhpzrmOhF+cO7Vkb+LOk06v2NkRF8G8jF5u7WVnNVVipTW0XqPqyck3TQC5ww==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e689808a-1287-4888-98ae-5c869607d4c7",
+                            SecurityStamp = "6fdd2d9c-9cd5-4442-b426-e7d363636585",
                             TwoFactorEnabled = false,
                             UserName = "legell5@wikispaces.com"
                         },
@@ -2637,18 +2639,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000007",
                             AccessFailedCount = 0,
                             Address = "39 Morrow Center",
-                            BirthDate = new DateTime(1970, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Hasselt",
-                            ConcurrencyStamp = "d19156ff-8203-4503-933b-3dd4709787e4",
+                            BirthDate = new DateTime(1981, 5, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Gent",
+                            ConcurrencyStamp = "096c0b33-653a-4ceb-bc70-c804cc29c235",
                             Email = "gbortolozzi6@friendfeed.com",
                             EmailConfirmed = true,
                             FullName = "Giavani Bortolozzi",
                             LockoutEnabled = false,
                             NormalizedEmail = "GBORTOLOZZI6@FRIENDFEED.COM",
                             NormalizedUserName = "GBORTOLOZZI6@FRIENDFEED.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAECbRWOskqMxmOhUc6+puD1LUMg+uJmPnpxccpfwT6X8TJUbutHPKDv93zosSAkahhw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEACxItEHvvyxDHbrIAO6xrcxlOT66hERrCvWI80BJPYZ0DPuD5f/K/249ftWOBxsJA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "20e2ad0b-208c-40fd-bc97-463de08a9e8f",
+                            SecurityStamp = "ac5c3a09-df5e-432d-a4cf-ec43e200c88c",
                             TwoFactorEnabled = false,
                             UserName = "gbortolozzi6@friendfeed.com"
                         },
@@ -2657,18 +2659,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000008",
                             AccessFailedCount = 0,
                             Address = "3 Monica Plaza",
-                            BirthDate = new DateTime(1970, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Antwerpen",
-                            ConcurrencyStamp = "95f18a07-9fad-4204-8bcd-e14cb8211ff9",
+                            BirthDate = new DateTime(1998, 9, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Hasselt",
+                            ConcurrencyStamp = "3d78360b-cd7a-4ad0-941d-cf7570f08602",
                             Email = "cmair7@dion.ne.jp",
                             EmailConfirmed = false,
                             FullName = "Casie Mair",
                             LockoutEnabled = false,
                             NormalizedEmail = "CMAIR7@DION.NE.JP",
                             NormalizedUserName = "CMAIR7@DION.NE.JP",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJQVZg6u67cICtARQ3W7+u6hVAZONKTiVOvnelhlhtSKQ4EwfYK37nV/RwVar5wSaw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEI7f2YI30gSOTLtdx2oHWLzk5sBW137c1teXQJ9/avCbCCKV3yRPR8gyRImiq9WVgg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c1f2d62e-6083-430c-aeec-6c60c79d1135",
+                            SecurityStamp = "9eb63640-41d1-438c-b60a-c7b55e60771e",
                             TwoFactorEnabled = false,
                             UserName = "cmair7@dion.ne.jp"
                         },
@@ -2677,18 +2679,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000009",
                             AccessFailedCount = 0,
                             Address = "22114 Carberry Avenue",
-                            BirthDate = new DateTime(1978, 7, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Brugge",
-                            ConcurrencyStamp = "d65f69ca-c83f-4675-a127-1a3b0945e521",
+                            BirthDate = new DateTime(1981, 12, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Antwerpen",
+                            ConcurrencyStamp = "8fcdba20-cc36-4c5b-bd0c-3846da41e98c",
                             Email = "mrispine8@is.gd",
-                            EmailConfirmed = false,
+                            EmailConfirmed = true,
                             FullName = "Madalena Rispine",
                             LockoutEnabled = false,
                             NormalizedEmail = "MRISPINE8@IS.GD",
                             NormalizedUserName = "MRISPINE8@IS.GD",
-                            PasswordHash = "AQAAAAEAACcQAAAAELjNWxlSWTHric+Z011wWJCM3Ps87aC3dMfRgjCY6u1pYJtYGQtD8kGsxIrnanljaw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAtZEVhKsQkWdCKgwD7AFYDjPBrfa86yZaIzazA2UAf+qxawfrNTTuzji2PrTCtkxQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "0cca7718-af64-4241-b95a-eca9135f8d39",
+                            SecurityStamp = "b7eb3579-0ec4-484a-a8ed-09cc0665b98b",
                             TwoFactorEnabled = false,
                             UserName = "mrispine8@is.gd"
                         },
@@ -2697,18 +2699,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000010",
                             AccessFailedCount = 0,
                             Address = "04 Harbort Point",
-                            BirthDate = new DateTime(1994, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Brugge",
-                            ConcurrencyStamp = "121711b0-685f-4d11-9926-e05c4da002b6",
+                            BirthDate = new DateTime(1990, 4, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Antwerpen",
+                            ConcurrencyStamp = "27eeed31-4d4e-433e-a591-44fb0eb9aa87",
                             Email = "browena9@springer.com",
-                            EmailConfirmed = false,
+                            EmailConfirmed = true,
                             FullName = "Broderick Rowena",
                             LockoutEnabled = false,
                             NormalizedEmail = "BROWENA9@SPRINGER.COM",
                             NormalizedUserName = "BROWENA9@SPRINGER.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAECKdB6iAZ8LZGqYBpAkpZDAsUhZxIp0U03KAGOAc31UpGkBDakmMPHvXpuJhu0eMiA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEJ0DjXvBKGYjyOUJuDXAQaGomeHNXcKnTcbDQGq2cb/mmlru3LnZm8ofMy7xh7eGw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d2e4c436-c894-4020-8c05-1312e23233a7",
+                            SecurityStamp = "3be992c4-3973-4c72-a83f-e06a8f8f3c0f",
                             TwoFactorEnabled = false,
                             UserName = "browena9@springer.com"
                         },
@@ -2717,18 +2719,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000011",
                             AccessFailedCount = 0,
                             Address = "97 Rockefeller Circle",
-                            BirthDate = new DateTime(1999, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Brugge",
-                            ConcurrencyStamp = "1258fa3d-175e-4fbf-80c2-72288b3063ba",
+                            BirthDate = new DateTime(2000, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Hasselt",
+                            ConcurrencyStamp = "b5267d71-0922-4c1f-90c9-3d77666de3a4",
                             Email = "lgregorioua@storify.com",
-                            EmailConfirmed = true,
+                            EmailConfirmed = false,
                             FullName = "Lenna Gregoriou",
                             LockoutEnabled = false,
                             NormalizedEmail = "LGREGORIOUA@STORIFY.COM",
                             NormalizedUserName = "LGREGORIOUA@STORIFY.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEM2emz3kIbT6A1LrOH/aICLcujO85GdnMMtuCdXdx8f8IQGlGAlQe0MK/VGt73nOag==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEjRwbYl3Ta800SfX1xah4tXeqghsfnYpnsIw/usCaL1LiDA8k0/HyKZD4LiNB7mwQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "047c385d-aa7c-49c4-9036-f54142ede268",
+                            SecurityStamp = "ebb6d90c-fb0c-48a2-a9b5-6265d976bcb7",
                             TwoFactorEnabled = false,
                             UserName = "lgregorioua@storify.com"
                         },
@@ -2737,18 +2739,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000012",
                             AccessFailedCount = 0,
                             Address = "6 Scofield Drive",
-                            BirthDate = new DateTime(1999, 8, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Antwerpen",
-                            ConcurrencyStamp = "2d0a98a0-80ee-48c8-a7e0-87f5692eaa4e",
+                            BirthDate = new DateTime(1983, 11, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Brussel",
+                            ConcurrencyStamp = "8ba7e6d6-1577-4c0c-b69c-0e3c79961925",
                             Email = "teastamb@phoca.cz",
-                            EmailConfirmed = true,
+                            EmailConfirmed = false,
                             FullName = "Timi Eastam",
                             LockoutEnabled = false,
                             NormalizedEmail = "TEASTAMB@PHOCA.CZ",
                             NormalizedUserName = "TEASTAMB@PHOCA.CZ",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBn2JN9ol9UgIfLCEzsypmj56QasGh0R/PK03VZNOXD/eWbekw9stOU0PG8sTHRKHw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPR3zR0+SMHIasE/fVJgr1sZCd8LqxvQFB02kHpQZy8vmAKt9cjQFKzAC3901tfvkg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "0cac219d-7b19-4696-a181-4e6531ec5040",
+                            SecurityStamp = "b8e3b66c-e181-4198-afec-0f4970a0c947",
                             TwoFactorEnabled = false,
                             UserName = "teastamb@phoca.cz"
                         },
@@ -2757,18 +2759,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000013",
                             AccessFailedCount = 0,
                             Address = "9 Chive Alley",
-                            BirthDate = new DateTime(1988, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            BirthDate = new DateTime(1975, 4, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             City = "Antwerpen",
-                            ConcurrencyStamp = "6ee6f76c-3d84-48e3-87a0-631417922f43",
+                            ConcurrencyStamp = "8ccc687b-a1c9-45b9-bc8c-abbc0796b0a5",
                             Email = "glidierthc@freewebs.com",
                             EmailConfirmed = true,
                             FullName = "Gweneth Lidierth",
                             LockoutEnabled = false,
                             NormalizedEmail = "GLIDIERTHC@FREEWEBS.COM",
                             NormalizedUserName = "GLIDIERTHC@FREEWEBS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEH+LO1K0AIrQ9FbaLYTlQtvYAifrEhZlpdRcBvlGKEruuRt+PPNAvbDxbgedSV370Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAELuQ181FUpQRHDw0Z7P8Ex5rSi+m7zjGYFGubGYCeNBRzYvatGA8rEEIqD3HTUn+Pw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a7a9deb3-2e0e-4886-abb3-ef3610b4261b",
+                            SecurityStamp = "3d940b65-b826-499b-a2cb-69a7ebd07e0b",
                             TwoFactorEnabled = false,
                             UserName = "glidierthc@freewebs.com"
                         },
@@ -2777,18 +2779,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000014",
                             AccessFailedCount = 0,
                             Address = "56741 Huxley Lane",
-                            BirthDate = new DateTime(1993, 5, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Gent",
-                            ConcurrencyStamp = "8396be6e-5502-4c93-b078-5248518b95c8",
+                            BirthDate = new DateTime(1970, 8, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Brussel",
+                            ConcurrencyStamp = "c13de9d0-7d9d-4d3c-88d2-7a1ed4a07efa",
                             Email = "lduttond@canalblog.com",
                             EmailConfirmed = true,
                             FullName = "Lesya Dutton",
                             LockoutEnabled = false,
                             NormalizedEmail = "LDUTTOND@CANALBLOG.COM",
                             NormalizedUserName = "LDUTTOND@CANALBLOG.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBxh7M7IB5EC7CYOzotA9CnOvM+IZY/gUC+f9OlwmiyRWWShvl+YQnmCY78xWlhPUg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDKWZOaBGfLz/36QxAEcM/wivAvivhYX06YV93UjIszIna3tg2W77qnukqvAdzKX0w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1d48c8d3-ad9d-4224-8ac8-915921b29263",
+                            SecurityStamp = "0f270c1f-4ae8-4fc2-86e3-242687b17f5b",
                             TwoFactorEnabled = false,
                             UserName = "lduttond@canalblog.com"
                         },
@@ -2797,18 +2799,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000015",
                             AccessFailedCount = 0,
                             Address = "4 Blaine Plaza",
-                            BirthDate = new DateTime(2000, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Brussel",
-                            ConcurrencyStamp = "0d69c356-5c4e-4439-90fd-84e8c9910cda",
+                            BirthDate = new DateTime(1981, 5, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Gent",
+                            ConcurrencyStamp = "801bd66c-4c20-4ac4-b18e-f5a8e45be67a",
                             Email = "hfyerse@dmoz.org",
-                            EmailConfirmed = false,
+                            EmailConfirmed = true,
                             FullName = "Hedvige Fyers",
                             LockoutEnabled = false,
                             NormalizedEmail = "HFYERSE@DMOZ.ORG",
                             NormalizedUserName = "HFYERSE@DMOZ.ORG",
-                            PasswordHash = "AQAAAAEAACcQAAAAEM8KOqP94H4jhKoNaM57fMfStlDZdrI13KMCYkTBo7nfnIEZi4IdE8+Y1r+kdWsiRA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFZKh6DhODraUaKRUZe5XycefqOPJ3mf6YDSYF8Kf6WqyDYTHY/+dX6f1pDHZAYyoQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "3c62ee53-b347-4a81-aa2a-30252035b4af",
+                            SecurityStamp = "759cc28d-3ae8-4d70-89c7-2aaed763e333",
                             TwoFactorEnabled = false,
                             UserName = "hfyerse@dmoz.org"
                         },
@@ -2817,18 +2819,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000016",
                             AccessFailedCount = 0,
                             Address = "58 Sherman Circle",
-                            BirthDate = new DateTime(1996, 8, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Hasselt",
-                            ConcurrencyStamp = "302022c8-145c-4e3d-b76a-aade40d23099",
+                            BirthDate = new DateTime(1977, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Gent",
+                            ConcurrencyStamp = "10c26f50-749f-4597-b27c-861099f604fa",
                             Email = "nhalworthf@ezinearticles.com",
                             EmailConfirmed = true,
                             FullName = "Nehemiah Halworth",
                             LockoutEnabled = false,
                             NormalizedEmail = "NHALWORTHF@EZINEARTICLES.COM",
                             NormalizedUserName = "NHALWORTHF@EZINEARTICLES.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEADnICpXU+iG+BSImwE3DiqAiRq7k3WQFix5hsdnAb27QeLxZCBCw/cHbSWCjNIbrw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAED1GxlQhWSe96pQE9cTrt0L3ShOotHu349tEPFBXtm7vCA/hWYbayWkXZrImK3Tmig==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c8306e6c-7fc0-462c-9844-18aaecb2925d",
+                            SecurityStamp = "72da2dee-59c8-48bd-aa51-fcef0dead618",
                             TwoFactorEnabled = false,
                             UserName = "nhalworthf@ezinearticles.com"
                         },
@@ -2837,18 +2839,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000017",
                             AccessFailedCount = 0,
                             Address = "2572 Nelson Trail",
-                            BirthDate = new DateTime(1986, 8, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Hasselt",
-                            ConcurrencyStamp = "acf72689-e9ef-4748-b7e2-dd528891b1e0",
+                            BirthDate = new DateTime(1982, 3, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Brugge",
+                            ConcurrencyStamp = "b9667bb1-3c35-4e01-9e1d-b639f3038552",
                             Email = "rphing@europa.eu",
-                            EmailConfirmed = false,
+                            EmailConfirmed = true,
                             FullName = "Robinetta Phin",
                             LockoutEnabled = false,
                             NormalizedEmail = "RPHING@EUROPA.EU",
                             NormalizedUserName = "RPHING@EUROPA.EU",
-                            PasswordHash = "AQAAAAEAACcQAAAAEMC2sSjgszEZgYHh8w6nNlI8SzVb/aJMBNRUj//CFDtHcLwqpNx+0UAZvYWKe6vVow==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBR0rT1Fm+fiRZ/XvPAjxrGFCw7AgJxMkuBDEZILU9V8/mciCjUxolmp9kMSwISbrg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "41f865e9-9cc8-481a-b671-0324b5eae1d0",
+                            SecurityStamp = "0f143386-95af-42a4-b1cd-3cb512bc6a92",
                             TwoFactorEnabled = false,
                             UserName = "rphing@europa.eu"
                         },
@@ -2857,18 +2859,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000018",
                             AccessFailedCount = 0,
                             Address = "45 Onsgard Parkway",
-                            BirthDate = new DateTime(1983, 8, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Brussel",
-                            ConcurrencyStamp = "d578914b-dff5-4dba-9d9f-930a114fcc1f",
+                            BirthDate = new DateTime(1971, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Hasselt",
+                            ConcurrencyStamp = "50d5e469-a8ec-425a-a12e-67e705d3adb0",
                             Email = "cdirrh@ucsd.edu",
-                            EmailConfirmed = false,
+                            EmailConfirmed = true,
                             FullName = "Correy Dirr",
                             LockoutEnabled = false,
                             NormalizedEmail = "CDIRRH@UCSD.EDU",
                             NormalizedUserName = "CDIRRH@UCSD.EDU",
-                            PasswordHash = "AQAAAAEAACcQAAAAEN4t8R9CrRbQm+Bk7DOzZmDdH8Y3DMi0DG8gLsjXpTT5LZbu8cesQC1Dzscn4sNbTQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIc9IPdwe5zpaG7FqQWO6APYaHqojgxwDHzQuD5Y9+1uYkOrwyFYo8nIvR/7srlmrw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b18f7bb0-a77d-4e27-b6dc-86389b6f4286",
+                            SecurityStamp = "60829b7c-ec9d-40a8-aa22-05103b4261f9",
                             TwoFactorEnabled = false,
                             UserName = "cdirrh@ucsd.edu"
                         },
@@ -2877,18 +2879,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000019",
                             AccessFailedCount = 0,
                             Address = "197 Longview Way",
-                            BirthDate = new DateTime(1982, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            BirthDate = new DateTime(1997, 4, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             City = "Gent",
-                            ConcurrencyStamp = "2da29e45-7c76-4ec3-87aa-9ed3d8647cd3",
+                            ConcurrencyStamp = "edafb93b-fb57-498c-8e16-7bed2b364247",
                             Email = "zferrerasi@cisco.com",
                             EmailConfirmed = true,
                             FullName = "Zelda Ferreras",
                             LockoutEnabled = false,
                             NormalizedEmail = "ZFERRERASI@CISCO.COM",
                             NormalizedUserName = "ZFERRERASI@CISCO.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEKxSWn7IhVTrJ0P/w9Zf0gabLkMWO5dsLXgeL5mz/0dYvi6JpvHOKPW4VT5gnu9o8A==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEhg+BRzyJ/Do4Oy4h8cIHmBkmOUxLdMFA5bO6IEoGc12aALPYwmCBHQQKzcOGTtvw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "add71354-be92-4d24-81ee-850802c6243c",
+                            SecurityStamp = "ace8155e-19ca-4915-ab72-9c299508befa",
                             TwoFactorEnabled = false,
                             UserName = "zferrerasi@cisco.com"
                         },
@@ -2897,18 +2899,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000020",
                             AccessFailedCount = 0,
                             Address = "9 Vahlen Crossing",
-                            BirthDate = new DateTime(1988, 11, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Brussel",
-                            ConcurrencyStamp = "55080271-a8ce-4577-b130-bd13db0a719d",
+                            BirthDate = new DateTime(1990, 10, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Antwerpen",
+                            ConcurrencyStamp = "5823715a-48a6-4e01-8e7f-66edc384a70b",
                             Email = "pninnisj@wix.com",
                             EmailConfirmed = true,
                             FullName = "Paddy Ninnis",
                             LockoutEnabled = false,
                             NormalizedEmail = "PNINNISJ@WIX.COM",
                             NormalizedUserName = "PNINNISJ@WIX.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFmArFSR86zNOrazDoMKFHs7yhHG1IfFEt3umrrrv93k9ssIgPTq5Z6gR91oqqRzJw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMdd8JJi7+dW1MDG+zEhoTAa4HxRQXrOAfY7l24x6+PR3DycrS/NUQwZmb1WZ/Kf/w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f3160320-12da-4c4c-bdc5-0206a312e036",
+                            SecurityStamp = "97d1ebf6-0f18-412b-b8df-2d48cb96c4d0",
                             TwoFactorEnabled = false,
                             UserName = "pninnisj@wix.com"
                         },
@@ -2917,18 +2919,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000021",
                             AccessFailedCount = 0,
                             Address = "98 Granby Hill",
-                            BirthDate = new DateTime(1977, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Brussel",
-                            ConcurrencyStamp = "43687c90-ac1c-46f5-9a17-69d8bb4050aa",
+                            BirthDate = new DateTime(1970, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Hasselt",
+                            ConcurrencyStamp = "93f9bc8c-e4ad-4d67-a15a-7dbb57522bbe",
                             Email = "jnindk@github.io",
-                            EmailConfirmed = false,
+                            EmailConfirmed = true,
                             FullName = "Jeanna Nind",
                             LockoutEnabled = false,
                             NormalizedEmail = "JNINDK@GITHUB.IO",
                             NormalizedUserName = "JNINDK@GITHUB.IO",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHV4Pk5zWH7s4aEGqZ/4H3/AdVyMeGszeQsDwYgj8ZcjgU5Rt3axN4K6QnyabyWm6Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAIjejEELryk3H/nCFRu6PyRjSqas96xyB9G3FEqQzEAsqxDtRovm5a2CF3Vn9rh0A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d5df410b-3b60-4b67-95cd-d59f768fecf9",
+                            SecurityStamp = "d6a87cd5-2fbf-4eb7-a04b-b86e895ea379",
                             TwoFactorEnabled = false,
                             UserName = "jnindk@github.io"
                         },
@@ -2937,18 +2939,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000022",
                             AccessFailedCount = 0,
                             Address = "88 Roxbury Crossing",
-                            BirthDate = new DateTime(1984, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Gent",
-                            ConcurrencyStamp = "ba10f8f6-770e-41ef-8d5f-536d6ee5c456",
+                            BirthDate = new DateTime(1984, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Brussel",
+                            ConcurrencyStamp = "2c5eb749-8c02-4654-aeac-d9ecd58b59a5",
                             Email = "drichfordl@economist.com",
-                            EmailConfirmed = true,
+                            EmailConfirmed = false,
                             FullName = "Darius Richford",
                             LockoutEnabled = false,
                             NormalizedEmail = "DRICHFORDL@ECONOMIST.COM",
                             NormalizedUserName = "DRICHFORDL@ECONOMIST.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBRCrn8iTqvrhwJZJwwznITW/THq2BMRwdDn7wVb1ceHqk9yxZ0WxRVQSCe1JSUkAg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHis0KbT2Qn7zCr1eRGoTaSXSyxUwp+9TF911WAqpqHCSdGuU4CCqODaXIBg4ScCAA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "061b3738-e20c-429a-8645-653d1d7f8eaa",
+                            SecurityStamp = "d25bb90a-5f08-4979-b6e9-605483d37360",
                             TwoFactorEnabled = false,
                             UserName = "drichfordl@economist.com"
                         },
@@ -2957,18 +2959,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000023",
                             AccessFailedCount = 0,
                             Address = "3 Holmberg Hill",
-                            BirthDate = new DateTime(1972, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Hasselt",
-                            ConcurrencyStamp = "ca2cbd2b-1626-45f4-9a8a-344d3d088406",
+                            BirthDate = new DateTime(1984, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Brugge",
+                            ConcurrencyStamp = "b94366f0-9111-498f-b11c-11e31dbcd3d7",
                             Email = "lsiebertm@mapy.cz",
                             EmailConfirmed = true,
                             FullName = "Lindy Siebert",
                             LockoutEnabled = false,
                             NormalizedEmail = "LSIEBERTM@MAPY.CZ",
                             NormalizedUserName = "LSIEBERTM@MAPY.CZ",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDXxMT1Sek0wE/cmLvRjJKQJP0IWqkUk5YeYgoS6WM7B3Rec2Behm/Y+6hnBWoOdiQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHw9vrxhnpjWsKZNgcrflgQkB8n6CsWzsnrPntoF/rchbMQnYC8DIQPjPOrxMV+NXw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "6eb23ab7-647d-477b-81e1-5da21ba1aa64",
+                            SecurityStamp = "93dbd751-35e7-4de7-8d11-024b5e7f71f8",
                             TwoFactorEnabled = false,
                             UserName = "lsiebertm@mapy.cz"
                         },
@@ -2977,18 +2979,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000024",
                             AccessFailedCount = 0,
                             Address = "64070 Lakewood Gardens Circle",
-                            BirthDate = new DateTime(1977, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Gent",
-                            ConcurrencyStamp = "b51726e6-42bc-4e37-a218-21bea233126a",
+                            BirthDate = new DateTime(1987, 11, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Antwerpen",
+                            ConcurrencyStamp = "436d02cd-3135-46fe-9d3d-0e6a85129699",
                             Email = "mbaxstaren@mysql.com",
-                            EmailConfirmed = true,
+                            EmailConfirmed = false,
                             FullName = "Micheil Baxstare",
                             LockoutEnabled = false,
                             NormalizedEmail = "MBAXSTAREN@MYSQL.COM",
                             NormalizedUserName = "MBAXSTAREN@MYSQL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEATuyeJuuG7jdnAw7LhLBPqDEQTuwkn8WCnne4VMX6Qg3hd3b+AtVVRoXGihs4qfjg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAq48Xyeu3IBnulTFM53mVe1N5BsGdowCzL1NHVCdcU0EQK1oblBhe1f5qgX5ZvBXQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e0791858-3486-4447-bc7e-e5ea972e2172",
+                            SecurityStamp = "4e510c68-a1b0-4d12-9d5e-b2606bf7c0f5",
                             TwoFactorEnabled = false,
                             UserName = "mbaxstaren@mysql.com"
                         },
@@ -2997,18 +2999,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000025",
                             AccessFailedCount = 0,
                             Address = "1 Mesta Court",
-                            BirthDate = new DateTime(1989, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            BirthDate = new DateTime(1976, 8, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             City = "Antwerpen",
-                            ConcurrencyStamp = "e1b11504-a434-4681-8291-9b70a0793ce3",
+                            ConcurrencyStamp = "9ce420a3-a73e-450f-96ea-7c2793ce4930",
                             Email = "tklainero@admin.ch",
                             EmailConfirmed = false,
                             FullName = "Terrance Klainer",
                             LockoutEnabled = false,
                             NormalizedEmail = "TKLAINERO@ADMIN.CH",
                             NormalizedUserName = "TKLAINERO@ADMIN.CH",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBXxAtAnI53PJRULo1wvU11tOh4pMmBFGb1LLkgx7Ip6AsmfRBj/5Gwz+9/7g9sHcg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAELnWJnvzKP0/NPc6uy1WRrH1XAR9vJtoI7AdVGXjka0uN40bMDmwiZ4eY15rXiVCcQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "cf1a89c1-fb7c-421e-aa17-f1860a1351e2",
+                            SecurityStamp = "6a99f8cc-ce7e-4c49-a45a-7ca9a29fa8cf",
                             TwoFactorEnabled = false,
                             UserName = "tklainero@admin.ch"
                         },
@@ -3017,18 +3019,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000026",
                             AccessFailedCount = 0,
                             Address = "0 Bashford Plaza",
-                            BirthDate = new DateTime(1973, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Gent",
-                            ConcurrencyStamp = "0199653e-71c7-4bb3-aa20-760c5948f974",
+                            BirthDate = new DateTime(1994, 6, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Brussel",
+                            ConcurrencyStamp = "4e2eb758-3cd5-4ecc-8748-5bd008cd8c89",
                             Email = "klocklessp@un.org",
                             EmailConfirmed = true,
                             FullName = "Killian Lockless",
                             LockoutEnabled = false,
                             NormalizedEmail = "KLOCKLESSP@UN.ORG",
                             NormalizedUserName = "KLOCKLESSP@UN.ORG",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBG84/22KdztX2+zCtxNw6zqm8015xn4siQoNktMvDcYnNTZLO5/nnJym4/ngMx/zA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEN2nWCQBqyoLeXOTVHqM16Px+Z82RaBslR86UMTJ3TxewU8arcDUzTH6jCvtMaljdQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ffc376ca-1cc2-4e12-a850-2653082137c7",
+                            SecurityStamp = "149f4aaa-e8a0-4765-95be-666a45ef8b26",
                             TwoFactorEnabled = false,
                             UserName = "klocklessp@un.org"
                         },
@@ -3037,18 +3039,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000027",
                             AccessFailedCount = 0,
                             Address = "79 Fieldstone Drive",
-                            BirthDate = new DateTime(1997, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            BirthDate = new DateTime(1981, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             City = "Gent",
-                            ConcurrencyStamp = "bb96153f-b1db-4cc6-a028-e5d023380304",
+                            ConcurrencyStamp = "ff08983a-de43-4c1d-9bf6-fad69b25f7fa",
                             Email = "rgabbyq@mozilla.org",
-                            EmailConfirmed = true,
+                            EmailConfirmed = false,
                             FullName = "Reynold Gabby",
                             LockoutEnabled = false,
                             NormalizedEmail = "RGABBYQ@MOZILLA.ORG",
                             NormalizedUserName = "RGABBYQ@MOZILLA.ORG",
-                            PasswordHash = "AQAAAAEAACcQAAAAEH9GC+uKJqABuDXDgrgNkd6JExnJ7xvvaKVM6ar3wCafsBJOuioqpEETHyuYHUxORg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAkJxjFK9LPVFEXQpKzpeSxJAkVIC8CeekPJP8UgluCGXTWbFfEI+fzkjLotx+Whow==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "6faf00b8-b2a3-40ed-aca5-91adc93b5a69",
+                            SecurityStamp = "4becb962-1064-493c-9f12-bf842bc76075",
                             TwoFactorEnabled = false,
                             UserName = "rgabbyq@mozilla.org"
                         },
@@ -3057,18 +3059,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000028",
                             AccessFailedCount = 0,
                             Address = "9875 Warner Terrace",
-                            BirthDate = new DateTime(1972, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Brussel",
-                            ConcurrencyStamp = "590930c2-694d-4664-98b0-a53a157ce4c3",
+                            BirthDate = new DateTime(1992, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Antwerpen",
+                            ConcurrencyStamp = "e295e7d2-f6dc-470a-abcf-d657a9ef9ffe",
                             Email = "obartar@vistaprint.com",
-                            EmailConfirmed = false,
+                            EmailConfirmed = true,
                             FullName = "Opaline Barta",
                             LockoutEnabled = false,
                             NormalizedEmail = "OBARTAR@VISTAPRINT.COM",
                             NormalizedUserName = "OBARTAR@VISTAPRINT.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEMh2VU3357zAoyEgvtdYgrK8ajf1YpVo7SfsYTFwYU/TfSlgazEjdv8IYeg2fgngJQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBEC0V969+fVCns7d5WNBv4MSySpco1PJJAaeb+y9QvZqahaSxrNoDyU4oNl8PBBcA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c15d5a86-ec7b-44b5-aaa7-59ccf58cc910",
+                            SecurityStamp = "98f52c80-08fc-4ed5-97ac-4cb986d58f81",
                             TwoFactorEnabled = false,
                             UserName = "obartar@vistaprint.com"
                         },
@@ -3077,18 +3079,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000029",
                             AccessFailedCount = 0,
                             Address = "189 Fairfield Hill",
-                            BirthDate = new DateTime(1988, 2, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Antwerpen",
-                            ConcurrencyStamp = "5b55d8e7-d26e-44ce-ad3d-df58fe39e8f2",
+                            BirthDate = new DateTime(2000, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Gent",
+                            ConcurrencyStamp = "ca284ca5-c7f3-4678-a775-7c74048a564b",
                             Email = "cscocrofts@facebook.com",
                             EmailConfirmed = true,
                             FullName = "Concettina Scocroft",
                             LockoutEnabled = false,
                             NormalizedEmail = "CSCOCROFTS@FACEBOOK.COM",
                             NormalizedUserName = "CSCOCROFTS@FACEBOOK.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDBHfEykCPTUHCFYGBdir7xBQu6He0ErX247Q24D7r7BNE5JN7dyfks7uUVKbfsnuA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAtgFf/9KzrMg6djVtC29Frzr0G7wHMhj0JNk92rJDO7doXn7HZ2e7p32URc29oxxg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "4d6d90b7-276f-4239-b9d3-327d0172d8a8",
+                            SecurityStamp = "2abfbc73-e85e-4147-8a5d-304d9a7b9b3d",
                             TwoFactorEnabled = false,
                             UserName = "cscocrofts@facebook.com"
                         },
@@ -3097,18 +3099,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000030",
                             AccessFailedCount = 0,
                             Address = "7918 Jenifer Lane",
-                            BirthDate = new DateTime(1985, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            BirthDate = new DateTime(1971, 10, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             City = "Brussel",
-                            ConcurrencyStamp = "65498488-54e0-4b9f-abaf-7eadb49f9232",
+                            ConcurrencyStamp = "391fb449-1d7e-4d94-a4fe-2cb0727a0355",
                             Email = "pshillt@simplemachines.org",
                             EmailConfirmed = false,
                             FullName = "Pooh Shill",
                             LockoutEnabled = false,
                             NormalizedEmail = "PSHILLT@SIMPLEMACHINES.ORG",
                             NormalizedUserName = "PSHILLT@SIMPLEMACHINES.ORG",
-                            PasswordHash = "AQAAAAEAACcQAAAAEA7ZA5F/7wva3FRWAeunexzE5HUEQStpnDCoVePhALjS2v9grgFmbPGGZo/Xwl+s6A==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEB97Z8ULQT7kI4AhkfwmN63XjtUHnT7dDobEB38GLOwZfNI8NPORetKEbDr77BdO5w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "aeb65d62-b26d-490e-b668-90d81e56369a",
+                            SecurityStamp = "fbd7761b-f790-46f4-ba6f-2520cd81330c",
                             TwoFactorEnabled = false,
                             UserName = "pshillt@simplemachines.org"
                         });
@@ -3144,28 +3146,28 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         new
                         {
                             Id = "00000000-0000-0000-000000000001",
-                            ConcurrencyStamp = "75b3d80b-033d-47f8-91b3-bf4f64dfc683",
+                            ConcurrencyStamp = "8af57707-f944-48b9-81b5-38b7ac39bfc7",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = "00000000-0000-0000-000000000002",
-                            ConcurrencyStamp = "18865642-796a-4198-9a16-d89967c2f418",
+                            ConcurrencyStamp = "82325881-34a0-4ed3-8cf3-33586def583c",
                             Name = "Warlord",
                             NormalizedName = "WARLORD"
                         },
                         new
                         {
                             Id = "00000000-0000-0000-000000000003",
-                            ConcurrencyStamp = "3c6f9d39-8195-42d8-9a3e-ae3b8d12ada9",
+                            ConcurrencyStamp = "c2fd7745-907b-4618-a332-d9cd45f96b4d",
                             Name = "RaidLeader",
                             NormalizedName = "RAIDLEADER"
                         },
                         new
                         {
                             Id = "00000000-0000-0000-000000000004",
-                            ConcurrencyStamp = "422b5f3a-2ac8-496f-b0f2-21cef8150610",
+                            ConcurrencyStamp = "75d719c3-9aa8-4ba6-91d1-1fee4682fc0b",
                             Name = "GuildMember",
                             NormalizedName = "GUILDMEMBER"
                         });
@@ -3217,428 +3219,6 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("AspNetUserClaims");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000001"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000001"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000002"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000002"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000003"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000003"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000004"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000004"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000005"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000005"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000006"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000006"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000007"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000007"
-                        },
-                        new
-                        {
-                            Id = 15,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000008"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000008"
-                        },
-                        new
-                        {
-                            Id = 17,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000009"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000009"
-                        },
-                        new
-                        {
-                            Id = 19,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000010"
-                        },
-                        new
-                        {
-                            Id = 20,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000010"
-                        },
-                        new
-                        {
-                            Id = 21,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000011"
-                        },
-                        new
-                        {
-                            Id = 22,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000011"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000012"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000012"
-                        },
-                        new
-                        {
-                            Id = 25,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000013"
-                        },
-                        new
-                        {
-                            Id = 26,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000013"
-                        },
-                        new
-                        {
-                            Id = 27,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000014"
-                        },
-                        new
-                        {
-                            Id = 28,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000014"
-                        },
-                        new
-                        {
-                            Id = 29,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000015"
-                        },
-                        new
-                        {
-                            Id = 30,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000015"
-                        },
-                        new
-                        {
-                            Id = 31,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000016"
-                        },
-                        new
-                        {
-                            Id = 32,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000016"
-                        },
-                        new
-                        {
-                            Id = 33,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000017"
-                        },
-                        new
-                        {
-                            Id = 34,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000017"
-                        },
-                        new
-                        {
-                            Id = 35,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000018"
-                        },
-                        new
-                        {
-                            Id = 36,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000018"
-                        },
-                        new
-                        {
-                            Id = 37,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000019"
-                        },
-                        new
-                        {
-                            Id = 38,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000019"
-                        },
-                        new
-                        {
-                            Id = 39,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000020"
-                        },
-                        new
-                        {
-                            Id = 40,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000020"
-                        },
-                        new
-                        {
-                            Id = 41,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000021"
-                        },
-                        new
-                        {
-                            Id = 42,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000021"
-                        },
-                        new
-                        {
-                            Id = 43,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000022"
-                        },
-                        new
-                        {
-                            Id = 44,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000022"
-                        },
-                        new
-                        {
-                            Id = 45,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000023"
-                        },
-                        new
-                        {
-                            Id = 46,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000023"
-                        },
-                        new
-                        {
-                            Id = 47,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000024"
-                        },
-                        new
-                        {
-                            Id = 48,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000024"
-                        },
-                        new
-                        {
-                            Id = 49,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000025"
-                        },
-                        new
-                        {
-                            Id = 50,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000025"
-                        },
-                        new
-                        {
-                            Id = 51,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000026"
-                        },
-                        new
-                        {
-                            Id = 52,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000026"
-                        },
-                        new
-                        {
-                            Id = 53,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000027"
-                        },
-                        new
-                        {
-                            Id = 54,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000027"
-                        },
-                        new
-                        {
-                            Id = 55,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000028"
-                        },
-                        new
-                        {
-                            Id = 56,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000028"
-                        },
-                        new
-                        {
-                            Id = 57,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000029"
-                        },
-                        new
-                        {
-                            Id = 58,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000029"
-                        },
-                        new
-                        {
-                            Id = 59,
-                            ClaimType = "registration-date",
-                            ClaimValue = "2021-03-15",
-                            UserId = "00000000-0000-0000-0000-000000000030"
-                        },
-                        new
-                        {
-                            Id = 60,
-                            ClaimType = "has-characters",
-                            ClaimValue = "true",
-                            UserId = "00000000-0000-0000-0000-000000000030"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
