@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Text;
 
 namespace Imi.Project.Api.Core.Entities
@@ -15,8 +17,16 @@ namespace Imi.Project.Api.Core.Entities
         public string FullName { get; set; }
         public string Password { get; set; }
         public string City { get; set; }
-        [NotMapped]
-        public IdentityResult Error { get; set; }
         public ICollection<Character> Characters { get; set; }
+
+        //Notmapped properties to load user claims and roles for UserRepository
+        [NotMapped]
+        public IdentityResult IdentityError { get; set; }
+        [NotMapped]
+        public bool SignInSucceeded { get; set; } = true;
+
+        //Token prop to that generating token could be performed in UserRepository
+        [NotMapped]
+        public string Token { get; set; }
     }
 }
