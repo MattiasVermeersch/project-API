@@ -14,5 +14,6 @@ namespace Imi.Project.Api.Core.Interfaces.Services
         Task<UserResponseDto> AddAsync(RegisterUserRequestDto registerUserRequestDto);
         Task<UserResponseDto> UpdateAsync(UserRequestDto userRequestDto);
         Task DeleteAsync(string id);
+        Task<LoginUserResponseDto> LoginUser(LoginUserRequestDto loginUserRequestDto);
     }
 }

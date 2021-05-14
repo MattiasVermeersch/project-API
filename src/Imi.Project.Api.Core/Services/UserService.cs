@@ -47,7 +47,7 @@ namespace Imi.Project.Api.Core.Services
             var result = await _userRepository.AddAsync(user);
             var dto = _mapper.Map<UserResponseDto>(result);
 
-            dto.Error = result.Error;
+            dto.Error = result.IdentityError;
 
             return dto;
         }
@@ -63,6 +63,25 @@ namespace Imi.Project.Api.Core.Services
         public async Task DeleteAsync(string id)
         {
             await _userRepository.DeleteAsync(id);
+        }
+
+        public async Task<LoginUserResponseDto> LoginUser(LoginUserRequestDto loginUserRequestDto)
+        {
+            var user = await _userRepository.LoginUser(loginUserRequestDto.Email, loginUserRequestDto.Password, false, false);
+
+            var success = user.SignInSucceeded;
+
+            if (!success)
+            {
+                return new LoginUserResponseDto { SignInSucceeded = false };
+            }
+
+            var response = new LoginUserResponseDto
+            {
+                Token = user.Token
+            };
+
+            return response;
         }
     }
 }
