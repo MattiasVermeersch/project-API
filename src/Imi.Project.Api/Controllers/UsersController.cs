@@ -69,6 +69,17 @@ namespace Imi.Project.Api.Controllers
             return Ok(userResponse);
         }
 
+        [AllowAnonymous]
+        [HttpPost("api/auth/login")]
+        public async Task<IActionResult> Login([FromBody] LoginUserRequestDto login)
+        {
+            var loginResponse = await _userService.LoginUser(login);
+
+            if (!loginResponse.SignInSucceeded) return Unauthorized();
+
+            return Ok(loginResponse);
+        }
+
         [HttpPut]
         public async Task<IActionResult> Put(UserRequestDto userRequest)
         {
