@@ -15,7 +15,7 @@ namespace Imi.Project.Api.Core.Entities
         public int ArenaRating { get; set; } = 0;
         public int BattlegroundRating { get; set; } = 0;
         public bool IsDeleted { get; set; } = false;
-        public Guid UserId { get; set; }
+        public string UserId { get; set; }
         public User User { get; set; }
         public ICollection<ArenaCharacter> ArenaCharacters { get; set; }
         public ICollection<BattlegroundCharacter> BattlegroundCharacters { get; set; }
