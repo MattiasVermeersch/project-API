@@ -24,6 +24,10 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
         const string RaidLeaderRoleId = "00000000-0000-0000-000000000003";
         const string RaidLeaderRoleName = "RaidLeader";
 
+        //Base role
+        const string BaseRoleId = "00000000-0000-0000-000000000004";
+        const string BaseRoleName = "GuildMember";
+
         public static void Seed(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<IdentityRole>().HasData(
@@ -44,6 +48,12 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                     Id = RaidLeaderRoleId,
                     Name = RaidLeaderRoleName,
                     NormalizedName = RaidLeaderRoleName.ToUpper()
+                },
+                new IdentityRole
+                {
+                    Id = BaseRoleId,
+                    Name = BaseRoleName,
+                    NormalizedName = BaseRoleName.ToUpper()
                 });
 
             //Users data, courtesy of mockaroo.com
@@ -122,7 +132,7 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
                 string userName = userEmails[i];
 
                 int cityIndex = random.Next(5);
-                int randomDay = random.Next(1, 31);
+                int randomDay = random.Next(1, 28);
                 int randomMonth = random.Next(1, 13);
                 int randomYear = random.Next(1970, 2001);
 
@@ -155,33 +165,58 @@ namespace Imi.Project.Api.Infrastructure.Data.Seeding
             };
 
             //adding roles to some users
-            modelBuilder.Entity<IdentityUserRole<string>>().HasData(
-                new IdentityUserRole<string>
+            string roleId;
+            int firstClaimId = 0;
+            int secondClaimId = 0;
+            foreach (var id in identifiers)
+            {
+                int index = identifiers.IndexOf(id);
+                
+                switch (index)
                 {
-                    RoleId = AdminRoleId,
-                    UserId = identifiers[0]
-                },
-                new IdentityUserRole<string>
-                {
-                    RoleId = RaidLeaderRoleId,
-                    UserId = identifiers[1]
-                },
-                new IdentityUserRole<string>
-                {
-                    RoleId = RaidLeaderRoleId,
-                    UserId = identifiers[2]
-                },
-                new IdentityUserRole<string>
-                {
-                    RoleId = WarlordRoleId,
-                    UserId = identifiers[3]
-                },
-                new IdentityUserRole<string>
-                {
-                    RoleId = WarlordRoleId,
-                    UserId = identifiers[4]
+                    case 0:
+                        roleId = AdminRoleId;
+                        break;
+                    case 1:
+                    case 2:
+                        roleId = RaidLeaderRoleId;
+                        break;
+                    case 3:
+                    case 4:
+                        roleId = WarlordRoleId;
+                        break;
+                    default:
+                        roleId = BaseRoleId;
+                        break;
                 }
-            );
+
+                modelBuilder.Entity<IdentityUserRole<string>>().HasData(
+                new IdentityUserRole<string>
+                {
+                    RoleId = roleId,
+                    UserId = id
+                });
+
+                secondClaimId = (index + 1) * 2;
+                firstClaimId = secondClaimId - 1;
+
+                modelBuilder.Entity<IdentityUserClaim<string>>().HasData(
+                    new IdentityUserClaim<string>
+                    {
+                        Id = firstClaimId,
+                        UserId = id,
+                        ClaimType = "registration-date",
+                        ClaimValue = new DateTime(2021, 3, 15).ToString("yyyy-MM-dd")
+                    },
+                    new IdentityUserClaim<string>
+                    {
+                        Id = secondClaimId,
+                        UserId = id,
+                        ClaimType = "has-characters",
+                        ClaimValue = "true"
+                    }
+                );
+            }
         }
     }
 }
