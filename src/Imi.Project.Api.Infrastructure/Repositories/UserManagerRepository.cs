@@ -22,7 +22,7 @@ namespace Imi.Project.Api.Infrastructure.Repositories
 
         public virtual IQueryable<T> GetAllAsync()
         {
-            return _userManager.Users.AsNoTracking();
+            return _userManager.Users;
         }
 
         public virtual async Task<T> GetByIdAsync(string id)
@@ -57,10 +57,11 @@ namespace Imi.Project.Api.Infrastructure.Repositories
             return await GetFiltered(predicate).ToListAsync();
         }
 
-        public async Task<T> AddAsync(T entity)
+        public virtual async Task<T> AddAsync(T entity)
         {
             var password = entity.PasswordHash;
             await _userManager.CreateAsync(entity, password);
+
             return entity;
         }
 
