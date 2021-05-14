@@ -14,6 +14,7 @@ namespace Imi.Project.Api.Core.Mapping
         {
             //Mapping for User entity
             CreateMap<User, UserResponseDto>();
+            CreateMap<RegisterUserRequestDto, User>();
             CreateMap<UserRequestDto, User>();
 
             //Mapping for Character entity
