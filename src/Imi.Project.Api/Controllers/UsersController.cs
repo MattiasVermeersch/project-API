@@ -1,6 +1,9 @@
 ﻿using Imi.Project.Api.Core.Dtos;
+using Imi.Project.Api.Core.Entities;
 using Imi.Project.Api.Core.Interfaces.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -14,10 +17,13 @@ namespace Imi.Project.Api.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
+        //SignInManager should be in a Service
+        private readonly SignInManager<User> _signInManager;
 
-        public UsersController(IUserService userService)
+        public UsersController(IUserService userService, SignInManager<User> signInManager)
         {
             _userService = userService;
+            _signInManager = signInManager;
         }
 
         [HttpGet]
@@ -41,16 +47,26 @@ namespace Imi.Project.Api.Controllers
             return Ok(user);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Post(UserRequestDto userRequest)
+        [AllowAnonymous]
+        [HttpPost("api/auth/register")]
+        public async Task<IActionResult> Register([FromBody] RegisterUserRequestDto registerUser)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+
+            var userResponse = await _userService.AddAsync(registerUser);
+
+            var errorResult = userResponse.Error;
+
+            if(errorResult != null && !errorResult.Succeeded)
             {
+                foreach(var error in errorResult.Errors)
+                {
+                    ModelState.AddModelError(error.Code, error.Description);
+                }
                 return BadRequest(ModelState);
             }
 
-            var userResponse = await _userService.AddAsync(userRequest);
-            return CreatedAtAction(nameof(Get), new { id = userResponse.Id }, userResponse);
+            return Ok(userResponse);
         }
 
         [HttpPut]
