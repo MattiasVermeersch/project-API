@@ -104,6 +104,12 @@ namespace Imi.Project.Api.Infrastructure.Repositories
             return user;
         }
 
+        public async Task<User> GetUserByCharacterIdAsync(Guid id)
+        {
+            var user = await GetAllAsync().Where(u => u.Characters.Any(c => c.Id.Equals(id))).SingleOrDefaultAsync();
+            return user;
+        }
+
         private async Task<JwtSecurityToken> GenerateTokenAsync(User user)
         {
             var claims = new List<Claim>(); 
