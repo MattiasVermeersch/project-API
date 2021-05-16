@@ -113,16 +113,16 @@ namespace Imi.Project.Api.Controllers
 
         [AllowAnonymous]
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(Guid characterId, string userId)
+        public async Task<IActionResult> Delete(Guid id)
         {
-            var character = await _characterService.GetByIdAsync(characterId);
+            var character = await _characterService.GetByIdAsync(id);
 
             if(character == null)
             {
-                return BadRequest($"Character with ID {characterId} could not be found.");
+                return BadRequest($"Character with ID {id} could not be found.");
             }
 
-            await _characterService.DeleteAsync(characterId, userId);
+            await _characterService.DeleteAsync(id);
             return Ok();
         }
     }
