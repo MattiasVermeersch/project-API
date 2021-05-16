@@ -19,7 +19,7 @@
     <ProjectReference Include="..\Imi.Project.Api.Infrastructure\Imi.Project.Api.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="https://json-stat.org/format/schema/2.0/" /></VisualStudio></ProjectExtensions>
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 
 </Project>
