@@ -51,7 +51,7 @@ namespace Imi.Project.Api.Infrastructure.Repositories
             
             User newUser = await _userManager.FindByEmailAsync(user.Email);
             await _userManager.AddClaimAsync(newUser,
-                new Claim("registration-date", DateTime.Now.ToString("yyyy-MM-dd")));
+                new Claim("registration-date", DateTime.UtcNow.ToString("yyyy-MM-dd")));
 
             string hasCharacters;
             if (newUser.Characters == null) hasCharacters = "false";
@@ -82,6 +82,28 @@ namespace Imi.Project.Api.Infrastructure.Repositories
             return user;
         }
 
+        public async Task<User> UpdateClaims(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            var userClaims = await _userManager.GetClaimsAsync(user);
+            Claim newClaim;
+
+            var userCharacters = user.Characters.Where(c => c.IsDeleted == false).ToList();
+            var characterCount = userCharacters.Count;
+            if (characterCount == 0) newClaim = new Claim("has-characters", "false");
+            else newClaim = new Claim("has-characters", "true");
+
+            foreach(var userClaim in userClaims)
+            {
+                if(userClaim.Type == "has-characters" && userClaim.Value != newClaim.Value)
+                {
+                    await _userManager.RemoveClaimAsync(user, userClaim);
+                    await _userManager.AddClaimAsync(user, newClaim);
+                }
+            }
+            return user;
+        }
+
         private async Task<JwtSecurityToken> GenerateTokenAsync(User user)
         {
             var claims = new List<Claim>(); 
@@ -101,7 +123,8 @@ namespace Imi.Project.Api.Infrastructure.Repositories
             var token = new JwtSecurityToken ( 
                 issuer: _jWTConfiguration.Issuer, 
                 audience: _jWTConfiguration.Audience, 
-                claims: claims, expires: DateTime.UtcNow.Add(TimeSpan.FromDays(expirationDays)), 
+                claims: claims, 
+                expires: DateTime.UtcNow.Add(TimeSpan.FromDays(expirationDays)), 
                 notBefore: DateTime.UtcNow, 
                 signingCredentials: new SigningCredentials(
                     new SymmetricSecurityKey(siginingKey), 

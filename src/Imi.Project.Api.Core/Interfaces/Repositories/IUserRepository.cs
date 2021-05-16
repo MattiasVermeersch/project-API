@@ -9,5 +9,6 @@ namespace Imi.Project.Api.Core.Interfaces.Repositories
 {
     public interface IUserRepository : IUserManagerRepository<User>
     {
+        Task<User> UpdateClaims(string id);
     }
 }
