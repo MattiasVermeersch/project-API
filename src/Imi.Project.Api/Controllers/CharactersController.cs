@@ -1,5 +1,6 @@
 ﻿using Imi.Project.Api.Core.Dtos;
 using Imi.Project.Api.Core.Interfaces.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Imi.Project.Api.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CharactersController : ControllerBase
@@ -83,6 +85,7 @@ namespace Imi.Project.Api.Controllers
             return Ok(characters);
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> Post(CharacterRequestDto characterRequest)
         {
@@ -95,6 +98,7 @@ namespace Imi.Project.Api.Controllers
             return CreatedAtAction(nameof(Get), new { id = characterResponse.Id }, characterResponse);
         }
 
+        [AllowAnonymous]
         [HttpPut]
         public async Task<IActionResult> Put(CharacterRequestDto characterRequest)
         {
@@ -107,17 +111,18 @@ namespace Imi.Project.Api.Controllers
             return Ok(characterResponse);
         }
 
+        [AllowAnonymous]
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(Guid id)
+        public async Task<IActionResult> Delete(Guid characterId, string userId)
         {
-            var character = await _characterService.GetByIdAsync(id);
+            var character = await _characterService.GetByIdAsync(characterId);
 
             if(character == null)
             {
-                return BadRequest($"Character with ID {id} could not be found.");
+                return BadRequest($"Character with ID {characterId} could not be found.");
             }
 
-            await _characterService.DeleteAsync(id);
+            await _characterService.DeleteAsync(characterId, userId);
             return Ok();
         }
     }

@@ -12,18 +12,16 @@ using System.Threading.Tasks;
 
 namespace Imi.Project.Api.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
-        //SignInManager should be in a Service
-        private readonly SignInManager<User> _signInManager;
 
-        public UsersController(IUserService userService, SignInManager<User> signInManager)
+        public UsersController(IUserService userService)
         {
             _userService = userService;
-            _signInManager = signInManager;
         }
 
         [HttpGet]
@@ -48,7 +46,7 @@ namespace Imi.Project.Api.Controllers
         }
 
         [AllowAnonymous]
-        [HttpPost("api/auth/register")]
+        [HttpPost("/api/auth/register")]
         public async Task<IActionResult> Register([FromBody] RegisterUserRequestDto registerUser)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -70,7 +68,7 @@ namespace Imi.Project.Api.Controllers
         }
 
         [AllowAnonymous]
-        [HttpPost("api/auth/login")]
+        [HttpPost("/api/auth/login")]
         public async Task<IActionResult> Login([FromBody] LoginUserRequestDto login)
         {
             var loginResponse = await _userService.LoginUser(login);
