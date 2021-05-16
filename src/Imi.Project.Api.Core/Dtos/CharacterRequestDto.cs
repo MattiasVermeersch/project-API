@@ -14,6 +14,6 @@ namespace Imi.Project.Api.Core.Dtos
         public int ItemLevel { get; set; }
         public double ArenaRating { get; set; }
         public double BattlegroundRating { get; set; }
-        public Guid UserId { get; set; }
+        public string UserId { get; set; }
     }
 }
