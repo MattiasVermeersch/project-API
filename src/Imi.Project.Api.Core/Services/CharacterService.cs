@@ -12,11 +12,13 @@ namespace Imi.Project.Api.Core.Services
     public class CharacterService : ICharacterService
     {
         private readonly ICharacterRepository _characterRepository;
+        private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
 
-        public CharacterService(ICharacterRepository characterRepo, IMapper mapper)
+        public CharacterService(ICharacterRepository characterRepo, IUserRepository userRepo, IMapper mapper)
         {
             _characterRepository = characterRepo;
+            _userRepository = userRepo;
             _mapper = mapper;
         }
 
@@ -40,6 +42,7 @@ namespace Imi.Project.Api.Core.Services
         {
             var character = _mapper.Map<Character>(characterRequest);
             var result = await _characterRepository.AddAsync(character);
+            await _userRepository.UpdateClaims(characterRequest.UserId);
             var dto = _mapper.Map<CharacterResponseDto>(result);
             return dto;
         }
@@ -48,15 +51,17 @@ namespace Imi.Project.Api.Core.Services
         {
             var character = _mapper.Map<Character>(characterRequest);
             var result = await _characterRepository.UpdateAsync(character);
+            await _userRepository.UpdateClaims(characterRequest.UserId);
             var dto = _mapper.Map<CharacterResponseDto>(result);
             return dto;
         }
 
-        public async Task DeleteAsync(Guid id)
+        public async Task DeleteAsync(Guid characterId, string userId)
         {
-            var character = await _characterRepository.GetByIdAsync(id);
+            var character = await _characterRepository.GetByIdAsync(characterId);
             character.IsDeleted = true;
             await _characterRepository.UpdateAsync(character);
+            await _userRepository.UpdateClaims(userId);
         }
     }
 }
