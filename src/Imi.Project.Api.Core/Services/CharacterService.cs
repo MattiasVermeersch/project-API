@@ -56,12 +56,13 @@ namespace Imi.Project.Api.Core.Services
             return dto;
         }
 
-        public async Task DeleteAsync(Guid characterId, string userId)
+        public async Task DeleteAsync(Guid id)
         {
-            var character = await _characterRepository.GetByIdAsync(characterId);
+            var character = await _characterRepository.GetByIdAsync(id);
             character.IsDeleted = true;
             await _characterRepository.UpdateAsync(character);
-            await _userRepository.UpdateClaims(userId);
+            var user = await _userRepository.GetUserByCharacterIdAsync(id);
+            await _userRepository.UpdateClaims(user.Id);
         }
     }
 }
