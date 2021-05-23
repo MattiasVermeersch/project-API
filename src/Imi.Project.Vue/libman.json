@@ -8,6 +8,13 @@
       "files": [
         "vue.js"
       ]
+    },
+    {
+      "library": "axios@0.21.0",
+      "destination": "wwwroot/lib/axios/",
+      "files": [
+        "axios.min.js"
+      ]
     }
   ]
 }
