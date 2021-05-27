@@ -64,5 +64,12 @@ namespace Imi.Project.Api.Core.Services
             var user = await _userRepository.GetUserByCharacterIdAsync(id);
             await _userRepository.UpdateClaims(user.Id);
         }
+
+        public async Task<IEnumerable<CharacterResponseDto>> GetByUserId(string id)
+        {
+            var characters = await _characterRepository.GetByUserIdAsync(id);
+            var dto = _mapper.Map<IEnumerable<CharacterResponseDto>>(characters);
+            return dto;
+        }
     }
 }

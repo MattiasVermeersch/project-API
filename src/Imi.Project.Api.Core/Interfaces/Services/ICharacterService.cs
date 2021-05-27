@@ -13,5 +13,6 @@ namespace Imi.Project.Api.Core.Interfaces.Services
         Task<CharacterResponseDto> AddAsync(CharacterRequestDto characterRequest);
         Task<CharacterResponseDto> UpdateAsync(CharacterRequestDto characterRequest);
         Task DeleteAsync(Guid id);
+        Task<IEnumerable<CharacterResponseDto>> GetByUserId(string id);
     }
 }
