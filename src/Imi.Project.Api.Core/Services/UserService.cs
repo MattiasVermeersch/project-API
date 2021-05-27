@@ -78,7 +78,8 @@ namespace Imi.Project.Api.Core.Services
 
             var response = new LoginUserResponseDto
             {
-                Token = user.Token
+                Token = user.Token,
+                UserId = user.Id
             };
 
             return response;
