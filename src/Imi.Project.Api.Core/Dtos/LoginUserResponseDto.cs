@@ -9,5 +9,6 @@ namespace Imi.Project.Api.Core.Dtos
     {
         public string Token { get; set; }
         public bool SignInSucceeded { get; set; } = true;
+        public string UserId { get; set; }
     }
 }
