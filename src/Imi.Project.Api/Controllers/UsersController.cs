@@ -18,10 +18,13 @@ namespace Imi.Project.Api.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
+        private readonly ICharacterService _characterService;
 
-        public UsersController(IUserService userService)
+        public UsersController(IUserService userService, 
+            ICharacterService characterService)
         {
             _userService = userService;
+            _characterService = characterService;
         }
 
         [HttpGet]
@@ -43,6 +46,14 @@ namespace Imi.Project.Api.Controllers
             }
 
             return Ok(user);
+        }
+
+        [HttpGet("{id}/characters")]
+        public async Task<IActionResult> GetCharactersByUserId(string id)
+        {
+            var characters = await _characterService.GetByUserId(id);
+
+            return Ok(characters);
         }
 
         [AllowAnonymous]
