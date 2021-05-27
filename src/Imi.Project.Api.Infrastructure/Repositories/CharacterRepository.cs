@@ -32,5 +32,12 @@ namespace Imi.Project.Api.Infrastructure.Repositories
         {
             return await GetAllAsync().SingleOrDefaultAsync(c => c.Id.Equals(id));
         }
+
+        public async Task<IEnumerable<Character>> GetByUserIdAsync(string id)
+        {
+            return await GetAllAsync()
+                .Where(c => c.UserId.Equals(id))
+                .ToListAsync();
+        }
     }
 }
