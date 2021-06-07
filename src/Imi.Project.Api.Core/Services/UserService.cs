@@ -54,8 +54,9 @@ namespace Imi.Project.Api.Core.Services
 
         public async Task<UserResponseDto> UpdateAsync(UserRequestDto userRequestDto)
         {
+            userRequestDto.UserName = userRequestDto.Email.Split('@')[0];
             var user = _mapper.Map<User>(userRequestDto);
-            var result = await _userRepository.UpdateAsync(user);
+            var result = await _userRepository.UpdateAsync(user, userRequestDto.Role);
             var dto = _mapper.Map<UserResponseDto>(result);
             return dto;
         }
