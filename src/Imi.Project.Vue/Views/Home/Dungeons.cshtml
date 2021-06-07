@@ -1,0 +1,215 @@
+﻿
+@{
+    ViewData["Title"] = "Dungeons";
+}
+
+<div class="text-center">
+    <h1 class="display-3">Dungeons</h1>
+    <hr />
+</div>
+<br />
+<div id="dungeons">
+    <div v-if="loading" class="text-center">
+        <br /><br /><br /><br />
+        <h1>Loading...</h1>
+        <img src="~/images/loading.gif" />
+    </div>
+    <div v-if="showDungeons">
+        <h1 class="display-4">Upcoming Dungeon events</h1>
+        <hr class="" />
+        <div class="row">
+            <button type="button" class="btn btn-success" v-on:click="showCreateForm(newDungeon)">
+                <i class="bi bi-plus"></i> Create Dungeon
+            </button>
+        </div>
+        <br />
+        <div class="row">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Instance</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Difficulty</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody v-if="udEmpty">
+                    <tr>
+                        <td colspan="6" class="alert alert-warning text-center">
+                            There are no dungeon events coming up.
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody v-else>
+                    <tr v-for="(dungeon, index) in upcomingDungeons">
+                        <td class="font-weight-bold">{{index + 1}}</td>
+                        <td>{{dungeon.instanceName}}</td>
+                        <td>{{dungeon.date}}</td>
+                        <td>{{dungeon.difficulty}}</td>
+                        <td>
+                            <button type="button" class="btn btn-success" v-on:click="getUpcomingDungeonDetails(dungeon)"><i class="bi bi-pencil"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br />
+        <h1 class="display-4">Past Dungeon events</h1>
+        <hr class="" />
+        <div class="row">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Instance</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Difficulty</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody v-if="pdEmpty">
+                    <tr>
+                        <td colspan="6" class=" alert alert-warning text-center">
+                            There are no past dungeon events recorded.
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody v-else>
+                    <tr v-for="(dungeon, index) in pastDungeons">
+                        <td class="font-weight-bold">{{index + 1}}</td>
+                        <td>{{dungeon.instanceName}}</td>
+                        <td>{{dungeon.date}}</td>
+                        <td>{{dungeon.difficulty}}</td>
+                        <td>
+                            <button type="button" class="btn btn-success" v-on:click="getDungeonDetails(dungeon)"><i class="bi bi-eye-fill"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div v-if="currentDungeon">
+        <div class="form-row" v-if="!isFullDungeon">
+            <div class="form-group col-md-6 offset-md-3" v-if="userHasNoCharacterSigned">
+                <button type="button" class="btn btn-success" v-on:click="addCharacter(currentDungeon)"><i class="bi bi-plus"></i>Sign Up A Character</button>
+            </div>
+        </div>
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6 offset-md-3">
+                    <label for="dungeonId">ID</label>
+                    <input id="dungeonId" class="form-control" type="text" v-model="currentDungeon.id" disabled />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6 offset-md-3">
+                    <label for="dungeonName">Instance</label>
+                    <input id="dungeonName" class="form-control" type="text" placeholder="e.g.: De Other Side" v-model="currentDungeon.instanceName" v-bind:disabled="isDisabled" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6 offset-md-3">
+                    <label for="dungeonDifficulty">Difficulty</label>
+                    <select class="custom-select" v-on:change="getDifficulty" v-model="difficultySelect" v-bind:disabled="isDisabled">
+                        <option value="Normal">Normal</option>
+                        <option value="Heroic">Heroic</option>
+                        <option value="Mythic">Mythic</option>
+                        <option value="Mythic+">Mythic+</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row" v-if="isMythicPlus">
+                <div class="form-group col-md-6 offset-md-3">
+                    <input class="form-control" placeholder="Mythic + Key" type="text" typeof="number" v-model="currentDungeon.mythicKey" v-bind:disabled="isDisabled" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6 offset-md-3">
+                    <label for="dungeonDate">Date of the run</label>
+                    <input id="dungeonDate" class="form-control" type="date" v-model="currentDungeon.date" v-bind:disabled="isDisabled" />
+                </div>
+            </div>
+            <div class="form-row" v-if="isPast">
+                <div class="form-group col-md-6 offset-md-3">
+                    <div v-if="currentDungeon.succes">
+                        <p class="alert alert-success">This Dungeon run was successful.</p>
+                    </div>
+                    <div v-if="!currentDungeon.succes">
+                        <p class="alert alert-danger">This Dungeon run was not successful.</p>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="form-row" v-if="isDisabled">
+                <h5>Characters participating</h5>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Class</th>
+                            <th scope="col">Role</th>
+                            <th scope="col">Itemlevel</th>
+                            <th scope="col" v-if="!userHasNoCharacterSigned"></th>
+                        </tr>
+                    </thead>
+                    <tbody v-if="!hasCharacters">
+                        <tr>
+                            <td colspan="6" class="alert alert-warning text-center">
+                                There are no Characters signed up for this Dungeon event.
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody v-else>
+                        <tr v-for="(character, index) in currentDungeon.characters">
+                            <td class="font-weight-bold">{{index + 1}}</td>
+                            <td>{{character.name}}</td>
+                            <td>{{character.class}}</td>
+                            <td>{{character.role}}</td>
+                            <td>{{character.itemLevel}}</td>
+                            <td>
+                                <button type="button" class="btn btn-danger" 
+                                        v-if="character.userId == sessionUserId" 
+                                        v-on:click="deleteCharacterFromDungeon(character, currentDungeon)">
+                                <i class="bi bi-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br />
+            <div class="form-row">
+                <div class="container text-center" v-if="isDisabled">
+                    <button type="button" class="btn btn-secondary" v-on:click="getDungeonList">Cancel</button>
+                </div>
+                <div class="container text-center" v-else>
+                    <button type="button" class="btn btn-success" v-on:click="createDungeon(currentDungeon)">Create</button>
+                    <button type="button" class="btn btn-secondary" v-on:click="getDungeonList">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div v-if="toAddCharacter">
+        <h3>Your Characters</h3>
+        <br />
+        <p class="text-info">Choose a character to add to this Dungeon event.</p>
+        <div class="row">
+            <select class="custom-select" v-model="selectedCharacter">
+                <option v-for="character in characters" :value="character.id">{{character.name}}</option>
+            </select>
+        </div>
+        <br />
+        <div class="row">
+            <div class="container text-center">
+                <input type="hidden" v-model="dungeonForCharacter" value="" disabled/>
+                <button type="button" class="btn btn-success" v-on:click="confirmCharacter(dungeonForCharacter)">Add Character</button>
+                <button type="button" class="btn btn-secondary" v-on:click="getDungeonList">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/js/dungeons.js"></script>
+}
