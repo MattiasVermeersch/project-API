@@ -19,7 +19,8 @@ namespace Imi.Project.Api.Infrastructure.Repositories
         private readonly JWTConfiguration _jWTConfiguration;
         public UserRepository(UserManager<User> userManager, 
             SignInManager<User> signInManager,
-            JWTConfiguration jWTConfiguration) 
+            JWTConfiguration jWTConfiguration
+            ) 
             : base(userManager, signInManager) 
         {
             _jWTConfiguration = jWTConfiguration;
@@ -33,14 +34,27 @@ namespace Imi.Project.Api.Infrastructure.Repositories
 
         public override async Task<User> GetByIdAsync(string id)
         {
-            return await GetAllAsync().SingleOrDefaultAsync(u => u.Id.Equals(id));
+            var user = await GetAllAsync().SingleOrDefaultAsync(u => u.Id.Equals(id));
+            user.Roles = await _userManager.GetRolesAsync(user);
+            return user;
+        }
+
+        public override async Task<IEnumerable<User>> ListAllAsync()
+        {
+            var users = await GetAllAsync().ToListAsync();
+            foreach(var user in users)
+            {
+                user.Roles = await _userManager.GetRolesAsync(user);
+            }
+            return users;
         }
 
         public override async Task<User> AddAsync(User user)
         {
             var password = user.Password;
-
+            
             var result = await _userManager.CreateAsync(user, password);
+            await _userManager.AddToRoleAsync(user, "GuildMember");
 
             if(!result.Succeeded) { 
                 user.IdentityError = result;
@@ -61,6 +75,28 @@ namespace Imi.Project.Api.Infrastructure.Repositories
                 new Claim("has-characters", hasCharacters));
 
             return newUser;
+        }
+
+        public async Task<User> UpdateAsync(User user, string role)
+        {
+            var userToEdit = await _userManager.FindByIdAsync(user.Id);
+
+            userToEdit.BirthDate = user.BirthDate;
+            userToEdit.Email = user.Email;
+            userToEdit.Address = user.Address;
+            userToEdit.FullName = user.FullName;
+            userToEdit.City = user.City;
+
+            var editUser = await _userManager.UpdateAsync(userToEdit);
+            var result = editUser.Succeeded;
+            var error = editUser.Errors;
+            var userRole = await _userManager.GetRolesAsync(user);
+            if(userRole.Contains(role))
+            {
+                await _userManager.RemoveFromRolesAsync(user, userRole);
+                await _userManager.AddToRoleAsync(user, role);
+            }
+            return user;
         }
 
         public override async Task<User> LoginUser(string email, string password, bool isPersistent, bool lockoutOnFailure) {
