@@ -16,7 +16,8 @@ namespace Imi.Project.Api.Infrastructure.Repositories
     {
         protected readonly UserManager<T> _userManager;
         protected readonly SignInManager<T> _signInManager;
-        public UserManagerRepository(UserManager<T> userManager, SignInManager<T> signInManager)
+        public UserManagerRepository(UserManager<T> userManager, 
+            SignInManager<T> signInManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -44,7 +45,7 @@ namespace Imi.Project.Api.Infrastructure.Repositories
             return await query.SingleOrDefaultAsync(t => t.Id.Equals(id));
         }
 
-        public async Task<IEnumerable<T>> ListAllAsync()
+        public virtual async Task<IEnumerable<T>> ListAllAsync()
         {
             return await GetAllAsync().ToListAsync();
         }
