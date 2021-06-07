@@ -85,6 +85,10 @@ namespace Imi.Project.Api.Infrastructure.Data
                 .WithMany(c => c.RaidCharacters)
                 .HasForeignKey(dc => dc.CharacterId);
 
+            //IdentityUser config
+            modelBuilder.Entity<User>()
+                .Property(p => p.ConcurrencyStamp).IsConcurrencyToken(false);
+
             base.OnModelCreating(modelBuilder);
 
             //seeding the data
