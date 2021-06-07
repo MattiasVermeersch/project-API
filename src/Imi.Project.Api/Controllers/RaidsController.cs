@@ -95,17 +95,17 @@ namespace Imi.Project.Api.Controllers
             return Ok();
         }
 
-        [HttpDelete("/api/raids/{id}/character")]
-        public async Task<IActionResult> DeleteCharacterFromRaid(Guid id, CharacterRequestDto characterRequest)
+        [HttpDelete("/api/raids/{raidId}/character/{characterId}")]
+        public async Task<IActionResult> DeleteCharacterFromRaid(Guid raidId, Guid characterId)
         {
-            var raid = await _raidService.GetByIdAsync(id);
+            var raid = await _raidService.GetByIdAsync(raidId);
 
             if (raid == null)
             {
-                return NotFound($"Raid with ID {id} could not be found.");
+                return NotFound($"Raid with ID {raidId} could not be found.");
             }
 
-            var raidResponse = await _raidService.DeleteCharacterAsync(id, characterRequest);
+            var raidResponse = await _raidService.DeleteCharacterAsync(raidId, characterId);
 
             return Ok(raidResponse);
         }
