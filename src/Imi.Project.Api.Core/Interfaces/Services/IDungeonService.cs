@@ -15,6 +15,6 @@ namespace Imi.Project.Api.Core.Interfaces.Services
         Task<DungeonResponseDto> UpdateAsync(DungeonRequestDto dungeonRequest);
         Task DeleteAsync(Guid id);
         Task<DungeonResponseDto> AddCharacterAsync(Guid id, CharacterRequestDto characterRequest);
-        Task<DungeonResponseDto> DeleteCharacterAsync(Guid id, CharacterRequestDto characterRequest);
+        Task<DungeonResponseDto> DeleteCharacterAsync(Guid dungeonId, Guid characterId);
     }
 }

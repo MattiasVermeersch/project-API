@@ -73,10 +73,9 @@ namespace Imi.Project.Api.Core.Services
             return dto;
         }
 
-        public async Task<DungeonResponseDto> DeleteCharacterAsync(Guid id, CharacterRequestDto characterRequest)
+        public async Task<DungeonResponseDto> DeleteCharacterAsync(Guid dungeonId, Guid characterId)
         {
-            var character = _mapper.Map<Character>(characterRequest);
-            var result = await _dungeonRepository.DeleteCharacterAsync(id, character);
+            var result = await _dungeonRepository.DeleteCharacterAsync(dungeonId, characterId);
             var dto = _mapper.Map<DungeonResponseDto>(result);
             return dto;
         }
