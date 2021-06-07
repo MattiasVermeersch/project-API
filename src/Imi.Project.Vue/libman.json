@@ -15,6 +15,10 @@
       "files": [
         "axios.min.js"
       ]
+    },
+    {
+      "library": "octicons@8.5.0",
+      "destination": "wwwroot/lib/octicons/"
     }
   ]
 }
