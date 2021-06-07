@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Imi.Project.Api.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210507205913_UpdateUserSeeding")]
-    partial class UpdateUserSeeding
+    [Migration("20210529233656_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -601,15 +601,12 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                     b.Property<string>("Role")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("UserId1")
+                    b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId1");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Characters");
 
@@ -625,7 +622,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Ghortak",
                             Role = "Tank",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000001")
+                            UserId = "00000000-0000-0000-0000-000000000001"
                         },
                         new
                         {
@@ -638,7 +635,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Bauglir",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000001")
+                            UserId = "00000000-0000-0000-0000-000000000001"
                         },
                         new
                         {
@@ -651,7 +648,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Shiroe",
                             Role = "Healer",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000001")
+                            UserId = "00000000-0000-0000-0000-000000000001"
                         },
                         new
                         {
@@ -664,7 +661,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Yoriko",
                             Role = "Healer",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000002")
+                            UserId = "00000000-0000-0000-0000-000000000002"
                         },
                         new
                         {
@@ -677,7 +674,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Elen",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000002")
+                            UserId = "00000000-0000-0000-0000-000000000002"
                         },
                         new
                         {
@@ -690,7 +687,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Tary",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000002")
+                            UserId = "00000000-0000-0000-0000-000000000002"
                         },
                         new
                         {
@@ -703,7 +700,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Borugor",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000003")
+                            UserId = "00000000-0000-0000-0000-000000000003"
                         },
                         new
                         {
@@ -716,7 +713,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Wildstrider",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000003")
+                            UserId = "00000000-0000-0000-0000-000000000003"
                         },
                         new
                         {
@@ -729,7 +726,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Liutasil",
                             Role = "Tank",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000003")
+                            UserId = "00000000-0000-0000-0000-000000000003"
                         },
                         new
                         {
@@ -742,7 +739,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Aerenthil",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000004")
+                            UserId = "00000000-0000-0000-0000-000000000004"
                         },
                         new
                         {
@@ -755,7 +752,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Ghinin",
                             Role = "Tank",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000004")
+                            UserId = "00000000-0000-0000-0000-000000000004"
                         },
                         new
                         {
@@ -768,7 +765,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Nuremor",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000004")
+                            UserId = "00000000-0000-0000-0000-000000000004"
                         },
                         new
                         {
@@ -781,7 +778,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Rhamanji",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000005")
+                            UserId = "00000000-0000-0000-0000-000000000005"
                         },
                         new
                         {
@@ -794,7 +791,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Ebrothil",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000005")
+                            UserId = "00000000-0000-0000-0000-000000000005"
                         },
                         new
                         {
@@ -807,7 +804,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Tyrigon",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000005")
+                            UserId = "00000000-0000-0000-0000-000000000005"
                         },
                         new
                         {
@@ -820,7 +817,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Aeternus",
                             Role = "Healer",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000006")
+                            UserId = "00000000-0000-0000-0000-000000000006"
                         },
                         new
                         {
@@ -833,7 +830,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Trech",
                             Role = "Healer",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000006")
+                            UserId = "00000000-0000-0000-0000-000000000006"
                         },
                         new
                         {
@@ -846,7 +843,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Baradhor",
                             Role = "Healer",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000007")
+                            UserId = "00000000-0000-0000-0000-000000000007"
                         },
                         new
                         {
@@ -859,7 +856,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Eranthil",
                             Role = "Healer",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000007")
+                            UserId = "00000000-0000-0000-0000-000000000007"
                         },
                         new
                         {
@@ -872,7 +869,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Morgoroth",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000007")
+                            UserId = "00000000-0000-0000-0000-000000000007"
                         },
                         new
                         {
@@ -885,7 +882,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Malefikh",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000007")
+                            UserId = "00000000-0000-0000-0000-000000000007"
                         },
                         new
                         {
@@ -898,7 +895,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Ashifal",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000008")
+                            UserId = "00000000-0000-0000-0000-000000000008"
                         },
                         new
                         {
@@ -911,7 +908,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Umbrion",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000008")
+                            UserId = "00000000-0000-0000-0000-000000000008"
                         },
                         new
                         {
@@ -924,7 +921,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Coolbone",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000008")
+                            UserId = "00000000-0000-0000-0000-000000000008"
                         },
                         new
                         {
@@ -937,7 +934,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "GilGalad",
                             Role = "Tank",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000009")
+                            UserId = "00000000-0000-0000-0000-000000000009"
                         },
                         new
                         {
@@ -950,7 +947,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Yreleth",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000009")
+                            UserId = "00000000-0000-0000-0000-000000000009"
                         },
                         new
                         {
@@ -963,7 +960,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Bromir",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000009")
+                            UserId = "00000000-0000-0000-0000-000000000009"
                         },
                         new
                         {
@@ -976,7 +973,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Phandalor",
                             Role = "Healer",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000010")
+                            UserId = "00000000-0000-0000-0000-000000000010"
                         },
                         new
                         {
@@ -989,7 +986,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Myriad",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000010")
+                            UserId = "00000000-0000-0000-0000-000000000010"
                         },
                         new
                         {
@@ -1002,7 +999,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Ithaela",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000010")
+                            UserId = "00000000-0000-0000-0000-000000000010"
                         },
                         new
                         {
@@ -1015,7 +1012,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Malfurion",
                             Role = "Tank",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000011")
+                            UserId = "00000000-0000-0000-0000-000000000011"
                         },
                         new
                         {
@@ -1028,7 +1025,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Faron",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000011")
+                            UserId = "00000000-0000-0000-0000-000000000011"
                         },
                         new
                         {
@@ -1041,7 +1038,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Krilli",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000011")
+                            UserId = "00000000-0000-0000-0000-000000000011"
                         },
                         new
                         {
@@ -1054,7 +1051,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Fandor",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000012")
+                            UserId = "00000000-0000-0000-0000-000000000012"
                         },
                         new
                         {
@@ -1067,7 +1064,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Marissa",
                             Role = "Tank",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000012")
+                            UserId = "00000000-0000-0000-0000-000000000012"
                         },
                         new
                         {
@@ -1080,7 +1077,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Aokie",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000012")
+                            UserId = "00000000-0000-0000-0000-000000000012"
                         },
                         new
                         {
@@ -1093,7 +1090,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Laughen",
                             Role = "Healer",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000013")
+                            UserId = "00000000-0000-0000-0000-000000000013"
                         },
                         new
                         {
@@ -1106,7 +1103,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Gartand",
                             Role = "Healer",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000013")
+                            UserId = "00000000-0000-0000-0000-000000000013"
                         },
                         new
                         {
@@ -1119,7 +1116,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Variann",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000013")
+                            UserId = "00000000-0000-0000-0000-000000000013"
                         },
                         new
                         {
@@ -1132,7 +1129,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Irridan",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000014")
+                            UserId = "00000000-0000-0000-0000-000000000014"
                         },
                         new
                         {
@@ -1145,7 +1142,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Aralon",
                             Role = "Tank",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000014")
+                            UserId = "00000000-0000-0000-0000-000000000014"
                         },
                         new
                         {
@@ -1158,7 +1155,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Sharyn",
                             Role = "Tank",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000014")
+                            UserId = "00000000-0000-0000-0000-000000000014"
                         },
                         new
                         {
@@ -1171,7 +1168,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Tharon",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000015")
+                            UserId = "00000000-0000-0000-0000-000000000015"
                         },
                         new
                         {
@@ -1184,7 +1181,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Phyrin",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000015")
+                            UserId = "00000000-0000-0000-0000-000000000015"
                         },
                         new
                         {
@@ -1197,7 +1194,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Clerence",
                             Role = "Tank",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000015")
+                            UserId = "00000000-0000-0000-0000-000000000015"
                         },
                         new
                         {
@@ -1210,7 +1207,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Meeky",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000016")
+                            UserId = "00000000-0000-0000-0000-000000000016"
                         },
                         new
                         {
@@ -1223,7 +1220,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Feeky",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000016")
+                            UserId = "00000000-0000-0000-0000-000000000016"
                         },
                         new
                         {
@@ -1236,7 +1233,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Beeky",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000016")
+                            UserId = "00000000-0000-0000-0000-000000000016"
                         },
                         new
                         {
@@ -1249,7 +1246,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Sylvar",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000017")
+                            UserId = "00000000-0000-0000-0000-000000000017"
                         },
                         new
                         {
@@ -1262,7 +1259,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Laryngo",
                             Role = "Healer",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000017")
+                            UserId = "00000000-0000-0000-0000-000000000017"
                         },
                         new
                         {
@@ -1275,7 +1272,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Saveron",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000017")
+                            UserId = "00000000-0000-0000-0000-000000000017"
                         },
                         new
                         {
@@ -1288,7 +1285,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Landarin",
                             Role = "Healer",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000018")
+                            UserId = "00000000-0000-0000-0000-000000000018"
                         },
                         new
                         {
@@ -1301,7 +1298,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Asfaloth",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000018")
+                            UserId = "00000000-0000-0000-0000-000000000018"
                         },
                         new
                         {
@@ -1314,7 +1311,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Mimtoth",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000018")
+                            UserId = "00000000-0000-0000-0000-000000000018"
                         },
                         new
                         {
@@ -1327,7 +1324,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Falfda",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000019")
+                            UserId = "00000000-0000-0000-0000-000000000019"
                         },
                         new
                         {
@@ -1340,7 +1337,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Pillia",
                             Role = "Healer",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000019")
+                            UserId = "00000000-0000-0000-0000-000000000019"
                         },
                         new
                         {
@@ -1353,7 +1350,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Lloydyr",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000019")
+                            UserId = "00000000-0000-0000-0000-000000000019"
                         },
                         new
                         {
@@ -1366,7 +1363,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Talade",
                             Role = "Healer",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000020")
+                            UserId = "00000000-0000-0000-0000-000000000020"
                         },
                         new
                         {
@@ -1379,7 +1376,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Elioth",
                             Role = "Healer",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000020")
+                            UserId = "00000000-0000-0000-0000-000000000020"
                         },
                         new
                         {
@@ -1392,7 +1389,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Kullem",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000020")
+                            UserId = "00000000-0000-0000-0000-000000000020"
                         },
                         new
                         {
@@ -1405,7 +1402,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Lyrand",
                             Role = "Tank",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000021")
+                            UserId = "00000000-0000-0000-0000-000000000021"
                         },
                         new
                         {
@@ -1418,7 +1415,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Cragho",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000021")
+                            UserId = "00000000-0000-0000-0000-000000000021"
                         },
                         new
                         {
@@ -1431,7 +1428,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Caitli",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000021")
+                            UserId = "00000000-0000-0000-0000-000000000021"
                         },
                         new
                         {
@@ -1444,7 +1441,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Thalgu",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000022")
+                            UserId = "00000000-0000-0000-0000-000000000022"
                         },
                         new
                         {
@@ -1457,7 +1454,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Squard",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000022")
+                            UserId = "00000000-0000-0000-0000-000000000022"
                         },
                         new
                         {
@@ -1470,7 +1467,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Wulaer",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000022")
+                            UserId = "00000000-0000-0000-0000-000000000022"
                         },
                         new
                         {
@@ -1483,7 +1480,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Stumpe",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000023")
+                            UserId = "00000000-0000-0000-0000-000000000023"
                         },
                         new
                         {
@@ -1496,7 +1493,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Orokki",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000023")
+                            UserId = "00000000-0000-0000-0000-000000000023"
                         },
                         new
                         {
@@ -1509,7 +1506,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Sterne",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000023")
+                            UserId = "00000000-0000-0000-0000-000000000023"
                         },
                         new
                         {
@@ -1522,7 +1519,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Zaldim",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000024")
+                            UserId = "00000000-0000-0000-0000-000000000024"
                         },
                         new
                         {
@@ -1535,7 +1532,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Bluffw",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000024")
+                            UserId = "00000000-0000-0000-0000-000000000024"
                         },
                         new
                         {
@@ -1548,7 +1545,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Reming",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000024")
+                            UserId = "00000000-0000-0000-0000-000000000024"
                         },
                         new
                         {
@@ -1561,7 +1558,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Merlac",
                             Role = "Healer",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000025")
+                            UserId = "00000000-0000-0000-0000-000000000025"
                         },
                         new
                         {
@@ -1574,7 +1571,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Lantis",
                             Role = "Healer",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000025")
+                            UserId = "00000000-0000-0000-0000-000000000025"
                         },
                         new
                         {
@@ -1587,7 +1584,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Statfo",
                             Role = "Healer",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000025")
+                            UserId = "00000000-0000-0000-0000-000000000025"
                         },
                         new
                         {
@@ -1600,7 +1597,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Eunich",
                             Role = "Healer",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000026")
+                            UserId = "00000000-0000-0000-0000-000000000026"
                         },
                         new
                         {
@@ -1613,7 +1610,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Mocarl",
                             Role = "Tank",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000026")
+                            UserId = "00000000-0000-0000-0000-000000000026"
                         },
                         new
                         {
@@ -1626,7 +1623,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Akzelo",
                             Role = "Tank",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000026")
+                            UserId = "00000000-0000-0000-0000-000000000026"
                         },
                         new
                         {
@@ -1639,7 +1636,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Pebble",
                             Role = "Tank",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000027")
+                            UserId = "00000000-0000-0000-0000-000000000027"
                         },
                         new
                         {
@@ -1652,7 +1649,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Lyoria",
                             Role = "Healer",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000027")
+                            UserId = "00000000-0000-0000-0000-000000000027"
                         },
                         new
                         {
@@ -1665,7 +1662,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Riverh",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000027")
+                            UserId = "00000000-0000-0000-0000-000000000027"
                         },
                         new
                         {
@@ -1678,7 +1675,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Orghana",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000028")
+                            UserId = "00000000-0000-0000-0000-000000000028"
                         },
                         new
                         {
@@ -1691,7 +1688,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Bolynn",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000028")
+                            UserId = "00000000-0000-0000-0000-000000000028"
                         },
                         new
                         {
@@ -1704,7 +1701,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Aayunn",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000028")
+                            UserId = "00000000-0000-0000-0000-000000000028"
                         },
                         new
                         {
@@ -1717,7 +1714,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Deinon",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000029")
+                            UserId = "00000000-0000-0000-0000-000000000029"
                         },
                         new
                         {
@@ -1730,7 +1727,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Alexil",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000029")
+                            UserId = "00000000-0000-0000-0000-000000000029"
                         },
                         new
                         {
@@ -1743,7 +1740,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Villia",
                             Role = "Dps",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000029")
+                            UserId = "00000000-0000-0000-0000-000000000029"
                         },
                         new
                         {
@@ -1756,7 +1753,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Rellan",
                             Role = "Tank",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000030")
+                            UserId = "00000000-0000-0000-0000-000000000030"
                         },
                         new
                         {
@@ -1769,7 +1766,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Brann",
                             Role = "Healer",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000030")
+                            UserId = "00000000-0000-0000-0000-000000000030"
                         },
                         new
                         {
@@ -1782,7 +1779,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Level = 60,
                             Name = "Surest",
                             Role = "Healer",
-                            UserId = new Guid("00000000-0000-0000-0000-000000000030")
+                            UserId = "00000000-0000-0000-0000-000000000030"
                         });
                 });
 
@@ -2522,18 +2519,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000001",
                             AccessFailedCount = 0,
                             Address = "6 Gale Plaza",
-                            BirthDate = new DateTime(1979, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Brussel",
-                            ConcurrencyStamp = "5ed68bc7-990f-4fbe-9f98-c977f9b2e81f",
+                            BirthDate = new DateTime(1996, 11, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Gent",
+                            ConcurrencyStamp = "67b2e934-2f3f-487d-9bfa-22143364aaf4",
                             Email = "ageydon0@marriott.com",
                             EmailConfirmed = true,
                             FullName = "Aldwin Geydon",
                             LockoutEnabled = false,
                             NormalizedEmail = "AGEYDON0@MARRIOTT.COM",
                             NormalizedUserName = "AGEYDON0@MARRIOTT.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEGCaV1a/pt/VmjwetJl8PE6a4VT0Nda52XW6qNni6Dz3rIeDDCqfpX6X5/tpM+H9sA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEE2MqhLvWJ/RANI57wihcKzYRjsUlbae/15B5HRt/T70NnPzk/CVpXRmj6m8vXT7GQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2670dd13-1514-45ed-bdff-72e1ecae6848",
+                            SecurityStamp = "1a94e148-dcb3-49d8-a12f-3f9befaaf9da",
                             TwoFactorEnabled = false,
                             UserName = "ageydon0@marriott.com"
                         },
@@ -2542,18 +2539,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000002",
                             AccessFailedCount = 0,
                             Address = "50 Independence Avenue",
-                            BirthDate = new DateTime(1992, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Hasselt",
-                            ConcurrencyStamp = "108ac3d2-f677-449f-a5cf-ce5c58106aff",
+                            BirthDate = new DateTime(2000, 9, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Gent",
+                            ConcurrencyStamp = "2acbbe23-b45a-40db-b79a-edc3fbac8f54",
                             Email = "cwoodland1@reference.com",
-                            EmailConfirmed = true,
+                            EmailConfirmed = false,
                             FullName = "Clem Woodland",
                             LockoutEnabled = false,
                             NormalizedEmail = "CWOODLAND1@REFERENCE.COM",
                             NormalizedUserName = "CWOODLAND1@REFERENCE.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEGQh9lImQIn+S+Cd+ijixRFaWR0tkxKnAgEuMr4hR/vShvl8XWWlbvfGWDPNOt8/CA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDW7z6yLkFXcTEVicIDShIkeTkYbamnfpoaHVqucxJcUzzP+2g09TJYutY8vjAB65w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1fe5e517-d930-4eb1-8b47-ceed8e81a770",
+                            SecurityStamp = "53f9bd8c-891f-4138-8aac-c31472fdce3c",
                             TwoFactorEnabled = false,
                             UserName = "cwoodland1@reference.com"
                         },
@@ -2562,18 +2559,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000003",
                             AccessFailedCount = 0,
                             Address = "5 Onsgard Parkway",
-                            BirthDate = new DateTime(1970, 12, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Hasselt",
-                            ConcurrencyStamp = "03a575a0-0b81-4c43-8524-4d5f59cd7e74",
+                            BirthDate = new DateTime(1981, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Antwerpen",
+                            ConcurrencyStamp = "92c0ed1e-68f8-4b16-8109-a22b207be44a",
                             Email = "msemeniuk2@prweb.com",
                             EmailConfirmed = false,
                             FullName = "Mil Semeniuk",
                             LockoutEnabled = false,
                             NormalizedEmail = "MSEMENIUK2@PRWEB.COM",
                             NormalizedUserName = "MSEMENIUK2@PRWEB.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJOLU1lIwFT6mlEQeHEoX6H82jpJkp2DbMkAksl7gbi7l6UNtVhNC6+hXMiNSWgxjw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEH5d66DBysbT3wPmLm0EiFByACRkEqKl/R2j78zj5L7bfNf1Lk/4VPIvUuDfSjykCg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "7731062b-b342-4615-aeb5-4a60daa0aac0",
+                            SecurityStamp = "88047215-e623-45d1-997b-36a9fc9e82ee",
                             TwoFactorEnabled = false,
                             UserName = "msemeniuk2@prweb.com"
                         },
@@ -2582,18 +2579,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000004",
                             AccessFailedCount = 0,
                             Address = "20 Wayridge Place",
-                            BirthDate = new DateTime(1972, 12, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Antwerpen",
-                            ConcurrencyStamp = "2f74f38a-8cc7-4172-8b23-5d1faf0eb721",
+                            BirthDate = new DateTime(1975, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Hasselt",
+                            ConcurrencyStamp = "415c687d-181e-43da-bf17-457fac0a2ddb",
                             Email = "awasbey3@google.it",
-                            EmailConfirmed = false,
+                            EmailConfirmed = true,
                             FullName = "Aurel Wasbey",
                             LockoutEnabled = false,
                             NormalizedEmail = "AWASBEY3@GOOGLE.IT",
                             NormalizedUserName = "AWASBEY3@GOOGLE.IT",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDkqDC6fLgWe80Q/2gRDgGFaVFFuTDYidLQhh92PosFDsDJPp1rPZVXryUXbKMS7Bg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAECcJM9XQmZkj58kotgjXrLbLj32ytg4fOPStRfbbmtaybYza6iFhV5UAbx90g4fUlg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "22582c92-2c5c-4ac9-ae48-7e78ae1133e4",
+                            SecurityStamp = "f495d8ca-a8de-42ae-95bb-4915c019b54a",
                             TwoFactorEnabled = false,
                             UserName = "awasbey3@google.it"
                         },
@@ -2602,18 +2599,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000005",
                             AccessFailedCount = 0,
                             Address = "80 Mcguire Circle",
-                            BirthDate = new DateTime(1993, 7, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Gent",
-                            ConcurrencyStamp = "bfb74765-90ed-40eb-ac23-e0da4410af88",
+                            BirthDate = new DateTime(1982, 8, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Brussel",
+                            ConcurrencyStamp = "77aa0003-5d3e-4026-81f1-ac52adeb52aa",
                             Email = "jingyon4@hao123.com",
                             EmailConfirmed = true,
                             FullName = "Jackson Ingyon",
                             LockoutEnabled = false,
                             NormalizedEmail = "JINGYON4@HAO123.COM",
                             NormalizedUserName = "JINGYON4@HAO123.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJT8sY9JZRFljxmokHlugcPKKJeWySimCjg9RgbE7vKS/s4k5UBjTw4lj5GiQRghpg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFVoecwxU2cfQH8nPT9ABTvvV7wZ4boxL3DWrhXvMkjlrgPE1S0P3oXC0XkDK6ELYw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ff6b0358-8b05-4044-a62d-60f4cbd1ad05",
+                            SecurityStamp = "431cd7cf-ad96-4569-b63b-89c2ca25cb55",
                             TwoFactorEnabled = false,
                             UserName = "jingyon4@hao123.com"
                         },
@@ -2622,18 +2619,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000006",
                             AccessFailedCount = 0,
                             Address = "7 Cody Way",
-                            BirthDate = new DateTime(1989, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Brugge",
-                            ConcurrencyStamp = "de2af1f0-879e-4274-b1c4-40798e9653d0",
+                            BirthDate = new DateTime(1996, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Antwerpen",
+                            ConcurrencyStamp = "60f1e765-02a9-434e-99ea-da13691ab038",
                             Email = "legell5@wikispaces.com",
                             EmailConfirmed = true,
                             FullName = "Lucho Egell",
                             LockoutEnabled = false,
                             NormalizedEmail = "LEGELL5@WIKISPACES.COM",
                             NormalizedUserName = "LEGELL5@WIKISPACES.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEMvdpsjVGML/8uvnJuKCu1njK/TJlAhl2cmoMvadVZMaPn8t5qDoyDXKYoTqfzmo+A==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJY9obtjzSxQYD95hK3PlP+R1+JMtByyKTNfzcsegkQLE0kZ0BY90kEeN9urIieWkA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "7c55e2c9-4998-49ab-8b52-ceecc7f9de3b",
+                            SecurityStamp = "9e616bfc-1d88-412b-97cd-378ccb6bf175",
                             TwoFactorEnabled = false,
                             UserName = "legell5@wikispaces.com"
                         },
@@ -2642,18 +2639,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000007",
                             AccessFailedCount = 0,
                             Address = "39 Morrow Center",
-                            BirthDate = new DateTime(1975, 9, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Gent",
-                            ConcurrencyStamp = "c911ed88-c01d-40e3-8d99-dbbb6145a187",
+                            BirthDate = new DateTime(1995, 8, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Hasselt",
+                            ConcurrencyStamp = "ed9d209a-b389-4eeb-bb24-b3ece61aa6f8",
                             Email = "gbortolozzi6@friendfeed.com",
                             EmailConfirmed = false,
                             FullName = "Giavani Bortolozzi",
                             LockoutEnabled = false,
                             NormalizedEmail = "GBORTOLOZZI6@FRIENDFEED.COM",
                             NormalizedUserName = "GBORTOLOZZI6@FRIENDFEED.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEA8B+HBPnzb3Be5pBFmeUJ0IUtJ73oWEoIJ7NKJH2lvLXU4PSMAmUKXz151V6e6bGw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHNPn2USyevdpipFVNROd1zehPGxg6JQ89s8g4PxchbgfvgBaqhTz8WReL87m/nwtA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "906b596f-1049-4e35-a32d-b6d45d6da2ce",
+                            SecurityStamp = "6783a88d-e907-453b-b6f4-1223bb6a0d0b",
                             TwoFactorEnabled = false,
                             UserName = "gbortolozzi6@friendfeed.com"
                         },
@@ -2662,18 +2659,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000008",
                             AccessFailedCount = 0,
                             Address = "3 Monica Plaza",
-                            BirthDate = new DateTime(1989, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            BirthDate = new DateTime(1976, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             City = "Brussel",
-                            ConcurrencyStamp = "d09cdbf0-cec9-42a6-808f-a9dbc9f185a2",
+                            ConcurrencyStamp = "b55785c8-82fc-45cd-bc4c-9358dde12929",
                             Email = "cmair7@dion.ne.jp",
                             EmailConfirmed = false,
                             FullName = "Casie Mair",
                             LockoutEnabled = false,
                             NormalizedEmail = "CMAIR7@DION.NE.JP",
                             NormalizedUserName = "CMAIR7@DION.NE.JP",
-                            PasswordHash = "AQAAAAEAACcQAAAAEP6peZTaux3KZ4flJjHOa/YygMM1FlkAqFVINgvwzBD47fH9+iMa9ajbX2gTymzE1w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBV9MJqK6LXHSDwYMiYYfLM7uOyRfb2JCUQyuZ2tWVydeaO5cZhnRTs/fpcNYBxbcg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d1d78abd-ad15-4894-b1e9-de2a2b257856",
+                            SecurityStamp = "96937c38-c3fc-4e4b-8a06-0f8e96212f11",
                             TwoFactorEnabled = false,
                             UserName = "cmair7@dion.ne.jp"
                         },
@@ -2682,18 +2679,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000009",
                             AccessFailedCount = 0,
                             Address = "22114 Carberry Avenue",
-                            BirthDate = new DateTime(1993, 3, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Hasselt",
-                            ConcurrencyStamp = "0d589640-ec9c-4b5b-a13d-9fff3e2321c1",
+                            BirthDate = new DateTime(1991, 7, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Antwerpen",
+                            ConcurrencyStamp = "59737250-b0f3-4d28-a7a8-7bf2407ec2f6",
                             Email = "mrispine8@is.gd",
-                            EmailConfirmed = false,
+                            EmailConfirmed = true,
                             FullName = "Madalena Rispine",
                             LockoutEnabled = false,
                             NormalizedEmail = "MRISPINE8@IS.GD",
                             NormalizedUserName = "MRISPINE8@IS.GD",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDXLRLlWbecTzeG14CLLJwIwGGGk6RCWdtfoKrqGaLbvegR/bFEJO4HP8AVmXVNjVg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAELQd4vLwkqM2PYWDmtVU0PT9HSHjYnyghfA8XPMp2Gc6BwCBjDT6Yxftjul7wg1FBQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d404f991-232a-45ce-aad0-ea61defed10b",
+                            SecurityStamp = "f51e9bdd-d858-4115-8a42-bc9a8c987896",
                             TwoFactorEnabled = false,
                             UserName = "mrispine8@is.gd"
                         },
@@ -2702,18 +2699,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000010",
                             AccessFailedCount = 0,
                             Address = "04 Harbort Point",
-                            BirthDate = new DateTime(1977, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Hasselt",
-                            ConcurrencyStamp = "63287954-7065-4374-849d-d1e310c0200b",
+                            BirthDate = new DateTime(1987, 9, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Brussel",
+                            ConcurrencyStamp = "6f745242-9ece-4690-a7af-9d7be2e08dd8",
                             Email = "browena9@springer.com",
-                            EmailConfirmed = true,
+                            EmailConfirmed = false,
                             FullName = "Broderick Rowena",
                             LockoutEnabled = false,
                             NormalizedEmail = "BROWENA9@SPRINGER.COM",
                             NormalizedUserName = "BROWENA9@SPRINGER.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEENvvmZlIUEhdd4+cG1aMig8Iu23qKYECLTRp0n+IzlShGqqShLZicB/6eR4A22hRQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAENYZKO7gvcz+QdSWc0GlWIHH1oy68NYYAvqu6vcf+QCinHBssp5D80eVuqAqiolujw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "19a5a86b-e5c6-445b-8613-ced9632f6091",
+                            SecurityStamp = "c1451956-f9fb-482c-be88-9e163aba76bd",
                             TwoFactorEnabled = false,
                             UserName = "browena9@springer.com"
                         },
@@ -2722,18 +2719,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000011",
                             AccessFailedCount = 0,
                             Address = "97 Rockefeller Circle",
-                            BirthDate = new DateTime(1985, 8, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            BirthDate = new DateTime(2000, 10, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             City = "Gent",
-                            ConcurrencyStamp = "50ad50fd-0a3f-4462-9f93-e7e340d953ab",
+                            ConcurrencyStamp = "f30685ef-a6a6-4433-99f5-51a1e9e3dad2",
                             Email = "lgregorioua@storify.com",
                             EmailConfirmed = true,
                             FullName = "Lenna Gregoriou",
                             LockoutEnabled = false,
                             NormalizedEmail = "LGREGORIOUA@STORIFY.COM",
                             NormalizedUserName = "LGREGORIOUA@STORIFY.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHFxi+yesvDP+nbhCiTlDji+gzwRZEa5jrL+RvZ3kSVx60oGhqOooBsrtIehn3vxPg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEA+5p6Dyb/WBkINOskJi2zkt9MmbjznAICJ91LW/YGd8ZLkcKQ3XwibTXCxHYn3Pmw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "07213708-f144-4df7-b870-cebf14ec935d",
+                            SecurityStamp = "5cf90957-3a33-447d-b9cc-2a40ab0262bb",
                             TwoFactorEnabled = false,
                             UserName = "lgregorioua@storify.com"
                         },
@@ -2742,18 +2739,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000012",
                             AccessFailedCount = 0,
                             Address = "6 Scofield Drive",
-                            BirthDate = new DateTime(1991, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Gent",
-                            ConcurrencyStamp = "b83c3445-b665-4da5-a7a7-82f410f26c0f",
+                            BirthDate = new DateTime(1998, 6, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Hasselt",
+                            ConcurrencyStamp = "a0740ca8-6e31-4bdf-b962-470151d60689",
                             Email = "teastamb@phoca.cz",
-                            EmailConfirmed = true,
+                            EmailConfirmed = false,
                             FullName = "Timi Eastam",
                             LockoutEnabled = false,
                             NormalizedEmail = "TEASTAMB@PHOCA.CZ",
                             NormalizedUserName = "TEASTAMB@PHOCA.CZ",
-                            PasswordHash = "AQAAAAEAACcQAAAAENprEmdhm2Hc5GqXFrSLqg8KTQ1XwOnNWzFNaw3peVaImYC6MCrezsdXHYZMokIZsQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPxEopLz97+cjmaiEWn3NLhEjggpgG8fSEcKwpR57FFLRk9sxxFJqn28/M5MiUvEkQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b4a1dab6-f795-4cd6-842e-78e5edfcedb6",
+                            SecurityStamp = "07a6a480-8f28-4735-8fc1-53f95614f64f",
                             TwoFactorEnabled = false,
                             UserName = "teastamb@phoca.cz"
                         },
@@ -2762,18 +2759,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000013",
                             AccessFailedCount = 0,
                             Address = "9 Chive Alley",
-                            BirthDate = new DateTime(1970, 7, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            BirthDate = new DateTime(1972, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             City = "Hasselt",
-                            ConcurrencyStamp = "0cb0be54-e581-4a90-9944-0dc15558ff9e",
+                            ConcurrencyStamp = "eb67608d-b42e-47f1-8021-fefb26cf3407",
                             Email = "glidierthc@freewebs.com",
-                            EmailConfirmed = true,
+                            EmailConfirmed = false,
                             FullName = "Gweneth Lidierth",
                             LockoutEnabled = false,
                             NormalizedEmail = "GLIDIERTHC@FREEWEBS.COM",
                             NormalizedUserName = "GLIDIERTHC@FREEWEBS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEB6n0LCDcfWFYzIVVhlYyO60NyiXMcLmmBhLTNOmsy1oeaZ/iH1Ic5dSuwYd+7fi0Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGHoEf8xNOAGda50Jfbzi2FulE0d7hAxxaonTdkNCtwspjfP9NcN0bXg2TK3mUObLg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d0ef17ee-aa93-4af4-8d34-2a588ff2b09c",
+                            SecurityStamp = "d6f0d89e-b324-4513-8ebc-4b2c731acb13",
                             TwoFactorEnabled = false,
                             UserName = "glidierthc@freewebs.com"
                         },
@@ -2782,18 +2779,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000014",
                             AccessFailedCount = 0,
                             Address = "56741 Huxley Lane",
-                            BirthDate = new DateTime(1993, 10, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            BirthDate = new DateTime(1977, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             City = "Antwerpen",
-                            ConcurrencyStamp = "36147dbb-7244-49fb-af3a-08620e166605",
+                            ConcurrencyStamp = "35bfcd6d-26ed-4fa8-b488-4951cf981438",
                             Email = "lduttond@canalblog.com",
-                            EmailConfirmed = true,
+                            EmailConfirmed = false,
                             FullName = "Lesya Dutton",
                             LockoutEnabled = false,
                             NormalizedEmail = "LDUTTOND@CANALBLOG.COM",
                             NormalizedUserName = "LDUTTOND@CANALBLOG.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEC7FNQiDkNe5ThOkW161mk22NS1I6ZoEJHaL7+w8qmAoRHLca80TmZeAzQnsnj03Fw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAELfDgDRq74PC0qVSMHlxlyRjbiM86ptMkeNuVmWKO2DekNTIUnZWx1hcUkD1IwW08Q==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d8dbec6a-509e-4d00-a29a-3fdf0d8078ce",
+                            SecurityStamp = "c106b1dc-4636-4060-8251-181d6f482a82",
                             TwoFactorEnabled = false,
                             UserName = "lduttond@canalblog.com"
                         },
@@ -2802,18 +2799,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000015",
                             AccessFailedCount = 0,
                             Address = "4 Blaine Plaza",
-                            BirthDate = new DateTime(1970, 5, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Brussel",
-                            ConcurrencyStamp = "d163184c-ce29-4015-ad02-23bddf511b94",
+                            BirthDate = new DateTime(1974, 10, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Hasselt",
+                            ConcurrencyStamp = "c1d47682-346e-47f0-ab02-36a0b34cd441",
                             Email = "hfyerse@dmoz.org",
-                            EmailConfirmed = true,
+                            EmailConfirmed = false,
                             FullName = "Hedvige Fyers",
                             LockoutEnabled = false,
                             NormalizedEmail = "HFYERSE@DMOZ.ORG",
                             NormalizedUserName = "HFYERSE@DMOZ.ORG",
-                            PasswordHash = "AQAAAAEAACcQAAAAEEklSoX+r8ZOgvVqt2GyYQsq4L0sbsvLGP/4bH18MaPoVq3nrrnKoOjzE+Z2MSQGJQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAED6KlZMatuH1WzIAXcGpsZQsuMmvZduDDHeJ0bhvjpZ4ku7uWJzSU/oA3vZMP7VIGw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "873f8bcb-3d38-4eb2-8a3e-951039e75bd3",
+                            SecurityStamp = "1db84d01-b470-4bc7-bb71-e272391a9901",
                             TwoFactorEnabled = false,
                             UserName = "hfyerse@dmoz.org"
                         },
@@ -2822,18 +2819,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000016",
                             AccessFailedCount = 0,
                             Address = "58 Sherman Circle",
-                            BirthDate = new DateTime(1981, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Gent",
-                            ConcurrencyStamp = "d7251231-0bf9-48b1-8c18-aed90a198140",
+                            BirthDate = new DateTime(1996, 12, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Hasselt",
+                            ConcurrencyStamp = "af2fc919-efee-4cdd-855d-5948b5f1a435",
                             Email = "nhalworthf@ezinearticles.com",
                             EmailConfirmed = true,
                             FullName = "Nehemiah Halworth",
                             LockoutEnabled = false,
                             NormalizedEmail = "NHALWORTHF@EZINEARTICLES.COM",
                             NormalizedUserName = "NHALWORTHF@EZINEARTICLES.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEML8KnWW4EhlflyTxN+OoyFOKB0MNdSA1TrurwsTx4W7WniAUweATVtBu3BCnvGgKw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEL6hGAdIJhymDg9Z4v8rYYrlkj2Uj8ZcJp6tRsQjUIMvift20x6mtMh+rI08X+smbg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a4fe4ef0-6e8f-47cb-8b72-a602bba8ce10",
+                            SecurityStamp = "f053bc9f-7709-4ded-a221-a453baa67be5",
                             TwoFactorEnabled = false,
                             UserName = "nhalworthf@ezinearticles.com"
                         },
@@ -2842,18 +2839,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000017",
                             AccessFailedCount = 0,
                             Address = "2572 Nelson Trail",
-                            BirthDate = new DateTime(1971, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Hasselt",
-                            ConcurrencyStamp = "818c5f11-4b07-4739-bd64-96669c88b02c",
+                            BirthDate = new DateTime(1987, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Antwerpen",
+                            ConcurrencyStamp = "930cf85b-9ebe-4acb-b029-356217ad1319",
                             Email = "rphing@europa.eu",
-                            EmailConfirmed = false,
+                            EmailConfirmed = true,
                             FullName = "Robinetta Phin",
                             LockoutEnabled = false,
                             NormalizedEmail = "RPHING@EUROPA.EU",
                             NormalizedUserName = "RPHING@EUROPA.EU",
-                            PasswordHash = "AQAAAAEAACcQAAAAEELID0WuB2VlKJqYbcj4hbZDWYA3/PuYkRsPP/XD0dnsgvQlth7gPHYR3pg9syzmCQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAMuzi+3IniWUtRSoUbwuudxZU0YjVYzEtzeUZeJ3ylK8upCpFwum4OFxGsfj/FqRg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "15c3c68d-ae13-4ca7-86bf-e975ba6e1982",
+                            SecurityStamp = "c4e2f2b3-5f87-4ca7-b55f-5a3381e79aa1",
                             TwoFactorEnabled = false,
                             UserName = "rphing@europa.eu"
                         },
@@ -2862,18 +2859,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000018",
                             AccessFailedCount = 0,
                             Address = "45 Onsgard Parkway",
-                            BirthDate = new DateTime(1987, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Antwerpen",
-                            ConcurrencyStamp = "d0d35676-1696-4d64-85d2-4215d2855442",
+                            BirthDate = new DateTime(1973, 8, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Brugge",
+                            ConcurrencyStamp = "f0509e34-9d98-4e3b-82b9-200747de0ea3",
                             Email = "cdirrh@ucsd.edu",
-                            EmailConfirmed = true,
+                            EmailConfirmed = false,
                             FullName = "Correy Dirr",
                             LockoutEnabled = false,
                             NormalizedEmail = "CDIRRH@UCSD.EDU",
                             NormalizedUserName = "CDIRRH@UCSD.EDU",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBfFDpvocomMS6TQFv+27Vg30O0QlfG+X7+TlBZhTVJ42XZKskvoZvWYtdZEThgmxA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEI9WZ7Qtg4+lX712rpz5DmxDA7JLwHq63wxN/Zi1mkS8NO69wEBUq50bPG8+7hWfDQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "0f5dd142-205f-4c20-af17-08765c615957",
+                            SecurityStamp = "54866d0f-0e14-4320-8351-b8af6379d145",
                             TwoFactorEnabled = false,
                             UserName = "cdirrh@ucsd.edu"
                         },
@@ -2882,18 +2879,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000019",
                             AccessFailedCount = 0,
                             Address = "197 Longview Way",
-                            BirthDate = new DateTime(1996, 5, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            BirthDate = new DateTime(1995, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             City = "Antwerpen",
-                            ConcurrencyStamp = "2879d350-b849-47a7-a83e-1d9f3f448373",
+                            ConcurrencyStamp = "669c65cd-c9ec-4567-b95d-9baf625df17e",
                             Email = "zferrerasi@cisco.com",
                             EmailConfirmed = false,
                             FullName = "Zelda Ferreras",
                             LockoutEnabled = false,
                             NormalizedEmail = "ZFERRERASI@CISCO.COM",
                             NormalizedUserName = "ZFERRERASI@CISCO.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHDW2DXmbjTxT3V1c5BPzENygghK6uMSAqcZcIMwCWHy9u9hMXWEMGMumx1nark70Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAENRmu5rXz+bcQv6dBmwbfXBRy4ZTmw6M7O3gGsP0eof/jsI3R6yFCtc+/TtxcKM7MA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e1886ad2-51a0-406d-a25f-f541ae6592ba",
+                            SecurityStamp = "8fb9bc7e-c7ac-425d-b433-4bdb0c5c0287",
                             TwoFactorEnabled = false,
                             UserName = "zferrerasi@cisco.com"
                         },
@@ -2902,18 +2899,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000020",
                             AccessFailedCount = 0,
                             Address = "9 Vahlen Crossing",
-                            BirthDate = new DateTime(1975, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Antwerpen",
-                            ConcurrencyStamp = "536bf459-be86-4a09-8637-3c91e0db2d77",
+                            BirthDate = new DateTime(1982, 6, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Brussel",
+                            ConcurrencyStamp = "4510ad96-67c4-4ed6-a280-6477e274ba66",
                             Email = "pninnisj@wix.com",
-                            EmailConfirmed = true,
+                            EmailConfirmed = false,
                             FullName = "Paddy Ninnis",
                             LockoutEnabled = false,
                             NormalizedEmail = "PNINNISJ@WIX.COM",
                             NormalizedUserName = "PNINNISJ@WIX.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFnyJ9nyioeAzr/LaOUIv7E42F4AyhucW0hlzMOtrOb94Bknmqvi5DSm0LdvPxhlYA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKDXNS3lpeEzOY4eHFQ71KKe3BJgphSNPyj4VvS7HThixe02lFSLAP6/f2dRRnvC4A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1c4b0996-566f-45ce-b915-117aafbc2c35",
+                            SecurityStamp = "2018f434-c152-4eed-9cec-ddee1ed4ba7e",
                             TwoFactorEnabled = false,
                             UserName = "pninnisj@wix.com"
                         },
@@ -2922,18 +2919,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000021",
                             AccessFailedCount = 0,
                             Address = "98 Granby Hill",
-                            BirthDate = new DateTime(1989, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Brugge",
-                            ConcurrencyStamp = "756e563f-1fb6-40f8-b6dd-88b41c1cef86",
+                            BirthDate = new DateTime(1981, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Brussel",
+                            ConcurrencyStamp = "c87211a9-ea25-49a3-a64e-49755a989d76",
                             Email = "jnindk@github.io",
                             EmailConfirmed = true,
                             FullName = "Jeanna Nind",
                             LockoutEnabled = false,
                             NormalizedEmail = "JNINDK@GITHUB.IO",
                             NormalizedUserName = "JNINDK@GITHUB.IO",
-                            PasswordHash = "AQAAAAEAACcQAAAAENGanqdWpReRgIFNxn/BvWESzRBvQleLxjnLRXfaVCB5Z1qdoQXhQ5SZzTsgubsErA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEI9RrzOgqz04p4iycRG2iTS4xwLo7FjhlnVHuIn2zKeYbPY105rJJ26vWocUigwduw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d4a6c226-6286-417b-93ac-818851c50109",
+                            SecurityStamp = "37492842-aab3-4f80-a9e2-18824aa77d98",
                             TwoFactorEnabled = false,
                             UserName = "jnindk@github.io"
                         },
@@ -2942,18 +2939,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000022",
                             AccessFailedCount = 0,
                             Address = "88 Roxbury Crossing",
-                            BirthDate = new DateTime(1993, 8, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Brugge",
-                            ConcurrencyStamp = "00d7bd3a-d200-4b80-9ec2-f80521b31a14",
+                            BirthDate = new DateTime(1996, 8, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Antwerpen",
+                            ConcurrencyStamp = "699c294e-bf4e-4951-bc60-6e401ff8d4c1",
                             Email = "drichfordl@economist.com",
-                            EmailConfirmed = false,
+                            EmailConfirmed = true,
                             FullName = "Darius Richford",
                             LockoutEnabled = false,
                             NormalizedEmail = "DRICHFORDL@ECONOMIST.COM",
                             NormalizedUserName = "DRICHFORDL@ECONOMIST.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIFBrTwLMqJsdcJob265DO8vEv2YlgOla2ciIm+Ed7wXD3qSUAilOLUQxAaKjUCqpQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOa2l3JltfbANbrZGnaXai/7cbwnhmN4NUG70V0FRd1gP7mo5uKJaMY2GiI13WowUQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "815fe8b2-c099-45e6-b492-aca8d79942a5",
+                            SecurityStamp = "70c34373-bcf3-40ac-bea5-b3e2068e17b1",
                             TwoFactorEnabled = false,
                             UserName = "drichfordl@economist.com"
                         },
@@ -2962,18 +2959,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000023",
                             AccessFailedCount = 0,
                             Address = "3 Holmberg Hill",
-                            BirthDate = new DateTime(1993, 6, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Brugge",
-                            ConcurrencyStamp = "ee4f24eb-b37b-439c-9cce-d3656aaf92f4",
+                            BirthDate = new DateTime(1998, 8, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Hasselt",
+                            ConcurrencyStamp = "66acb3f7-9ca6-489d-b11f-e30125e639ce",
                             Email = "lsiebertm@mapy.cz",
-                            EmailConfirmed = false,
+                            EmailConfirmed = true,
                             FullName = "Lindy Siebert",
                             LockoutEnabled = false,
                             NormalizedEmail = "LSIEBERTM@MAPY.CZ",
                             NormalizedUserName = "LSIEBERTM@MAPY.CZ",
-                            PasswordHash = "AQAAAAEAACcQAAAAEAatX1KQJDeyP9p7eIR1RzTZypB/nltApTG7G8kHdPzCZwSoknCvsSBhBgen9yQ2ag==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGlnmE8BbWuhcN0w4IQL9Yjr/8XKVWKrD7xlIkOTwq2aJ0PrICFLGmqMqTi6OUAx2A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d05929e2-4ce6-4eb4-8f6c-c8a0ae5c6092",
+                            SecurityStamp = "e4b63c65-6460-41fd-94b5-10cf87f22db6",
                             TwoFactorEnabled = false,
                             UserName = "lsiebertm@mapy.cz"
                         },
@@ -2982,18 +2979,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000024",
                             AccessFailedCount = 0,
                             Address = "64070 Lakewood Gardens Circle",
-                            BirthDate = new DateTime(1987, 6, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Gent",
-                            ConcurrencyStamp = "b2b1cdd0-712f-4520-8708-8f22d99c8874",
+                            BirthDate = new DateTime(1987, 4, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Antwerpen",
+                            ConcurrencyStamp = "553c2ec3-d730-4d04-986c-0bfee646c728",
                             Email = "mbaxstaren@mysql.com",
                             EmailConfirmed = false,
                             FullName = "Micheil Baxstare",
                             LockoutEnabled = false,
                             NormalizedEmail = "MBAXSTAREN@MYSQL.COM",
                             NormalizedUserName = "MBAXSTAREN@MYSQL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEA3zBplnm464NKqNgsVk5QkaO9145B/5pgi/wibst6XNxAIGebDud4w1fpBv5EFxnw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDOylYSJB8/WO68z2C/qaZZ11zTNnB5fMXyHmkfKJmN/hl+MHQ45UVWFMQ6sRDjDNg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d270cdba-8245-41a0-a54c-70f845c7c26e",
+                            SecurityStamp = "965b0f0f-e70a-4553-8b46-290f41e14a95",
                             TwoFactorEnabled = false,
                             UserName = "mbaxstaren@mysql.com"
                         },
@@ -3002,18 +2999,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000025",
                             AccessFailedCount = 0,
                             Address = "1 Mesta Court",
-                            BirthDate = new DateTime(1996, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Brugge",
-                            ConcurrencyStamp = "49306ba5-c458-4e37-b41d-104e08965c1d",
+                            BirthDate = new DateTime(1995, 5, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Gent",
+                            ConcurrencyStamp = "6590a0bf-3df9-4ac2-a4c1-e2041fb42e02",
                             Email = "tklainero@admin.ch",
-                            EmailConfirmed = false,
+                            EmailConfirmed = true,
                             FullName = "Terrance Klainer",
                             LockoutEnabled = false,
                             NormalizedEmail = "TKLAINERO@ADMIN.CH",
                             NormalizedUserName = "TKLAINERO@ADMIN.CH",
-                            PasswordHash = "AQAAAAEAACcQAAAAEGLulqk4bOC41ylhBtlhzDNRH7TQHIpb3rQ4nP2VAii1kqkhjlZpT39lPDQcgKgWhQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKVt7YKNDySZcNyTboNfmASoCq6VXs0TXISfCuyzWZ+D+mU/0MCHgAa1hvcUafUnAg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a32b1513-89c4-4465-b102-059a18fc8203",
+                            SecurityStamp = "72efeccc-5cdb-43b7-b1ed-5846991eee59",
                             TwoFactorEnabled = false,
                             UserName = "tklainero@admin.ch"
                         },
@@ -3022,18 +3019,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000026",
                             AccessFailedCount = 0,
                             Address = "0 Bashford Plaza",
-                            BirthDate = new DateTime(1992, 6, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            BirthDate = new DateTime(1992, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             City = "Brugge",
-                            ConcurrencyStamp = "85fc2c23-ae60-4658-b2db-ece7321c0c29",
+                            ConcurrencyStamp = "26f43a11-1b8a-4b7f-a3a8-d72768120f9e",
                             Email = "klocklessp@un.org",
                             EmailConfirmed = false,
                             FullName = "Killian Lockless",
                             LockoutEnabled = false,
                             NormalizedEmail = "KLOCKLESSP@UN.ORG",
                             NormalizedUserName = "KLOCKLESSP@UN.ORG",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJU8hNE/AUSwvKLdsWqZpM+RxdWvycTGGuJir5WWpDTkMno5l30jsMFTf/RiwaNIAg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFFzeEILFHFUTGPjoSCjZBhs3BJ5hXTMAXBEUJSpXF+oMihcV5JDgRiNv9FSdTRhHg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c268bf28-04eb-4442-8a3a-8d12590145c3",
+                            SecurityStamp = "b65c244e-dcdf-4179-a7fc-1f04425576bf",
                             TwoFactorEnabled = false,
                             UserName = "klocklessp@un.org"
                         },
@@ -3042,18 +3039,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000027",
                             AccessFailedCount = 0,
                             Address = "79 Fieldstone Drive",
-                            BirthDate = new DateTime(1986, 8, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Brugge",
-                            ConcurrencyStamp = "a09a2201-e276-448b-87d6-a247fa045c4b",
+                            BirthDate = new DateTime(1994, 7, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Antwerpen",
+                            ConcurrencyStamp = "7386a97c-3018-4e9a-a10b-22bd487ddf2a",
                             Email = "rgabbyq@mozilla.org",
                             EmailConfirmed = true,
                             FullName = "Reynold Gabby",
                             LockoutEnabled = false,
                             NormalizedEmail = "RGABBYQ@MOZILLA.ORG",
                             NormalizedUserName = "RGABBYQ@MOZILLA.ORG",
-                            PasswordHash = "AQAAAAEAACcQAAAAEGkeaBBC+uSGgranQZGssKFTLTH+O/qIChnSwBXcaiFAh2XXpRPWU/bmDl0XQeZ/kg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDg+7JY7rr6iEVR5iilIxfjE161QBYvrZZu+JXiroLec/hZkY7aLK0O6JdpvR9xuUA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "5f77fd15-e677-4651-948e-2673ad0ad87e",
+                            SecurityStamp = "b29fe10b-d1f7-4ec5-8fe2-fdfc663ad8f6",
                             TwoFactorEnabled = false,
                             UserName = "rgabbyq@mozilla.org"
                         },
@@ -3062,18 +3059,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000028",
                             AccessFailedCount = 0,
                             Address = "9875 Warner Terrace",
-                            BirthDate = new DateTime(1980, 8, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Brugge",
-                            ConcurrencyStamp = "de2bd8cb-e86a-4128-876c-b99916d921b8",
+                            BirthDate = new DateTime(1998, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Brussel",
+                            ConcurrencyStamp = "040813a5-c5a4-4201-943c-fb869b5eb160",
                             Email = "obartar@vistaprint.com",
-                            EmailConfirmed = false,
+                            EmailConfirmed = true,
                             FullName = "Opaline Barta",
                             LockoutEnabled = false,
                             NormalizedEmail = "OBARTAR@VISTAPRINT.COM",
                             NormalizedUserName = "OBARTAR@VISTAPRINT.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEEKgLOBP/fvjlYnFxL8Xm5VWb5Y0geemuz30sXPRUXQSxRS76ZMaRl8w38LlFmNwSQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOAMjaU11WmGnyRksOBHAg2NQhvsJvI5hywUafW/LnLtrJ9/tXxE0oSN+mztrBlpQw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a9064620-8b7f-48f2-8fe7-57963b3f9a7a",
+                            SecurityStamp = "ceea70f3-d7b2-4efe-a4b3-dd24d4eb0dfb",
                             TwoFactorEnabled = false,
                             UserName = "obartar@vistaprint.com"
                         },
@@ -3082,18 +3079,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000029",
                             AccessFailedCount = 0,
                             Address = "189 Fairfield Hill",
-                            BirthDate = new DateTime(1981, 6, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Brussel",
-                            ConcurrencyStamp = "d9afed0c-1b03-4593-ae4e-32c92401d8dd",
+                            BirthDate = new DateTime(1976, 10, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Brugge",
+                            ConcurrencyStamp = "bd4085f6-3f82-43d1-955f-202309577091",
                             Email = "cscocrofts@facebook.com",
                             EmailConfirmed = true,
                             FullName = "Concettina Scocroft",
                             LockoutEnabled = false,
                             NormalizedEmail = "CSCOCROFTS@FACEBOOK.COM",
                             NormalizedUserName = "CSCOCROFTS@FACEBOOK.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBrL1yX2H6qZe/HLTBUuqIDrI70KX1WJjeKWgD9J+Hu47Ck1PsXt7HuWeoPsXkQomw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAELPyupi8E9MXJgdabuYMm4QemOFxrjTI1qF1BuClwqxlKyeOuzXcQXxBrK6kcm0bfw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "41fdf888-1eb5-4c26-9af6-fbb1296afc4a",
+                            SecurityStamp = "e60e7d53-a7c7-46c9-b2ea-c2593118820b",
                             TwoFactorEnabled = false,
                             UserName = "cscocrofts@facebook.com"
                         },
@@ -3102,18 +3099,18 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                             Id = "00000000-0000-0000-0000-000000000030",
                             AccessFailedCount = 0,
                             Address = "7918 Jenifer Lane",
-                            BirthDate = new DateTime(1994, 8, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            BirthDate = new DateTime(1995, 5, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             City = "Brussel",
-                            ConcurrencyStamp = "cab1c41a-f412-48c2-858c-3ff4f93eaa53",
+                            ConcurrencyStamp = "0643af10-acef-417c-b835-1c2d38fa5f50",
                             Email = "pshillt@simplemachines.org",
-                            EmailConfirmed = false,
+                            EmailConfirmed = true,
                             FullName = "Pooh Shill",
                             LockoutEnabled = false,
                             NormalizedEmail = "PSHILLT@SIMPLEMACHINES.ORG",
                             NormalizedUserName = "PSHILLT@SIMPLEMACHINES.ORG",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIKSfpyJ+t6h43CXbzeTJxUmIiIAeOpc+kEBOSEyZ3/QHW5BZCOUIDrSPv0LqeUF7w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAECH27HwuLC7qJKOgLJUuP1hTDpPgeHkBzqKKfFehAUq7Y82VFr1/+Ks3PruY9+ysfg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c34c15f1-c3f9-4026-af03-da0f669afdba",
+                            SecurityStamp = "09a34d7f-f679-4198-bc3d-aa37fbe6ea78",
                             TwoFactorEnabled = false,
                             UserName = "pshillt@simplemachines.org"
                         });
@@ -3149,23 +3146,30 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         new
                         {
                             Id = "00000000-0000-0000-000000000001",
-                            ConcurrencyStamp = "7cc62e79-d189-416e-b078-0baff608c457",
+                            ConcurrencyStamp = "58d4d0b8-9068-42ba-8984-eaa2b702b556",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = "00000000-0000-0000-000000000002",
-                            ConcurrencyStamp = "e0c45924-6242-4504-8c22-a9e34e4be961",
+                            ConcurrencyStamp = "3b51afd4-bb35-4635-ace8-1ed112d53981",
                             Name = "Warlord",
                             NormalizedName = "WARLORD"
                         },
                         new
                         {
                             Id = "00000000-0000-0000-000000000003",
-                            ConcurrencyStamp = "5ff04843-d3bf-4e31-8112-0006d3b35117",
+                            ConcurrencyStamp = "0a3bcda5-5005-43e2-bc12-c5e9cf69d5e7",
                             Name = "RaidLeader",
                             NormalizedName = "RAIDLEADER"
+                        },
+                        new
+                        {
+                            Id = "00000000-0000-0000-000000000004",
+                            ConcurrencyStamp = "ddd7e507-efdc-4a58-8348-5654de0285e0",
+                            Name = "GuildMember",
+                            NormalizedName = "GUILDMEMBER"
                         });
                 });
 
@@ -3215,6 +3219,428 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("AspNetUserClaims");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000001"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000001"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000002"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000002"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000003"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000003"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000004"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000004"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000005"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000005"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000006"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000006"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000007"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000007"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000008"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000008"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000009"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000009"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000010"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000010"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000011"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000011"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000012"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000012"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000013"
+                        },
+                        new
+                        {
+                            Id = 26,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000013"
+                        },
+                        new
+                        {
+                            Id = 27,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000014"
+                        },
+                        new
+                        {
+                            Id = 28,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000014"
+                        },
+                        new
+                        {
+                            Id = 29,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000015"
+                        },
+                        new
+                        {
+                            Id = 30,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000015"
+                        },
+                        new
+                        {
+                            Id = 31,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000016"
+                        },
+                        new
+                        {
+                            Id = 32,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000016"
+                        },
+                        new
+                        {
+                            Id = 33,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000017"
+                        },
+                        new
+                        {
+                            Id = 34,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000017"
+                        },
+                        new
+                        {
+                            Id = 35,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000018"
+                        },
+                        new
+                        {
+                            Id = 36,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000018"
+                        },
+                        new
+                        {
+                            Id = 37,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000019"
+                        },
+                        new
+                        {
+                            Id = 38,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000019"
+                        },
+                        new
+                        {
+                            Id = 39,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000020"
+                        },
+                        new
+                        {
+                            Id = 40,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000020"
+                        },
+                        new
+                        {
+                            Id = 41,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000021"
+                        },
+                        new
+                        {
+                            Id = 42,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000021"
+                        },
+                        new
+                        {
+                            Id = 43,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000022"
+                        },
+                        new
+                        {
+                            Id = 44,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000022"
+                        },
+                        new
+                        {
+                            Id = 45,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000023"
+                        },
+                        new
+                        {
+                            Id = 46,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000023"
+                        },
+                        new
+                        {
+                            Id = 47,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000024"
+                        },
+                        new
+                        {
+                            Id = 48,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000024"
+                        },
+                        new
+                        {
+                            Id = 49,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000025"
+                        },
+                        new
+                        {
+                            Id = 50,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000025"
+                        },
+                        new
+                        {
+                            Id = 51,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000026"
+                        },
+                        new
+                        {
+                            Id = 52,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000026"
+                        },
+                        new
+                        {
+                            Id = 53,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000027"
+                        },
+                        new
+                        {
+                            Id = 54,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000027"
+                        },
+                        new
+                        {
+                            Id = 55,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000028"
+                        },
+                        new
+                        {
+                            Id = 56,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000028"
+                        },
+                        new
+                        {
+                            Id = 57,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000029"
+                        },
+                        new
+                        {
+                            Id = 58,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000029"
+                        },
+                        new
+                        {
+                            Id = 59,
+                            ClaimType = "registration-date",
+                            ClaimValue = "2021-03-15",
+                            UserId = "00000000-0000-0000-0000-000000000030"
+                        },
+                        new
+                        {
+                            Id = 60,
+                            ClaimType = "has-characters",
+                            ClaimValue = "true",
+                            UserId = "00000000-0000-0000-0000-000000000030"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
@@ -3278,6 +3704,131 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                         {
                             UserId = "00000000-0000-0000-0000-000000000005",
                             RoleId = "00000000-0000-0000-000000000002"
+                        },
+                        new
+                        {
+                            UserId = "00000000-0000-0000-0000-000000000006",
+                            RoleId = "00000000-0000-0000-000000000004"
+                        },
+                        new
+                        {
+                            UserId = "00000000-0000-0000-0000-000000000007",
+                            RoleId = "00000000-0000-0000-000000000004"
+                        },
+                        new
+                        {
+                            UserId = "00000000-0000-0000-0000-000000000008",
+                            RoleId = "00000000-0000-0000-000000000004"
+                        },
+                        new
+                        {
+                            UserId = "00000000-0000-0000-0000-000000000009",
+                            RoleId = "00000000-0000-0000-000000000004"
+                        },
+                        new
+                        {
+                            UserId = "00000000-0000-0000-0000-000000000010",
+                            RoleId = "00000000-0000-0000-000000000004"
+                        },
+                        new
+                        {
+                            UserId = "00000000-0000-0000-0000-000000000011",
+                            RoleId = "00000000-0000-0000-000000000004"
+                        },
+                        new
+                        {
+                            UserId = "00000000-0000-0000-0000-000000000012",
+                            RoleId = "00000000-0000-0000-000000000004"
+                        },
+                        new
+                        {
+                            UserId = "00000000-0000-0000-0000-000000000013",
+                            RoleId = "00000000-0000-0000-000000000004"
+                        },
+                        new
+                        {
+                            UserId = "00000000-0000-0000-0000-000000000014",
+                            RoleId = "00000000-0000-0000-000000000004"
+                        },
+                        new
+                        {
+                            UserId = "00000000-0000-0000-0000-000000000015",
+                            RoleId = "00000000-0000-0000-000000000004"
+                        },
+                        new
+                        {
+                            UserId = "00000000-0000-0000-0000-000000000016",
+                            RoleId = "00000000-0000-0000-000000000004"
+                        },
+                        new
+                        {
+                            UserId = "00000000-0000-0000-0000-000000000017",
+                            RoleId = "00000000-0000-0000-000000000004"
+                        },
+                        new
+                        {
+                            UserId = "00000000-0000-0000-0000-000000000018",
+                            RoleId = "00000000-0000-0000-000000000004"
+                        },
+                        new
+                        {
+                            UserId = "00000000-0000-0000-0000-000000000019",
+                            RoleId = "00000000-0000-0000-000000000004"
+                        },
+                        new
+                        {
+                            UserId = "00000000-0000-0000-0000-000000000020",
+                            RoleId = "00000000-0000-0000-000000000004"
+                        },
+                        new
+                        {
+                            UserId = "00000000-0000-0000-0000-000000000021",
+                            RoleId = "00000000-0000-0000-000000000004"
+                        },
+                        new
+                        {
+                            UserId = "00000000-0000-0000-0000-000000000022",
+                            RoleId = "00000000-0000-0000-000000000004"
+                        },
+                        new
+                        {
+                            UserId = "00000000-0000-0000-0000-000000000023",
+                            RoleId = "00000000-0000-0000-000000000004"
+                        },
+                        new
+                        {
+                            UserId = "00000000-0000-0000-0000-000000000024",
+                            RoleId = "00000000-0000-0000-000000000004"
+                        },
+                        new
+                        {
+                            UserId = "00000000-0000-0000-0000-000000000025",
+                            RoleId = "00000000-0000-0000-000000000004"
+                        },
+                        new
+                        {
+                            UserId = "00000000-0000-0000-0000-000000000026",
+                            RoleId = "00000000-0000-0000-000000000004"
+                        },
+                        new
+                        {
+                            UserId = "00000000-0000-0000-0000-000000000027",
+                            RoleId = "00000000-0000-0000-000000000004"
+                        },
+                        new
+                        {
+                            UserId = "00000000-0000-0000-0000-000000000028",
+                            RoleId = "00000000-0000-0000-000000000004"
+                        },
+                        new
+                        {
+                            UserId = "00000000-0000-0000-0000-000000000029",
+                            RoleId = "00000000-0000-0000-000000000004"
+                        },
+                        new
+                        {
+                            UserId = "00000000-0000-0000-0000-000000000030",
+                            RoleId = "00000000-0000-0000-000000000004"
                         });
                 });
 
@@ -3334,7 +3885,7 @@ namespace Imi.Project.Api.Infrastructure.Migrations
                 {
                     b.HasOne("Imi.Project.Api.Core.Entities.User", "User")
                         .WithMany("Characters")
-                        .HasForeignKey("UserId1");
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("Imi.Project.Api.Core.Entities.DungeonCharacter", b =>
