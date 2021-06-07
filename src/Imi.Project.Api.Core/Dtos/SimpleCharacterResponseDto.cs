@@ -11,5 +11,6 @@ namespace Imi.Project.Api.Core.Dtos
         public string Class { get; set; }
         public string Role { get; set; }
         public int ItemLevel { get; set; }
+        public string UserId { get; set; }
     }
 }
