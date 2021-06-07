@@ -95,17 +95,17 @@ namespace Imi.Project.Api.Controllers
             return Ok();
         }
 
-        [HttpDelete("/api/battlegrounds/{id}/character")]
-        public async Task<IActionResult> DeleteCharacterFromBattleground(Guid id, CharacterRequestDto characterRequest)
+        [HttpDelete("/api/battlegrounds/{battleGroundId}/character/{characterId}")]
+        public async Task<IActionResult> DeleteCharacterFromBattleground(Guid battleGroundId, Guid characterId)
         {
-            var battleground = await _battlegroundService.GetByIdAsync(id);
+            var battleground = await _battlegroundService.GetByIdAsync(battleGroundId);
 
             if (battleground == null)
             {
-                return NotFound($"Battleground with ID {id} could not be found.");
+                return NotFound($"Battleground with ID {battleGroundId} could not be found.");
             }
 
-            var battlegroundResponse = await _battlegroundService.DeleteCharacterAsync(id, characterRequest);
+            var battlegroundResponse = await _battlegroundService.DeleteCharacterAsync(battleGroundId, characterId);
 
             return Ok(battlegroundResponse);
         }
