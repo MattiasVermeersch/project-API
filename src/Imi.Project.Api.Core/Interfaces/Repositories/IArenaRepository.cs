@@ -10,6 +10,6 @@ namespace Imi.Project.Api.Core.Interfaces.Repositories
     {
         Task<IEnumerable<Arena>> GetByCharacterId(Guid id);
         Task<Arena> AddCharacterAsync(Guid id, Character character);
-        Task<Arena> DeleteCharacterAsync(Guid id, Character character);
+        Task<Arena> DeleteCharacterAsync(Guid arenaId, Guid characterId);
     }
 }

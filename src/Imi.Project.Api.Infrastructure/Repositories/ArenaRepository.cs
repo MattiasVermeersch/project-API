@@ -35,32 +35,37 @@ namespace Imi.Project.Api.Infrastructure.Repositories
 
         public async Task<Arena> AddCharacterAsync(Guid id, Character character)
         {
-            var arena = await GetByIdAsync(id);
+            var arena = _dbContext.Arenas.Find(id);
+            var charToAdd = _dbContext.Characters.Find(character.Id);
+
+            arena.ArenaCharacters = new List<ArenaCharacter>();
 
             arena.ArenaCharacters.Add(new ArenaCharacter
             {
                 Arena = arena,
-                Character = character
+                Character = charToAdd
             });
 
             await _dbContext.SaveChangesAsync();
 
-            return arena;
+            return await GetByIdAsync(id);
         }
 
-        public async Task<Arena> DeleteCharacterAsync(Guid id, Character character)
+        public async Task<Arena> DeleteCharacterAsync(Guid arenaId, Guid characterId)
         {
-            var arena = await GetByIdAsync(id);
+            var arena = _dbContext.Arenas.Find(arenaId);
 
-            arena.ArenaCharacters.Remove(new ArenaCharacter
-            {
-                Arena = arena,
-                Character = character
-            });
+            var arenaCharacters = _dbContext.ArenaCharacters.ToList();
+            var charToRemove = arenaCharacters
+                .Where(ac => ac.ArenaId.Equals(arenaId))
+                .Where(ac => ac.CharacterId.Equals(characterId))
+                .SingleOrDefault();
+
+            _dbContext.ArenaCharacters.Remove(charToRemove);
 
             await _dbContext.SaveChangesAsync();
 
-            return arena;
+            return await GetByIdAsync(arenaId);
         }
     }
 }
