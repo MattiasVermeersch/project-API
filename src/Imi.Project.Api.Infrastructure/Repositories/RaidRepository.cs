@@ -35,32 +35,37 @@ namespace Imi.Project.Api.Infrastructure.Repositories
 
         public async Task<Raid> AddCharacterAsync(Guid id, Character character)
         {
-            var raid = await GetByIdAsync(id);
+            var raid = _dbContext.Raids.Find(id);
+            var characterToAdd = _dbContext.Characters.Find(character.Id);
+
+            raid.RaidCharacters = new List<RaidCharacter>();
 
             raid.RaidCharacters.Add(new RaidCharacter
             {
                 Raid = raid,
-                Character = character
+                Character = characterToAdd
             });
 
             await _dbContext.SaveChangesAsync();
 
-            return raid;
+            return await GetByIdAsync(id);
         }
 
-        public async Task<Raid> DeleteCharacterAsync(Guid id, Character character)
+        public async Task<Raid> DeleteCharacterAsync(Guid raidId, Guid characterId)
         {
-            var raid = await GetByIdAsync(id);
+            var raid = _dbContext.Raids.Find(raidId);
 
-            raid.RaidCharacters.Remove(new RaidCharacter
-            {
-                Raid = raid,
-                Character = character
-            });
+            var raidCharacters = _dbContext.RaidCharacters.ToList();
+            var charToRemove = raidCharacters
+                .Where(dc => dc.RaidId.Equals(raidId))
+                .Where(dc => dc.CharacterId.Equals(characterId))
+                .SingleOrDefault();
+
+            _dbContext.RaidCharacters.Remove(charToRemove);
 
             await _dbContext.SaveChangesAsync();
 
-            return raid;
+            return await GetByIdAsync(raidId);
         }
     }
 }
