@@ -35,32 +35,37 @@ namespace Imi.Project.Api.Infrastructure.Repositories
 
         public async Task<Dungeon> AddCharacterAsync(Guid id, Character character)
         {
-            var dungeon = await GetByIdAsync(id);
+            var dungeon = _dbContext.Dungeons.Find(id);
+            var characterToAdd = _dbContext.Characters.Find(character.Id);
+
+            dungeon.DungeonCharacters = new List<DungeonCharacter>();
 
             dungeon.DungeonCharacters.Add(new DungeonCharacter
             {
                 Dungeon = dungeon,
-                Character = character
+                Character = characterToAdd
             });
 
             await _dbContext.SaveChangesAsync();
 
-            return dungeon;
+            return await GetByIdAsync(id);
         }
 
-        public async Task<Dungeon> DeleteCharacterAsync(Guid id, Character character)
+        public async Task<Dungeon> DeleteCharacterAsync(Guid dungeonId, Guid characterId)
         {
-            var dungeon = await GetByIdAsync(id);
+            var dungeon = _dbContext.Dungeons.Find(dungeonId);
 
-            dungeon.DungeonCharacters.Remove(new DungeonCharacter
-            {
-                Dungeon = dungeon,
-                Character = character
-            });
+            var dungeonCharacters = _dbContext.DungeonCharacters.ToList();
+            var charToRemove = dungeonCharacters
+                .Where(dc => dc.DungeonId.Equals(dungeonId))
+                .Where(dc => dc.CharacterId.Equals(characterId))
+                .SingleOrDefault();
+
+            _dbContext.DungeonCharacters.Remove(charToRemove);
 
             await _dbContext.SaveChangesAsync();
 
-            return dungeon;
+            return await GetByIdAsync(dungeonId);
         }
     }
 }
