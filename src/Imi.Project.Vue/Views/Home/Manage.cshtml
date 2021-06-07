@@ -1,0 +1,87 @@
+﻿@{ 
+    ViewData["Title"] = "Manage Account";
+}
+<div class="text-center">
+    <h1 class="display-3">Manage Account</h1>
+    <hr />
+</div>
+
+<div id="manage">
+    <div v-if="loading" class="text-center">
+        <br /><br /><br /><br />
+        <h1>Loading...</h1>
+        <img src="~/images/loading.gif" />
+    </div>
+    <div v-if="currentUser">
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6 offset-md-3">
+                    <label for="userId">ID</label>
+                    <input id="userId" class="form-control" type="text" v-model="currentUser.id" disabled />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6 offset-md-3">
+                    <label for="userFullName">Name</label>
+                    <input id="userFullName" class="form-control" type="text" v-model="currentUser.fullName" v-bind:disabled="isDisabled" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6 offset-md-3">
+                    <label for="userMail">Email</label>
+                    <input id="userMail" class="form-control" type="text" v-model="currentUser.email" v-bind:disabled="isDisabled" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6 offset-md-3">
+                    <label for="userBirthDate">Date of birth</label>
+                    <input id="userBirthDate" class="form-control" type="date" v-model="currentUser.birthDate" v-bind:disabled="isDisabled" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6 offset-md-3">
+                    <label for="userAddress">Address</label>
+                    <input id="userAddress" class="form-control" type="text" v-model="currentUser.address" v-bind:disabled="isDisabled" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6 offset-md-3">
+                    <label for="userCity">City</label>
+                    <input id="userCity" class="form-control" type="text" v-model="currentUser.city" v-bind:disabled="isDisabled" />
+                </div>
+            </div>
+            <div class="form-row" v-if="!isEdit">
+                <div class="form-group col-md-6 offset-md-3">
+                    <label for="userRole">Role</label>
+                    <input id="userRole" class="form-control" type="text" v-model="currentUser.roles" disabled />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="container text-center" v-if="!isEdit">
+                    <button type="button" class="btn btn-primary" v-on:click="editUserDetails(currentUser)">Edit</button>
+                    <button type="button" class="btn btn-danger" v-on:click="deleteUser(currentUser)">Delete</button>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="container text-center" v-if="isEdit">
+                    <button type="button" class="btn btn-primary" v-on:click="saveUserDetails(currentUser)">Save</button>
+                    <button type="button" class="btn btn-secondary" v-on:click="fetchUser">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div v-if="userToDelete">
+        <div class="form-group col-md-8 offset-md-2">
+            <p class=" alert alert-warning text-center">
+                Are you sure you want to delete <span class="font-weight-bolder">{{userToDelete.email}}</span>?</p>
+                <div class="container text-center">
+                    <button type="button" class="btn btn-danger" v-on:click="confirmDelete(userToDelete)">Confirm</button>
+                    <button type="button" class="btn btn-secondary" v-on:click="fetchUser">Cancel</button>
+                </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/js/manage.js"></script>
+}
