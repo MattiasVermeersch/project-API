@@ -1,0 +1,110 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div id="index">
+    
+    <div v-if="loading" class="text-center">
+        <h1 class="display-4">Login</h1>
+        <hr />
+        <br /><br /><br /><br />
+        <h1>Signing in...</h1>
+        <img src="~/images/loading.gif" />
+    </div>
+
+    <form v-if="isLogin" v-on:submit.prevent="loginUser(login)">
+        <h1 class="display-4">Login</h1>
+        <hr />
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="email">Email</label>
+                <input id="email" class="form-control" type="text" v-model="login.email" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="password">Password</label>
+                <input id="password" class="form-control" type="password" v-model="login.password" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input class="btn btn-primary" type="submit" value="Login">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <p>Not registered yet? <a href="#" v-on:click="loginForm(false)" class="primary-link">Register here</a></p>
+            </div>
+        </div>
+        <div v-if="errorMessage">
+            <p class=" alert alert-danger">{{errorMessage}}</p>
+        </div>
+    </form>
+
+    <form v-if="isRegister" v-on:submit.prevent="registerUser(newUser)">
+        <h1 class="display-4">Register</h1>
+        <hr />
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="newFirstName">First name</label>
+                <input class="form-control" type="text" id="newFirstName" placeholder="First Name" v-model="newUser.firstName" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="newLastName">Last name</label>
+                <input class="form-control" type="text" id="newLastName" placeholder="Last Name" v-model="newUser.lastName" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="newEmail">Email</label>
+                <input class="form-control" type="email" id="newEmail" placeholder="user@example.com" v-model="newUser.email" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="newBirthdate">Date of birth</label>
+                <input class="form-control" type="date" id="newBirthdate" v-model="newUser.birthDate" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="newStreet">Address</label>
+                <input class="form-control" type="text" id="newStreet" placeholder="Street & number" v-model="newUser.address" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="newCity">City</label>
+                <input class="form-control" type="text" id="newCity" placeholder="City" v-model="newUser.city" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="newPassword">Password</label>
+                <input class="form-control" type="password" id="newPassword" placeholder="Password" v-model="newUser.password" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="confirmPassword">Confirm password</label>
+                <input class="form-control" type="password" id="confirmPassword" placeholder="Confirm password" v-model="newUser.confirmPassword" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-1">
+                <input type="submit" value="Register" class="btn btn-outline-primary" />
+            </div>
+            <div class="form-group col-md-1">
+                <button type="button" class="btn btn-secondary" v-on:click="loginForm(true)">Cancel</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+@section scripts {
+    <script src="~/js/login.js"></script>
+}
