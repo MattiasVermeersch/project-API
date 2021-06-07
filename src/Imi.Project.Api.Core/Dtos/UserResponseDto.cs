@@ -14,6 +14,7 @@ namespace Imi.Project.Api.Core.Dtos
         public string Address { get; set; }
         public string FullName { get; set; }
         public string City { get; set; }
+        public IEnumerable<string> Roles { get; set; }
         public IdentityResult Error { get; set; }
         public ICollection<SimpleCharacterResponseDto> Characters { get; set; }
     }
