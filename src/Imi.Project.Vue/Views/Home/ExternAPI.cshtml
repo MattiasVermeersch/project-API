@@ -1,0 +1,332 @@
+﻿
+@{
+    ViewData["Title"] = "ExternAPI";
+}
+
+<div class="text-center">
+    <h1 class="display-3">Harry Potter API</h1>
+    <hr />
+    <br />
+</div>
+
+<div id="harrypotter">
+    <div v-if="loading" class="text-center">
+        <br /><br /><br /><br />
+        <h1>Loading...</h1>
+        <img src="~/images/loading.gif" />
+    </div>
+    <div class="container body-content">
+        <ul class="nav nav-tabs justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link" 
+                   v-bind:class="{active: activeAllCharacters}" 
+                   v-on:click="showAllCharacters">
+                    All Characters
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" 
+                   v-bind:class="{active: activeStudents}" 
+                   v-on:click="showAllStudents">
+                    Students
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" 
+                   v-bind:class="{active: activeStaff}" 
+                   v-on:click="showAllStaff">
+                    Staff
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" 
+                   v-bind:class="{active: activeHouses}" 
+                   v-on:click="showAllHouses">
+                    The Houses
+                </a>
+            </li>
+        </ul>
+    </div>
+    <br />
+    <div v-if="activeAllCharacters">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Occupation</th>
+                    <th scope="col">Date of birth</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(character, index) in characters">
+                    <th scope="row">{{index + 1}}</th>
+                    <td>{{character.name}}</td>
+                    <td v-if="character.hogwartsStudent">Student</td>
+                    <td v-if="character.hogwartsStaff">Staff</td>
+                    <td v-if="!character.hogwartsStudent
+                        && !character.hogwartsStaff">Other</td>
+                    <td v-if="character.dateOfBirth">{{character.dateOfBirth}}</td>
+                    <td v-else>Unknown</td>
+                    <td><button class="btn btn-light" v-on:click="getCharacterDetails(character,'characters')">Details</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div v-if="activeStudents">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Name</th>
+                    <th scope="col">House</th>
+                    <th scope="col">Date of birth</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(character, index) in students">
+                    <th scope="row">{{index + 1}}</th>
+                    <td>{{character.name}}</td>
+                    <td>{{character.house}}</td>
+                    <td v-if="character.dateOfBirth">{{character.dateOfBirth}}</td>
+                    <td v-else>Unknown</td>
+                    <td><button class="btn btn-light" v-on:click="getCharacterDetails(character,'students')">Details</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div v-if="activeStaff">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Name</th>
+                    <th scope="col">House</th>
+                    <th scope="col">Date of birth</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(character, index) in staff">
+                    <th scope="row">{{index + 1}}</th>
+                    <td>{{character.name}}</td>
+                    <td v-if="character.house">{{character.house}}</td>
+                    <td v-else>Unknown</td>
+                    <td v-if="character.dateOfBirth">{{character.dateOfBirth}}</td>
+                    <td v-else>Unknown</td>
+                    <td><button class="btn btn-light" v-on:click="getCharacterDetails(character,'staff')">Details</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div v-if="activeHouses">
+        @* Images source = https://harrypotter.fandom.com/wiki/Hogwarts_Houses *@
+        <table class="table" style="margin: auto; width: 20%;">
+            <tr>
+                <th scope="col" class="border-top-0 border-right border-bottom-0 float-right">
+                    <a class="img-fluid" href="#" v-on:click="getCharactersByHouse('Gryffindor')">
+                        <img src="~/images/Gryffindor.jpg" alt="" />
+                    </a>
+                </th>
+                <th scope="col" class="border-top-0 border-bottom-0 border-right-0">
+                    <a class="img-fluid" href="#" v-on:click="getCharactersByHouse('Ravenclaw')">
+                        <img src="~/images/Ravenclaw.jpg" alt="" />
+                    </a>
+                </th>
+            </tr>
+            <tr>
+                <th scope="col" class="border-right border-bottom-0 float-right">
+                    <a class="img-fluid" href="#" v-on:click="getCharactersByHouse('Hufflepuff')">
+                        <img src="~/images/Hufflepuff.jpg" alt="" />
+                    </a>
+                </th>
+                <th scope="col" class="border-bottom-0 border-right-0">
+                    <a class="img-fluid" href="#" v-on:click="getCharactersByHouse('Slytherin')">
+                        <img src="~/images/Slytherin.jpg" alt="" />
+                    </a>
+                </th>
+            </tr>
+        </table>
+        <br />
+        <table class="table table-striped" v-if="showByHouse">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Name</th>
+                    <th scope="col">House</th>
+                    <th scope="col">Occupation</th>
+                    <th scope="col">Date of birth</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(character, index) in charactersByHouse">
+                    <th scope="row">{{index + 1}}</th>
+                    <td>{{character.name}}</td>
+                    <td>{{character.house}}</td>
+                    <td v-if="character.hogwartsStudent">Student</td>
+                    <td v-if="character.hogwartsStaff">Staff</td>
+                    <td v-if="!character.hogwartsStudent
+                        && !character.hogwartsStaff">
+                        Other
+                    </td>
+                    <td v-if="character.dateOfBirth">{{character.dateOfBirth}}</td>
+                    <td v-else>Unknown</td>
+                    <td><button class="btn btn-light" v-on:click="getCharacterDetails(character,'houses')">Details</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div v-if="currentCharacter" class="text-center">
+        <table class="table table-bordered" style="margin: auto; width: 60%;">
+            <thead>
+                <tr class="d-flex">
+                    <th class="col-md-12">
+                        {{currentCharacter.name}}
+                        <br />
+                        <img v-bind:src="currentCharacter.image" style="height: 20rem;" />
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="d-flex">
+                    <th class="col-md-12">
+                        Biographical information
+                    </th>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-md-4 font-weight-bold">Date of birth</td>
+                    <td class="col-md-8" v-if="currentCharacter.dateOfBirth">{{currentCharacter.dateOfBirth}}</td>
+                    <td class="col-md-8" v-else>Unknown</td>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-md-4 font-weight-bold">Status</td>
+                    <td class="col-md-8" v-if="currentCharacter.alive">Alive</td>
+                    <td class="col-md-8" v-else>Deceased</td>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-md-4 font-weight-bold">Ancestry</td>
+                    <td class="col-md-8" v-if="currentCharacter.ancestry">{{currentCharacter.ancestry}}</td>
+                    <td class="col-md-8" v-else>Unknown</td>
+                </tr>
+                <tr class="d-flex">
+                    <th class="col-md-12">
+                        Appearance
+                    </th>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-md-4 font-weight-bold">Species</td>
+                    <td class="col-md-8" v-if="currentCharacter.species">{{currentCharacter.species}}</td>
+                    <td class="col-md-8" v-else>Unknown</td>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-md-4 font-weight-bold">Gender</td>
+                    <td class="col-md-8" v-if="currentCharacter.gender">{{currentCharacter.gender}}</td>
+                    <td class="col-md-8" v-else>Unknown</td>
+
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-md-4 font-weight-bold">Hair colour</td>
+                    <td class="col-md-8" v-if="currentCharacter.hairColour">{{currentCharacter.hairColour}}</td>
+                    <td class="col-md-8" v-else>Unknown</td>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-md-4 font-weight-bold">Eye colour</td>
+                    <td class="col-md-8" v-if="currentCharacter.eyeColour">{{currentCharacter.eyeColour}}</td>
+                    <td class="col-md-8" v-else>Unknown</td>
+                </tr>
+                <tr class="d-flex">
+                    <th class="col-md-12">
+                        Occupation
+                    </th>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-md-4 font-weight-bold">Role</td>
+                    <td class="col-md-8" v-if="currentCharacter.hogwartsStudent">Student at Hogwarts</td>
+                    <td class="col-md-8" v-if="currentCharacter.hogwartsStaff">Staff at Hogwarts</td>
+                    <td class="col-md-8"
+                        v-if="!currentCharacter.hogwartsStaff && !currentCharacter.hogwartsStudent">
+                        <span v-if="currentCharacter.name ==
+                              ('Kingsley Shacklebolt' ||
+                              'Arthur Weasley')">
+                            Works at the Ministry of Magic
+                        </span>
+                        <span v-if="currentCharacter.name ==
+                              ('Sirius Black')">
+                            Unemployed <br /> (Fugitive)
+                        </span>
+                        <span v-if="currentCharacter.name ==
+                              ('Bellatrix Lestrange')">
+                            Death Eater
+                        </span>
+                        <span v-if="currentCharacter.name ==
+                              ('Lord Voldemort')">
+                            Dark Wizard
+                        </span>
+                        <span v-if="currentCharacter.name ==
+                              ('Lucius Malfoy')">
+                            Works at the Ministry of Magic <br />
+                            (Death Eater in secret)
+                        </span>
+                    </td>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-md-4 font-weight-bold">House</td>
+                    <td class="col-md-8" v-if="currentCharacter.house">{{currentCharacter.house}}</td>
+                    <td class="col-md-8" v-else>Unknown</td>
+                </tr>
+                <tr class="d-flex">
+                    <th class="col-md-12">
+                        Wand
+                    </th>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-md-4 font-weight-bold">Core</td>
+                    <td class="col-md-8" v-if="currentCharacter.wand.core">{{currentCharacter.wand.core}}</td>
+                    <td class="col-md-8" v-else>Not specified</td>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-md-4 font-weight-bold">Length</td>
+                    <td class="col-md-8" v-if="currentCharacter.wand.length">{{currentCharacter.wand.length}} inch.</td>
+                    <td class="col-md-8" v-else>Not specified</td>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-md-4 font-weight-bold">Wood</td>
+                    <td class="col-md-8" v-if="currentCharacter.wand.wood">{{currentCharacter.wand.wood}}</td>
+                    <td class="col-md-8" v-else>Not specified</td>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-md-4 font-weight-bold">Patronus</td>
+                    <td class="col-md-8" v-if="currentCharacter.patronus">{{currentCharacter.patronus}}</td>
+                    <td class="col-md-8" v-else>Not specified</td>
+                </tr>
+                <tr class="d-flex">
+                    <th class="col-md-12">
+                        Films
+                    </th>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-md-4 font-weight-bold">Played by</td>
+                    <td class="col-md-8" v-if="currentCharacter.actor">
+                        {{currentCharacter.actor}}
+                        <span v-if="currentCharacter.name == 'Vincent Crabbe'"><br />
+                            (Blaise Zibini in 'Deathly Hallows Part II')
+                        </span>
+                    </td>
+                    <td class="col-md-8" v-else>Not specified</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <div>
+            <a href="#" type="button" class="btn btn-outline-secondary" v-on:click="returnToPage">Return</a>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/js/harrypotter.js"></script>
+}
