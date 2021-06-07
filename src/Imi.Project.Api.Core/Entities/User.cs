@@ -19,6 +19,10 @@ namespace Imi.Project.Api.Core.Entities
         public string City { get; set; }
         public ICollection<Character> Characters { get; set; }
 
+        //NotMapped Roles are already in Identity
+        [NotMapped]
+        public IEnumerable<string> Roles { get; set; }
+
         //Notmapped properties to load user claims and roles for UserRepository
         [NotMapped]
         public IdentityResult IdentityError { get; set; }
