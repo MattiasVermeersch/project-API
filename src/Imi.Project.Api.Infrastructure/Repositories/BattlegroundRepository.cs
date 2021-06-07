@@ -35,32 +35,37 @@ namespace Imi.Project.Api.Infrastructure.Repositories
 
         public async Task<Battleground> AddCharacterAsync(Guid id, Character character)
         {
-            var battleground = await GetByIdAsync(id);
+            var battleground = _dbContext.Battlegrounds.Find(id);
+            var characterToAdd = _dbContext.Characters.Find(id);
+
+            battleground.BattlegroundCharacters = new List<BattlegroundCharacter>();
 
             battleground.BattlegroundCharacters.Add(new BattlegroundCharacter
             {
                 Battleground = battleground,
-                Character = character
+                Character = characterToAdd
             });
 
             await _dbContext.SaveChangesAsync();
 
-            return battleground;
+            return await GetByIdAsync(id);
         }
 
-        public async Task<Battleground> DeleteCharacterAsync(Guid id, Character character)
+        public async Task<Battleground> DeleteCharacterAsync(Guid battleGroundId, Guid characterId)
         {
-            var battleground = await GetByIdAsync(id);
+            var battleground = _dbContext.Battlegrounds.Find(battleGroundId);
 
-            battleground.BattlegroundCharacters.Remove(new BattlegroundCharacter
-            {
-                Battleground = battleground,
-                Character = character
-            });
+            var battleGroundCharacters = _dbContext.BattlegroundCharacters.ToList();
+            var charToRemove = battleGroundCharacters
+                .Where(bc => bc.BattlegroundId.Equals(battleGroundId))
+                .Where(bc => bc.CharacterId.Equals(characterId))
+                .SingleOrDefault();
+
+            _dbContext.BattlegroundCharacters.Remove(charToRemove);
 
             await _dbContext.SaveChangesAsync();
 
-            return battleground;
+            return await GetByIdAsync(battleGroundId);
         }
     }
 }
