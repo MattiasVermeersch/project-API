@@ -95,17 +95,17 @@ namespace Imi.Project.Api.Controllers
             return Ok();
         }
 
-        [HttpDelete("/api/arenas/{id}/character")]
-        public async Task<IActionResult> DeleteCharacterFromArena(Guid id, CharacterRequestDto characterRequest)
+        [HttpDelete("/api/arenas/{arenaId}/character/{characterId}")]
+        public async Task<IActionResult> DeleteCharacterFromArena(Guid arenaId, Guid characterId)
         {
-            var arena = await _arenaService.GetByIdAsync(id);
+            var arena = await _arenaService.GetByIdAsync(arenaId);
 
             if(arena == null)
             {
-                return NotFound($"Arena with ID {id} could not be found.");
+                return NotFound($"Arena with ID {arenaId} could not be found.");
             }
 
-            var arenaResponse = await _arenaService.DeleteCharacterAsync(id, characterRequest);
+            var arenaResponse = await _arenaService.DeleteCharacterAsync(arenaId, characterId);
 
             return Ok(arenaResponse);
         }
