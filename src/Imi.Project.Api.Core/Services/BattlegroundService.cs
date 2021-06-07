@@ -73,10 +73,9 @@ namespace Imi.Project.Api.Core.Services
             return dto;
         }
 
-        public async Task<BattlegroundResponseDto> DeleteCharacterAsync(Guid id, CharacterRequestDto characterRequest)
+        public async Task<BattlegroundResponseDto> DeleteCharacterAsync(Guid battleGroundId, Guid characterId)
         {
-            var character = _mapper.Map<Character>(characterRequest);
-            var result = await _battlegroundRepository.DeleteCharacterAsync(id, character);
+            var result = await _battlegroundRepository.DeleteCharacterAsync(battleGroundId, characterId);
             var dto = _mapper.Map<BattlegroundResponseDto>(result);
             return dto;
         }
