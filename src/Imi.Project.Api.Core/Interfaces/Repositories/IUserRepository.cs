@@ -11,5 +11,6 @@ namespace Imi.Project.Api.Core.Interfaces.Repositories
     {
         Task<User> UpdateClaims(string id);
         Task<User> GetUserByCharacterIdAsync(Guid id);
+        Task<User> UpdateAsync(User user, string role);
     }
 }
