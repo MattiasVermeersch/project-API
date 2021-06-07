@@ -73,10 +73,9 @@ namespace Imi.Project.Api.Core.Services
             return dto;
         }
 
-        public async Task<RaidResponseDto> DeleteCharacterAsync(Guid id, CharacterRequestDto characterRequest)
+        public async Task<RaidResponseDto> DeleteCharacterAsync(Guid raidId, Guid characterId)
         {
-            var character = _mapper.Map<Character>(characterRequest);
-            var result = await _raidRepository.DeleteCharacterAsync(id, character);
+            var result = await _raidRepository.DeleteCharacterAsync(raidId, characterId);
             var dto = _mapper.Map<RaidResponseDto>(result);
             return dto;
         }
