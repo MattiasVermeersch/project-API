@@ -22,7 +22,7 @@ namespace Imi.Project.Api.Controllers
             _userService = userService;
         }
 
-        [HttpPost("/api/auth/register")]
+        [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterUserRequestDto registerUser)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -43,7 +43,7 @@ namespace Imi.Project.Api.Controllers
             return Ok(userResponse);
         }
 
-        [HttpPost("/api/auth/login")]
+        [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginUserRequestDto login)
         {
             var loginResponse = await _userService.LoginUser(login);
