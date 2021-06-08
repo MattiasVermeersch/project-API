@@ -27,6 +27,7 @@ namespace Imi.Project.Api.Controllers
             _characterService = characterService;
         }
 
+        [Authorize(Policy = "UserWithAdminRole")]
         [HttpGet]
         public async Task<IActionResult> Get()
         {
