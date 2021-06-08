@@ -106,6 +106,8 @@ namespace Imi.Project.Api
                         return false;
                     });
                 });
+                options.AddPolicy("UserWithAdminRole", policy =>
+                    policy.RequireRole("Admin"));
             });
 
             services.AddSwaggerGen(c =>
