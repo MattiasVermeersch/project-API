@@ -56,39 +56,6 @@ namespace Imi.Project.Api.Controllers
             return Ok(characters);
         }
 
-        [AllowAnonymous]
-        [HttpPost("/api/auth/register")]
-        public async Task<IActionResult> Register([FromBody] RegisterUserRequestDto registerUser)
-        {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-
-            var userResponse = await _userService.AddAsync(registerUser);
-
-            var errorResult = userResponse.Error;
-
-            if(errorResult != null && !errorResult.Succeeded)
-            {
-                foreach(var error in errorResult.Errors)
-                {
-                    ModelState.AddModelError(error.Code, error.Description);
-                }
-                return BadRequest(ModelState);
-            }
-
-            return Ok(userResponse);
-        }
-
-        [AllowAnonymous]
-        [HttpPost("/api/auth/login")]
-        public async Task<IActionResult> Login([FromBody] LoginUserRequestDto login)
-        {
-            var loginResponse = await _userService.LoginUser(login);
-
-            if (!loginResponse.SignInSucceeded) return Unauthorized();
-
-            return Ok(loginResponse);
-        }
-
         [HttpPut]
         public async Task<IActionResult> Put(UserRequestDto userRequest)
         {
