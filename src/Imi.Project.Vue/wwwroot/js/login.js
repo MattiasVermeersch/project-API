@@ -7,17 +7,17 @@ var app = new Vue({
     data: {
         isLogin: true,
         isRegister: false,
-        login: { email: "ageydon0@marriott.com", password: "Test123?" },
+        login: { email: "", password: "" },
         newLogin: { email: "", password: ""},
         newUser: {
-            firstName: "Kim",
-            lastName: "Vanhollebeke",
-            email: "user@example.com",
-            password: "Test123?",
-            confirmPassword: "Test123?",
-            city: "Aartrijke",
-            address: "Brugse Heirweg 7",
-            birthDate: new Date("1992-04-05").toISOString().substr(0, 10),
+            firstName: "",
+            lastName: "",
+            email: "",
+            password: "",
+            confirmPassword: "",
+            city: "",
+            address: "",
+            birthDate: '',
         },
         errorMessage: null,
         loading: false,
@@ -38,7 +38,7 @@ var app = new Vue({
             self.loading = true;
             axios
                 .post(apiLogin, login)
-                .then((response) => {
+                .then(function (response) {
                     if (response.status == 200) {
                         self.handleSessionStorage(response.data);
                         window.location.href = '/Home/Characters';
@@ -48,7 +48,7 @@ var app = new Vue({
                         self.isLogin = true;
                     }
                 })
-                .catch(error => self.errorMessage = error);
+                .catch(function (error) { self.errorMessage = error });
         },
         registerUser: function (newUser) {
             var self = this;
@@ -56,7 +56,7 @@ var app = new Vue({
             newUser.birthDate = newUser.birthDate.substr(0, 10);
             axios
                 .post(apiRegister, newUser)
-                .then((response) => {
+                .then(function (response) {
                     if (response.status == 200) {
                         self.isLogin = true;
                         newLogin = {
@@ -68,7 +68,7 @@ var app = new Vue({
                         self.errorMessage = response.data.status;
                     }
                 })
-                .catch(error => self.errorMessage = error);
+                .catch(function (error) { self.errorMessage = error });
         },
         jWTTokenParse: function (JWTtoken) {
             try {
