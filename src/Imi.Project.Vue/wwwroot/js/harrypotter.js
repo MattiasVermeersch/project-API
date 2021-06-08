@@ -31,7 +31,6 @@ var app = new Vue({
             axios.get(`${charactersUrl}`)
                 .then(function (response){
                     self.characters = response.data;
-                    console.log(self.characters);
             });
         },
         fetchStudents: function () {
@@ -103,6 +102,7 @@ var app = new Vue({
             self.activeStaff = false;
             self.activeHouses = false;
             self.page = page;
+            self.capitalizeProps(character);
             self.currentCharacter = character;
             self.loading = false;
         },
@@ -119,6 +119,17 @@ var app = new Vue({
             else if (self.page == 'staff') self.activeStaff = true;
             else if (self.page == 'houses') self.activeHouses = true;
             self.currentCharacter = null;
+        },
+        capitalizeProps: function (character) {
+            character.ancestry = character.ancestry.charAt(0).toUpperCase() + character.ancestry.slice(1);
+            character.eyeColour = character.eyeColour.charAt(0).toUpperCase() + character.eyeColour.slice(1);
+            character.gender = character.gender.charAt(0).toUpperCase() + character.gender.slice(1);
+            character.hairColour = character.hairColour.charAt(0).toUpperCase() + character.hairColour.slice(1);
+            character.patronus = character.patronus.charAt(0).toUpperCase() + character.patronus.slice(1);
+            character.species = character.species.charAt(0).toUpperCase() + character.species.slice(1);
+
+            character.wand.core = character.wand.core.charAt(0).toUpperCase() + character.wand.core.slice(1);
+            character.wand.wood = character.wand.wood.charAt(0).toUpperCase() + character.wand.wood.slice(1);
         },
     },
 });
