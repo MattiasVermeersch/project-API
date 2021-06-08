@@ -105,7 +105,6 @@ var app = new Vue({
             var self = this;
             axios.delete(`${charactersUrl}/${character.id}`, axiosConfig)
                 .then(function (response) {
-                    console.log(response);
                     if (response.status == 200) {
                         self.characters = [];
                         self.fetchCharacters();
@@ -144,7 +143,7 @@ var app = new Vue({
                         self.isRegister = false;
                     }
                 })
-                .catch(error => self.errorMessage = error);
+                .catch((error) => console.log(error.response));
         },
         getRoleOptions: function () {
             var self = this;
