@@ -81,12 +81,9 @@ var app = new Vue({
         },
         confirmDelete: function (user) {
             var self = this;
-            console.log(`${usersUrl}/${user.id}`);
             axios.delete(`${usersUrl}/${user.id}`, axiosConfig)
                 .then(function (response) {
-                    console.log(response);
                     if (response.status == 200) {
-                        console.log(response.status);
                         self.fetchUsers();
                         self.showUsers = true;
                         self.userToDelete = null;
