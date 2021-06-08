@@ -106,25 +106,25 @@
             <div class="form-row">
                 <div class="form-group col-md-6 offset-md-3">
                     <label for="characterLevel">Level</label>
-                    <input id="characterLevel" class="form-control" type="number" v-model="currentCharacter.level" v-bind:disabled="isDisabled" />
+                    <input id="characterLevel" class="form-control" type="number" v-model.number="currentCharacter.level" v-bind:disabled="isDisabled" />
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6 offset-md-3">
                     <label for="characterItemLevel">Itemlevel</label>
-                    <input id="characterItemLevel" class="form-control" type="number" v-model="currentCharacter.itemLevel" v-bind:disabled="isDisabled" />
+                    <input id="characterItemLevel" class="form-control" type="number" v-model.number="currentCharacter.itemLevel" v-bind:disabled="isDisabled" />
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6 offset-md-3">
                     <label for="characterArenaRating">Arenarating</label>
-                    <input id="characterArenaRating" class="form-control" type="number" v-model="currentCharacter.arenaRating" v-bind:disabled="isDisabled" />
+                    <input id="characterArenaRating" class="form-control" type="number" v-model.number="currentCharacter.arenaRating" v-bind:disabled="isDisabled" />
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6 offset-md-3">
                     <label for="characterBattlegroundRating">Battlegroundrating</label>
-                    <input id="characterBattlegroundRating" class="form-control" type="number" v-model="currentCharacter.battlegroundRating" v-bind:disabled="isDisabled" />
+                    <input id="characterBattlegroundRating" class="form-control" type="number" v-model.number="currentCharacter.battlegroundRating" v-bind:disabled="isDisabled" />
                 </div>
             </div>
             <div class="form-row">
